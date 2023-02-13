@@ -1,5 +1,39 @@
 ## webapp16
 
+# DEFINICIÓN DE LAS FUNCIONES DE LA WEB
+
+  - CONCEPTO:
+  Nuestra página web consiste en un blog de viajes para que los usuarios compartan sus experiencias con los demás.
+
+  - ENTIDADES Y RELACIONES:
+  Usuario: que hay de tres niveles
+  
+    Usuarios invitados (nivel 1): que podrán visualizar los viajes realizados por los usuarios registrados y los comentarios realizados por estos
+
+    Usuarios registrados (nivel 2): que podrán realizar viajes (y publicarlos) y realizar comentarios sobre los viajes publicados (por ellos mismos y por los demás).
+
+    Usuarios administradores (nivel 3): que pueden crear, editar y borrar destinos y configurar las características de los usuarios (no queremos que tengan nombre, avatares o publicaciones inadecuadas).
+
+    Los usuarios de nivel 2 pueden hacer aquello que puedan hacer los de nivel 1, y los de nivel 3 pueden hacer aquello que puedan hacer los de nivel 2 (y por tanto también los ed nivel 1).
+
+  Destinos: a los que se realizan viajes.
+
+  Viajes: realizados a un destino y publicados por los usuarios registrados.
+
+  Comentarios: Realizados por los usuarios registrados y publicados sobre un viaje.
+
+  - Imágenes:
+  Los usuarios podrán publicar sus avatares personalizados (imágenes propias) así como las fotos de sus viajes.
+
+  - Gráfico:
+  Los destinos contendrán información sobre los viajes realizados por los usuarios y las valoraciones realizadas de esos viajes. Los administradores tendrán acceso a gráficas que permitan determinar cuales son los mejores destinos de acuerdo con los usuarios.
+
+  - Tecnología complementaria
+  Las páginas de los destinos tienen acceso a google maps, y mostrarán un plano del destino gracias a un enlace embebido de este servicio.
+
+  - Algoritmo avanzado
+  Utilizaremos un algoritmo de ordenación para recomendar a los usuarios los mejores destinos.
+
 # CAPTURAS DE PANTALLA
 
   - PANTALLA ADMINISTRADOR:
