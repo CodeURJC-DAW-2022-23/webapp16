@@ -14,13 +14,13 @@
 
     Usuarios administradores (nivel 3): que pueden crear, editar y borrar destinos y configurar las características de los usuarios (no queremos que tengan nombre, avatares o publicaciones inadecuadas).
 
-    Los usuarios de nivel 2 pueden hacer aquello que puedan hacer los de nivel 1, y los de nivel 3 pueden hacer aquello que puedan hacer los de nivel 2 (y por tanto también los ed nivel 1).
+    Los usuarios de nivel 2 pueden hacer aquello que puedan hacer los de nivel 1, y los de nivel 3 pueden hacer aquello que puedan hacer los de nivel 2 (y por tanto también los de nivel 1).
 
   Destinos: a los que se realizan viajes.
 
   Viajes: realizados a un destino y publicados por los usuarios registrados.
 
-  Comentarios: Realizados por los usuarios registrados y publicados sobre un viaje.
+  Comentarios: Realizados por los usuarios registrados y publicados sobre un destino.
 
   - Imágenes:
   Los usuarios podrán publicar sus avatares personalizados (imágenes propias) así como las fotos de sus viajes.
