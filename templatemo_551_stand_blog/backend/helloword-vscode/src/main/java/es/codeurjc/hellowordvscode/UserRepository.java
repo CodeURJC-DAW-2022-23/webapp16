@@ -2,13 +2,16 @@ package es.codeurjc.hellowordvscode;
 
 import es.codeurjc.Usuario;
 
-public class UserRepository {
 
-    public Object findById(long id) {
-        return null;
-    }
 
-    public void save(Usuario usuario) {
-    }
+import org.springframework.data.jpa.repository.JpaRepository;
+
+//import es.codeurjc.daw.library.model.Book;
+
+
+public interface UserRepository extends JpaRepository<Usuario, Long>{
+
+   
+
 
 }

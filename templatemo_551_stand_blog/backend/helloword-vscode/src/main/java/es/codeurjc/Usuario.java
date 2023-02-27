@@ -5,6 +5,8 @@ import java.util.*;
 
 import javax.persistence.*;
 
+import org.hibernate.engine.jdbc.BlobProxy;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -31,9 +33,11 @@ public class Usuario {
     public void setImageFile(Blob generateProxy) {
     }
 
-    public Object getImageFile() {
-        return null;
+    public Blob getImageFile() {
+        return imageFile;
     }
+
+   
     
 
 }
