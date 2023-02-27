@@ -9,6 +9,16 @@
             "request": "launch",
             "name": "Open Login.html",
             "file": "c:\\Users\\aleja\\OneDrive - Universidad Rey Juan Carlos\\Documentos\\GitHub\\webapp16\\templatemo_551_stand_blog\\Login.html"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-HellowordVscodeApplication<helloword-vscode>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "es.codeurjc.hellowordvscode.HellowordVscodeApplication",
+            "projectName": "helloword-vscode",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
