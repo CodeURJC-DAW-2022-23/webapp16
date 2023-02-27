@@ -2,7 +2,7 @@ package es.codeurjc;
 
 import java.util.*;
 
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
 public class Destino {

@@ -1,10 +1,24 @@
 package es.codeurjc.hellowordvscode;
 
+import java.io.*;
+import java.net.URI;
+import java.sql.SQLException;
+
+import javax.annotation.Resource;
+
+import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.ResponseEntity.BodyBuilder;
+import org.springframework.http.ResponseEntity.HeadersBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
+
+import es.codeurjc.Usuario;
 
 @Controller
 public class UserController {
@@ -25,6 +39,10 @@ public class UserController {
 		usuarios.save(usuario);
 
 		return ResponseEntity.created(location).build();
+	}
+
+	private HeadersBuilder<BodyBuilder> fromCurrentRequest() {
+		return null;
 	}
 
 	@GetMapping

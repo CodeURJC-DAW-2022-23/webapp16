@@ -1,5 +1,6 @@
 package es.codeurjc;
 
+import javax.persistence.*;
 import javax.persistence.GenerationType;
 
 @Entity
