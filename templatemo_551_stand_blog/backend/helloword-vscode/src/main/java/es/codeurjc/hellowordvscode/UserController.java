@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.core.io.InputStreamResource;
+import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
 
 import es.codeurjc.Usuario;
 
@@ -42,9 +44,9 @@ public class UserController {
 		return ResponseEntity.created(location).build();
 	}
 
-	private HeadersBuilder<BodyBuilder> fromCurrentRequest() {
+	/*private HeadersBuilder<BodyBuilder> fromCurrentRequest() {
 		return null;
-	}
+	}*/
 
 	@GetMapping
 	public ResponseEntity<Object> downloadImage(@PathVariable long id) throws SQLException {
@@ -53,7 +55,7 @@ public class UserController {
 
 		if (usuario.getImageFile() != null) {
 
-			Resource file = new InputStreamResource(usuario.getImageFile().getBinaryStream());
+			Resource file = (Resource) new InputStreamResource(usuario.getImageFile().getBinaryStream());
 
 			return ResponseEntity.ok().header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
 					.contentLength(usuario.getImageFile().length()).body(file);
