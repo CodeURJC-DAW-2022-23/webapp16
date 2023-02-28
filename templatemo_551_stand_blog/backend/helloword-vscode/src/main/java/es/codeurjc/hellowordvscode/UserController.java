@@ -1,5 +1,7 @@
 package es.codeurjc.hellowordvscode;
 
+import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
+
 import java.io.*;
 import java.net.URI;
 import java.sql.SQLException;
@@ -8,6 +10,7 @@ import javax.annotation.Resource;
 
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.ResponseEntity.BodyBuilder;
@@ -43,11 +46,19 @@ public class UserController {
 
 		return ResponseEntity.created(location).build();
 	}
+<<<<<<< HEAD
 
 	/*private HeadersBuilder<BodyBuilder> fromCurrentRequest() {
 		return null;
 	}*/
 
+=======
+/*
+	private HeadersBuilder<BodyBuilder> fromCurrentRequest() {
+		return null;
+	}
+*/
+>>>>>>> 98f2ed14fabc4355f6d206a422892e00221be29a
 	@GetMapping
 	public ResponseEntity<Object> downloadImage(@PathVariable long id) throws SQLException {
 
