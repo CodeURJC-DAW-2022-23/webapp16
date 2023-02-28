@@ -46,19 +46,12 @@ public class UserController {
 
 		return ResponseEntity.created(location).build();
 	}
-<<<<<<< HEAD
+
 
 	/*private HeadersBuilder<BodyBuilder> fromCurrentRequest() {
 		return null;
 	}*/
 
-=======
-/*
-	private HeadersBuilder<BodyBuilder> fromCurrentRequest() {
-		return null;
-	}
-*/
->>>>>>> 98f2ed14fabc4355f6d206a422892e00221be29a
 	@GetMapping
 	public ResponseEntity<Object> downloadImage(@PathVariable long id) throws SQLException {
 
