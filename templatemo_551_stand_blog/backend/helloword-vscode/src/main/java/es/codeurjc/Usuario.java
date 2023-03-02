@@ -37,6 +37,10 @@ public class Usuario {
         return imageFile;
     }
 
+    public String getNombre(){
+        return nombre;
+    }
+
    
     
 
