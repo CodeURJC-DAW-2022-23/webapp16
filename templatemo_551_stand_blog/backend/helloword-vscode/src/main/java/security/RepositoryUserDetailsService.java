@@ -1,4 +1,4 @@
-package security;
+/*package security;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,4 +35,4 @@ public class RepositoryUserDetailsService implements UserDetailsService {
 				user.getEncodedPassword(), roles);
 
 	}
-}
+}*/

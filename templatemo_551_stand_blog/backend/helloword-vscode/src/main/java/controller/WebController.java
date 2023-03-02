@@ -1,6 +1,9 @@
 package controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -21,9 +24,12 @@ public class WebController {
         return "loginerror";
     }
     
-    @GetMapping("/private")
-    public String privatePage() {
-        return "private";
+    @GetMapping("/personalArea")
+    public String privatePage(Model model, HttpServletRequest request) {
+        //model.addAttribute("username", request.getUserPrincipal().getName());
+        model.addAttribute("admin", request.isUserInRole("ADMIN"));
+ 
+        return "personalArea";
     }
 }
 
