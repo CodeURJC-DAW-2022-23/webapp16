@@ -9,31 +9,42 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
- 
- @Override
- protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-    PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
- 
-    String encodedPassword = encoder.encode("pass");
- 
-    auth.inMemoryAuthentication().withUser("user").password(encodedPassword).roles("USER");
+   @Override
+   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
+      PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+
+      String encodedPassword = encoder.encode("pass");
+
+      auth.inMemoryAuthentication().withUser("user").password(encodedPassword).roles("USER");
+   }
+
+   @Override
+   protected void configure(HttpSecurity http) throws Exception {
+
+      // Security configuration
+      // Public pages
+      http.authorizeRequests().antMatchers("/").permitAll();
+      http.authorizeRequests().antMatchers("/login").permitAll();
+      http.authorizeRequests().antMatchers("/loginerror").permitAll();
+      http.authorizeRequests().antMatchers("/logout").permitAll();
+      // Private pages (all other pages)
+      http.authorizeRequests().anyRequest().authenticated();
+
+      // - Login and logout
+      // Login form
+      http.formLogin().loginPage("/Login");
+      http.formLogin().usernameParameter("name");
+      http.formLogin().passwordParameter("password");
+      http.formLogin().defaultSuccessUrl("/personalArea");
+      http.formLogin().failureUrl("/loginerror");
+
+      // Logout
+      //http.logout().logoutUrl("/logout");
+      http.logout().logoutUrl("/");
+      http.logout().logoutSuccessUrl("/");
+
+      // - Other security configurations
+   }
 }
-
-@Override
-protected void configure(HttpSecurity http) throws Exception {
- 
- // Security configuration
- // Public pages
-    http.authorizeRequests().antMatchers("/").permitAll();
-    http.authorizeRequests().antMatchers("/login").permitAll();
-    http.authorizeRequests().antMatchers("/loginerror").permitAll();
-    http.authorizeRequests().antMatchers("/logout").permitAll();
-    // Private pages (all other pages)
-    http.authorizeRequests().anyRequest().authenticated();
- 
- // - Login and logout 
- // - Other security configurations
- }
-}
-
