@@ -15,5 +15,7 @@ public class Destino {
     @OneToMany(mappedBy = "destino")
     ArrayList<Viaje> listaViajes;
     
-
+    public String getNombre(){
+        return nombre;
+    }
 }
