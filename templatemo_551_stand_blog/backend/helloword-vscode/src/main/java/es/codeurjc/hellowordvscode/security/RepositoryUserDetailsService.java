@@ -1,4 +1,4 @@
-/*package security;
+package es.codeurjc.hellowordvscode.security;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +11,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import es.codeurjc.Usuario;
-import es.codeurjc.hellowordvscode.UserRepository;
+import es.codeurjc.hellowordvscode.Repositories.UserRepository;
 
-@Service
+/*@Service
 public class RepositoryUserDetailsService implements UserDetailsService {
 
 	@Autowired
@@ -34,5 +33,5 @@ public class RepositoryUserDetailsService implements UserDetailsService {
 		return new org.springframework.security.core.userdetails.User(user.getNombre(), 
 				user.getEncodedPassword(), roles);
 
-	}
-}*/
+	}*/
+

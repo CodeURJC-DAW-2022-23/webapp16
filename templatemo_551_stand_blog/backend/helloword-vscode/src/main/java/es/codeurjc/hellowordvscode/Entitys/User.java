@@ -29,13 +29,6 @@ public class User {
     ArrayList<Trip> trip_list;
 
 
-
-
-
-
-
-
-
     public void setImage(String string) {
     }
 
