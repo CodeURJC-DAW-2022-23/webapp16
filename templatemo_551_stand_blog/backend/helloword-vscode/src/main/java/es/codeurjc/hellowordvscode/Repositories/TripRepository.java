@@ -1,7 +1,7 @@
 
 package es.codeurjc.hellowordvscode.Repositories;
 
-import es.codeurjc.Trip;
+import es.codeurjc.hellowordvscode.Entitys.Trip;
 
 import java.util.Optional;
 

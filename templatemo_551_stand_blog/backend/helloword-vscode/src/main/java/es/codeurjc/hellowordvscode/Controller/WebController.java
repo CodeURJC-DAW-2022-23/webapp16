@@ -1,4 +1,4 @@
-package controller;
+package es.codeurjc.hellowordvscode.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 

@@ -1,4 +1,4 @@
-package es.codeurjc;
+package es.codeurjc.hellowordvscode.Entitys;
 
 import java.util.ArrayList;
 

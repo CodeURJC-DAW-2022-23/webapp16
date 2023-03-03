@@ -1,4 +1,4 @@
-package security;
+package es.codeurjc.hellowordvscode.security;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

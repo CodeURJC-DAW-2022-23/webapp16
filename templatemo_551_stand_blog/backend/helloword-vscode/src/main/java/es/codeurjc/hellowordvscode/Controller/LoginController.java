@@ -1,4 +1,4 @@
-package controller;
+package es.codeurjc.hellowordvscode.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

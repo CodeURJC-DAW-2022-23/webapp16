@@ -24,7 +24,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.core.io.InputStreamResource;
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
 
-import es.codeurjc.User;
+import es.codeurjc.hellowordvscode.Entitys.User;
 import es.codeurjc.hellowordvscode.Repositories.UserRepository;
 
 @Controller

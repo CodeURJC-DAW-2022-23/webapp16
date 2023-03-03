@@ -1,4 +1,4 @@
-package security;
+package es.codeurjc.hellowordvscode.security;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

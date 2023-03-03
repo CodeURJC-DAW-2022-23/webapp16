@@ -1,10 +1,10 @@
 package es.codeurjc.hellowordvscode.Repositories;
 
-import es.codeurjc.User;
-
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import es.codeurjc.hellowordvscode.Entitys.User;
 
 //import es.codeurjc.daw.library.model.Book;
 

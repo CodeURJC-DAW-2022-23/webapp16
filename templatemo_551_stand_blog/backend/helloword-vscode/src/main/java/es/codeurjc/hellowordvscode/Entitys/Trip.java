@@ -1,9 +1,12 @@
-package es.codeurjc;
+package es.codeurjc.hellowordvscode.Entitys;
 
 import java.io.File;
 import java.util.List;
 
 import javax.persistence.*;
+
+import es.codeurjc.hellowordvscode.Entitys.Comment;
+import es.codeurjc.hellowordvscode.Entitys.Destination;
 
 @Entity
 public class Trip {
