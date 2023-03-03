@@ -1,4 +1,4 @@
-package es.codeurjc.hellowordvscode;
+package es.codeurjc.hellowordvscode.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

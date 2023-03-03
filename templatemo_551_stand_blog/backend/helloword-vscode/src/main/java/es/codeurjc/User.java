@@ -5,27 +5,36 @@ import java.util.*;
 
 import javax.persistence.*;
 
-import org.hibernate.engine.jdbc.BlobProxy;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Usuario {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
+    private Long id;
 
-    String correo;
-    String nombre;
+
+    private String email;
+    private String name;
     Boolean admin;
-
-    @OneToMany(mappedBy = "usuario")
-    ArrayList<Viaje> listaViajes;
-
+    
     @Lob
     @JsonIgnore
-    Blob imageFile;//avatar
+    Blob imageFile;
+
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Trip")
+    ArrayList<Trip> trip_list;
+
+
+
+
+
+
+
+
 
     public void setImage(String string) {
     }
@@ -38,7 +47,7 @@ public class Usuario {
     }
 
     public String getNombre(){
-        return nombre;
+        return name;
     }
 
    

@@ -1,4 +1,4 @@
-package es.codeurjc.hellowordvscode;
+package es.codeurjc.hellowordvscode.Controller;
 
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
 
@@ -24,7 +24,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.core.io.InputStreamResource;
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
 
-import es.codeurjc.Usuario;
+import es.codeurjc.User;
+import es.codeurjc.hellowordvscode.Repositories.UserRepository;
 
 @Controller
 public class UserController {
@@ -36,7 +37,7 @@ public class UserController {
 	public ResponseEntity<Object> uploadImage(@PathVariable long id, @RequestParam MultipartFile imageFile)
 			throws IOException {
 
-		Usuario usuario = usuarios.findById(id).orElseThrow();
+		User usuario = usuarios.findById(id).orElseThrow();
 
 		URI location = fromCurrentRequest().build().toUri();
 
@@ -55,7 +56,7 @@ public class UserController {
 	@GetMapping
 	public ResponseEntity<Object> downloadImage(@PathVariable long id) throws SQLException {
 
-		Usuario usuario = usuarios.findById(id).orElseThrow();
+		User usuario = usuarios.findById(id).orElseThrow();
 
 		if (usuario.getImageFile() != null) {
 
@@ -72,7 +73,7 @@ public class UserController {
 	@DeleteMapping
 	public ResponseEntity<Object> deleteImage(@PathVariable long id) throws IOException {
 
-		Usuario usuario = usuarios.findById(id).orElseThrow();
+		User usuario = usuarios.findById(id).orElseThrow();
 
 		usuario.setImageFile(null);
 		usuario.setImage(null);

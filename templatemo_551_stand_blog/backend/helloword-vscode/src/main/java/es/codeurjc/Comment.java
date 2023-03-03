@@ -1,15 +1,21 @@
 package es.codeurjc;
 
+import java.util.ArrayList;
+
 import javax.persistence.*;
 import javax.persistence.GenerationType;
 
 @Entity
-public class Comentario {
+public class Comment{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
+    private Long id;
+
+    private String texto;
+
+    @OneToOne    
+    private Long id_viaje;
     
-    String texto;
 
 }
