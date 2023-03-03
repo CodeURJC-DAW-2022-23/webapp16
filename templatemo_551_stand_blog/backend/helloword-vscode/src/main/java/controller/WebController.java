@@ -26,7 +26,7 @@ public class WebController {
     
     @GetMapping("/personalArea")
     public String privatePage(Model model, HttpServletRequest request) {
-        //model.addAttribute("username", request.getUserPrincipal().getName());
+        model.addAttribute("username", request.getUserPrincipal().getName());
         model.addAttribute("admin", request.isUserInRole("ADMIN"));
  
         return "personalArea";
