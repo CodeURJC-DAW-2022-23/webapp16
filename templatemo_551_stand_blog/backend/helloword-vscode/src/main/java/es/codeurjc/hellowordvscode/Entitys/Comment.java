@@ -15,7 +15,7 @@ public class Comment{
     private String texto;
 
     @OneToOne    
-    private Long id_viaje;
+    private Trip id_viaje;
     
 
 }

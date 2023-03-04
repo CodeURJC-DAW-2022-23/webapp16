@@ -6,6 +6,7 @@ import java.io.*;
 import java.net.URI;
 import java.sql.SQLException;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
 import org.hibernate.engine.jdbc.BlobProxy;
@@ -27,23 +28,28 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 import es.codeurjc.hellowordvscode.Entitys.User;
 import es.codeurjc.hellowordvscode.Repositories.UserRepository;
 
-@Controller
+@RestController
 public class UserController {
 
 	@Autowired
-	UserRepository usuarios;
+	UserRepository users;
+
+	@PostConstruct
+	public void init(){
+
+	}
 	
 	@PostMapping
 	public ResponseEntity<Object> uploadImage(@PathVariable long id, @RequestParam MultipartFile imageFile)
 			throws IOException {
 
-		User usuario = usuarios.findById(id).orElseThrow();
+		User user = users.findById(id).orElseThrow();
 
 		URI location = fromCurrentRequest().build().toUri();
 
-		usuario.setImage(location.toString());
-		usuario.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
-		usuarios.save(usuario);
+		user.setImage(location.toString());
+		user.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
+		users.save(user);
 
 		return ResponseEntity.created(location).build();
 	}
@@ -56,7 +62,7 @@ public class UserController {
 	@GetMapping
 	public ResponseEntity<Object> downloadImage(@PathVariable long id) throws SQLException {
 
-		User usuario = usuarios.findById(id).orElseThrow();
+		User usuario = users.findById(id).orElseThrow();
 
 		if (usuario.getImageFile() != null) {
 
@@ -73,12 +79,12 @@ public class UserController {
 	@DeleteMapping
 	public ResponseEntity<Object> deleteImage(@PathVariable long id) throws IOException {
 
-		User usuario = usuarios.findById(id).orElseThrow();
+		User usuario = users.findById(id).orElseThrow();
 
 		usuario.setImageFile(null);
 		usuario.setImage(null);
 		
-		usuarios.save(usuario);
+		users.save(usuario);
 
 		return ResponseEntity.noContent().build();
 	}

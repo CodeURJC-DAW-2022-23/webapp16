@@ -25,8 +25,9 @@ public class User {
     Blob imageFile;
 
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Trip")
-    ArrayList<Trip> trip_list;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Trip> trip_list = new ArrayList<>();
+    
 
 
     public void setImage(String string) {
@@ -43,7 +44,5 @@ public class User {
         return name;
     }
 
-   
-    
 
 }

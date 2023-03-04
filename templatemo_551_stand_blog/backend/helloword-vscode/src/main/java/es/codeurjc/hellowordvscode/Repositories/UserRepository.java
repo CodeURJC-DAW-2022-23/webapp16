@@ -7,10 +7,9 @@ import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
 import es.codeurjc.hellowordvscode.Entitys.User;
 
-//import es.codeurjc.daw.library.model.Book;
 
 
-public interface UserRepository extends JpaRepository<User, Long>, QuerydslPredicateExecutor<User>{
+public interface UserRepository extends JpaRepository<User, Long> ,QuerydslPredicateExecutor<User>{
 
    Optional<User> findByName(String name);
 

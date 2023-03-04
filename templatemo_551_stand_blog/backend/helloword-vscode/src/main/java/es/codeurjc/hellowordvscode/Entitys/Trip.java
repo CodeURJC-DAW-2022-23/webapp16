@@ -1,6 +1,7 @@
 package es.codeurjc.hellowordvscode.Entitys;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -15,13 +16,13 @@ public class Trip {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToMany (cascade=CascadeType.ALL)
-    private List<File> archives_list;
+    /*@OneToMany (mappedBy= "trip", cascade=CascadeType.ALL)
+    private List<Archive> archives_list;*/
 
-    @OneToOne
+    @ManyToOne 
     private User user;
 
-    @OneToOne
+    @ManyToOne
     private Destination destination;
 
     @OneToOne (cascade=CascadeType.ALL)

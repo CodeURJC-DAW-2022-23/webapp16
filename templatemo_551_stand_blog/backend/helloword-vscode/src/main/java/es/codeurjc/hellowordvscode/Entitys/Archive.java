@@ -8,4 +8,7 @@ public class Archive {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    /*@ManyToOne
+    private Trip trip;*/
+    
 }
