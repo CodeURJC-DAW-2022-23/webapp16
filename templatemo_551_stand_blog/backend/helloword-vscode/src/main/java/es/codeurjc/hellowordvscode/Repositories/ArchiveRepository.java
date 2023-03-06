@@ -1,19 +1,12 @@
 package es.codeurjc.hellowordvscode.Repositories;
 
-import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
 import es.codeurjc.hellowordvscode.Entitys.Archive;
-import es.codeurjc.hellowordvscode.Entitys.Comment;
 
 //import es.codeurjc.daw.library.model.Book;
 
 
-public interface ArchiveRepository extends JpaRepository<Archive, Long>, QuerydslPredicateExecutor<Archive>{
-
-
-
+public interface ArchiveRepository extends JpaRepository<Archive, Long>{
 
 }

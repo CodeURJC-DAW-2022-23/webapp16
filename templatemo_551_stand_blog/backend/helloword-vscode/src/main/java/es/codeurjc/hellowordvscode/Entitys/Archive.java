@@ -2,6 +2,7 @@ package es.codeurjc.hellowordvscode.Entitys;
 
 import javax.persistence.*;
 
+@Entity
 public class Archive {
 
     @Id
