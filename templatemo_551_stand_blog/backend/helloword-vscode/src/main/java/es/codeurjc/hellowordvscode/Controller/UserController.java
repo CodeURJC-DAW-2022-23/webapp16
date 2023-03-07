@@ -28,7 +28,7 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 import es.codeurjc.hellowordvscode.Entitys.User;
 import es.codeurjc.hellowordvscode.Repositories.UserRepository;
 
-@RestController
+@Controller
 public class UserController {
 
 	@Autowired

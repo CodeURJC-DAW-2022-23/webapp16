@@ -1,4 +1,4 @@
-package es.codeurjc.hellowordvscode.security;
+/* package es.codeurjc.hellowordvscode.security;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -28,7 +28,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
  
       // Security configuration
       // Public pages
-       http.authorizeRequests().antMatchers("/").permitAll();
+       http.authorizeRequests().antMatchers("/index").permitAll();
        http.authorizeRequests().antMatchers("/login").permitAll();
        http.authorizeRequests().antMatchers("/loginerror").permitAll();
        http.authorizeRequests().antMatchers("/logout").permitAll(); //CREAR PAGINA DE LOGOUT
@@ -52,3 +52,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
       // - Other security configurations
    }
 }
+ */
