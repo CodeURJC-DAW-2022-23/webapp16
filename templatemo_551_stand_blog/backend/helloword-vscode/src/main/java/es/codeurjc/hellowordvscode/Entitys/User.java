@@ -44,5 +44,13 @@ public class User {
         return name;
     }
 
+    public String[] getRoles() {
+        return null;
+    }
+
+    public String getEncodedPassword() {
+        return null;
+    }
+
 
 }

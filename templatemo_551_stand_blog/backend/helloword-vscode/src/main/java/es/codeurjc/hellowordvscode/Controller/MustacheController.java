@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+
 
 @Controller
 public class MustacheController {
@@ -25,10 +25,15 @@ public class MustacheController {
 		return "destino";
 	}
 	
-	@GetMapping("/Login")
+	@GetMapping("/login")
 	public String login(Model model) {
-		return "Login";
+		return "login";
 	}
+
+	@GetMapping("/loginerror")
+    public String loginerror() {
+        return "loginerror";
+    }
 
 	@GetMapping("/personalArea")
 	public String personalArea(Model model, HttpServletRequest request) {
@@ -37,9 +42,9 @@ public class MustacheController {
 		return "personalArea";
 	}
 
-	@GetMapping("/Signup")
+	@GetMapping("/signup")
 	public String signup(Model model) {
-		return "Signup";
+		return "signup";
 	}
 
 	@GetMapping("/valoraciones")
@@ -51,16 +56,8 @@ public class MustacheController {
 	public String error(Model model) {
 		return "error";
 	}
-
-	@GetMapping("/login")
-    public String login() {
-        return "login";
-    }
  
-    @GetMapping("/loginerror")
-    public String loginerror() {
-        return "loginerror";
-    }
+   
 
 	
 }

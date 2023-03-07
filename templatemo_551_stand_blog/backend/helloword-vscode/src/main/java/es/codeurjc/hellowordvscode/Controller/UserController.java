@@ -14,16 +14,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.ResponseEntity.BodyBuilder;
-import org.springframework.http.ResponseEntity.HeadersBuilder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.core.io.InputStreamResource;
-import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
+
 
 import es.codeurjc.hellowordvscode.Entitys.User;
 import es.codeurjc.hellowordvscode.Repositories.UserRepository;
