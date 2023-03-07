@@ -23,4 +23,9 @@ public class Destination {
         return name;
     }
 
+    public String getInformation(){
+        return information;
+    }
+
+
 }

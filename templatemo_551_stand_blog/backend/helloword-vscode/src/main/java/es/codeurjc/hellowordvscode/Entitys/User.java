@@ -45,7 +45,12 @@ public class User {
     }
 
     public String[] getRoles() {
-        return null;
+        if (admin){
+            String[] value = {"USER","ADMIN"};
+            return value;
+        }
+        String[] value = {"USER"};
+        return value;
     }
 
     public String getEncodedPassword() {

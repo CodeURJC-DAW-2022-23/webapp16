@@ -1,7 +1,5 @@
 package es.codeurjc.hellowordvscode.Entitys;
 
-import java.util.ArrayList;
-
 import javax.persistence.*;
 import javax.persistence.GenerationType;
 
@@ -17,5 +15,12 @@ public class Comment{
     @OneToOne    
     private Trip id_viaje;
     
+    public String getTexto(){
+        return texto;
+    }
+
+    public void setTexto(String texto){
+        this.texto=texto;
+    }
 
 }
