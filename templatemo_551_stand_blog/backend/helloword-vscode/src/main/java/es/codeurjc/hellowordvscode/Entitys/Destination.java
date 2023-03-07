@@ -14,7 +14,7 @@ public class Destination {
 
     private String name;
     private String information;
-    private Blob photo;
+    private Blob image;
 
     @OneToMany (mappedBy="destination")   
     private List<Trip> trip_list;
