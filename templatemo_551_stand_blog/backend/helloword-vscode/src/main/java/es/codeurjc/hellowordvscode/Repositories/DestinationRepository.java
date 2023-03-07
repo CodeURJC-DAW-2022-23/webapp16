@@ -7,12 +7,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
+import org.springframework.stereotype.Repository;
 
 import com.querydsl.core.types.Predicate;
 
 import es.codeurjc.hellowordvscode.Entitys.Destination;
 
-
+@Repository
 public interface DestinationRepository extends JpaRepository<Destination, Long>, QuerydslPredicateExecutor<Destination>{
     
     Page<Destination> findByName(String name, Pageable page);
