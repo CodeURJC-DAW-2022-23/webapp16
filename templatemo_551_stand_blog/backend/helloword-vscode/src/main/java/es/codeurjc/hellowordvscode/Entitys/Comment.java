@@ -6,6 +6,12 @@ import javax.persistence.GenerationType;
 @Entity
 public class Comment{
 
+    public Comment(){}
+
+    public Comment(String texto) {
+        this.texto = texto;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

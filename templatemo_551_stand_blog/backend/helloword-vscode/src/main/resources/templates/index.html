@@ -37,8 +37,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="login">Log In</a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="Signup">Sign UP</a>
+              <li class="nav-item">
+                <a class="nav-link" href="signup">Sign Up</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="personalArea">Area personal</a>
@@ -76,8 +76,13 @@
                       <img src="assets/images/blog-thumb-01.jpg" alt="">
                     </div>
                     <div class="down-content">
-                      <span>Roma</span>
-                      <a href="destino"><h4>Donec tincidunt leo</h4></a>
+                      <a href="destino"><h4><span>
+                        <ul class="items">
+                          {{#destination}}
+                          <li><a href="/destination/{{id}}">{{name}}</a></li>
+                          {{/destination}}
+                        </ul>
+                      </span></h4></a>
                       <ul class="post-info">
                         <li><a href="#">Admin</a></li>
                         <li><a href="#">May 31, 2020</a></li>
@@ -101,8 +106,7 @@
                       <img src="assets/images/blog-thumb-02.jpg" alt="">
                     </div>
                     <div class="down-content">
-                      <span>París</span>
-                      <a href="destino"><h4>Suspendisse et metus</h4></a>
+                      <a href="destino"><h4><span>París</span></h4></a>
                       <ul class="post-info">
                         <li><a href="#">Admin</a></li>
                         <li><a href="#">May 22, 2020</a></li>
@@ -126,8 +130,7 @@
                       <img src="assets/images/blog-thumb-03.jpg" alt="">
                     </div>
                     <div class="down-content">
-                      <span>Londres</span>
-                      <a href="post-details"><h4>Donec tincidunt leo</h4></a>
+                      <a href="post-details"><h4><span>Londres</span></h4></a>
                       <ul class="post-info">
                         <li><a href="#">Admin</a></li>
                         <li><a href="#">May 18, 2020</a></li>
@@ -151,8 +154,8 @@
                       <img src="assets/images/blog-thumb-04.jpg" alt="">
                     </div>
                     <div class="down-content">
-                      <span>Barcelona</span>
-                      <a href="destino"><h4>Mauris ac dolor ornare</h4></a>
+                      
+                      <a href="destino"><h4><span>Barcelona</span></h4></a>
                       <ul class="post-info">
                         <li><a href="#">Admin</a></li>
                         <li><a href="#">May 16, 2020</a></li>
@@ -176,8 +179,7 @@
                       <img src="assets/images/blog-thumb-05.jpg" alt="">
                     </div>
                     <div class="down-content">
-                      <span>Viena</span>
-                      <a href="destino"><h4>Donec tincidunt leo</h4></a>
+                      <a href="destino"><h4><span>Viena</span></h4></a>
                       <ul class="post-info">
                         <li><a href="#">Admin</a></li>
                         <li><a href="#">May 12, 2020</a></li>
@@ -201,8 +203,7 @@
                       <img src="assets/images/blog-thumb-06.jpg" alt="">
                     </div>
                     <div class="down-content">
-                      <span>Rio de Janeiro</span>
-                      <a href="destino"><h4>Mauris ac dolor ornare</h4></a>
+                      <a href="destino"><h4><span>Rio de Janeiro</span></h4></a>
                       <ul class="post-info">
                         <li><a href="#">Admin</a></li>
                         <li><a href="#">May 10, 2020</a></li>
@@ -264,20 +265,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-12">
-                  <div class="sidebar-item categories">
-                    <div class="sidebar-heading">
-                      <h2>Categories</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="sidebar-item tags">
-                    <div class="sidebar-heading">
-                      <h2>Tag Clouds</h2>
-                    </div>
-                  </div>
-                </div>
+                
+                
               </div>
             </div>
           </div>

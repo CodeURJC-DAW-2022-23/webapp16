@@ -8,12 +8,23 @@ import javax.persistence.*;
 @Entity
 public class Destination {
 
+    public Destination(){}
+
+    public Destination(String name) {
+        this.name = name;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private String name;
     private String information;
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+
     private Blob image;
 
     @OneToMany (mappedBy="destination")   

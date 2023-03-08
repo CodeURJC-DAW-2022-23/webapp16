@@ -19,6 +19,15 @@ public class User {
     private String email;
     private String name;
     Boolean admin;
+
+    public User(){}
+
+    public User(String email, String name) {
+        this.email = email;
+        this.name = name;
+    }
+
+    
     
     @Lob
     @JsonIgnore
@@ -28,7 +37,7 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Trip> trip_list = new ArrayList<>();
     
-
+    
 
     public void setImage(String string) {
     }

@@ -15,6 +15,13 @@ public class Trip {
     @ManyToOne 
     private User user;
 
+    public Trip(){}
+
+    public Trip(User user, Destination destination) {
+        this.user = user;
+        this.destination = destination;
+    }
+
     @ManyToOne
     private Destination destination;
 
