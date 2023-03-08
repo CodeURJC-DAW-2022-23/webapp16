@@ -21,16 +21,15 @@ public class Destination {
     private String name;
     private String information;
     
+
     public void setName(String name) {
         this.name = name;
     }
 
-    private Blob image;
-
     @OneToMany (mappedBy="destination")   
     private List<Trip> trip_list;
 
-    public String getNombre(){
+    public String getName(){
         return name;
     }
 

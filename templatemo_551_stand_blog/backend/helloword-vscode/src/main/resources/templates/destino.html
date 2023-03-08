@@ -81,17 +81,17 @@
                   <div class="blog-post">
                     <div class="blog-thumb">
 
-                      {{#book.image}}
-                      <img src="/destinos/{{destination.name}}/image">
-                      {{/book.image}}
+                      
 
-                      {{^book.image}}
-                      <img src="assets/images/no_image.png">
-                      {{/book.image}}
+                      <ul class="items">
+                        {{#destino}}
+                        <li><a href="/destino/{{name}}">{{name}}</a></li>
+                        {{/destino}}
+                      </ul>
 
                     </div>
                     <div class="down-content">
-                      <span>{{destination.name}}</span>
+                      <span>ddd</span>
                       <a href="destino"><h4>Aenean pulvinar gravida sem nec</h4></a>
                       <ul class="post-info">
                         <li><a href="#">Admin</a></li>

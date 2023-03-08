@@ -1,5 +1,7 @@
-package es.codeurjc.hellowordvscode.Controller;
+/*package es.codeurjc.hellowordvscode.Controller;
 
+
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
@@ -18,8 +20,8 @@ public class DestinationController {
     @Autowired
     private DestinationRepository destinations;
 
-    @GetMapping("/destinations")
-    public Page<Destination> getDestinations(@RequestParam (required = false) String name, Pageable page) {
+    @GetMapping("/destino")
+    public Optional<Destination> getDestinations(@RequestParam (required = false) String name, Pageable page) {
         if (name != null){
             return destinations.findByName(name, page);
         }
@@ -28,4 +30,4 @@ public class DestinationController {
         }
     }
     
-}
+}*/

@@ -63,9 +63,18 @@
       </div>
     </section>
 
+    
+
 
     <section class="blog-posts grid-system">
       <div class="container">
+
+        {{#destino}}
+        <li><a href="/destino/{{id}}">{{name}}</a></li>
+        {{/destino}}
+
+
+
         <div class="row">
           <div class="col-lg-8">
             <div class="all-blog-posts">
@@ -78,9 +87,9 @@
                     <div class="down-content">
                       <a href="destino"><h4><span>
                         <ul class="items">
-                          {{#destination}}
-                          <li><a href="/destination/{{id}}">{{name}}</a></li>
-                          {{/destination}}
+                          {{#destination.name}}
+                          <a src="/destino/{{destination.name}}">
+                          {{/destination.name}}
                         </ul>
                       </span></h4></a>
                       <ul class="post-info">
