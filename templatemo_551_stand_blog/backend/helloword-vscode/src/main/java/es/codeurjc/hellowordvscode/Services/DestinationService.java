@@ -23,6 +23,10 @@ public class DestinationService {
 		return repository.findByName(name);
 	}
 
+    public Object findAll() {
+        return null;
+    }
+
     
     
 }

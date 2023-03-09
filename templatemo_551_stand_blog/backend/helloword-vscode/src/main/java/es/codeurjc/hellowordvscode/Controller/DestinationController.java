@@ -14,20 +14,6 @@ import es.codeurjc.hellowordvscode.Entitys.Destination;
 import es.codeurjc.hellowordvscode.Repositories.DestinationRepository;
 
 @Controller
-@RequestMapping
 public class DestinationController {
-
-    @Autowired
-    private DestinationRepository destinations;
-
-    @GetMapping("/destino")
-    public Optional<Destination> getDestinations(@RequestParam (required = false) String name, Pageable page) {
-        if (name != null){
-            return destinations.findByName(name, page);
-        }
-        else{
-            return destinations.findAll(page);
-        }
-    }
-    
-}*/
+ 
+*/

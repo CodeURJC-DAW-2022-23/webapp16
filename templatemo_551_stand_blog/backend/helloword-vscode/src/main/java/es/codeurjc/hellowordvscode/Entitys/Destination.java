@@ -37,5 +37,9 @@ public class Destination {
         return information;
     }
 
+    public void setInformation(String information) {
+        this.information=information;
+    }
+
 
 }
