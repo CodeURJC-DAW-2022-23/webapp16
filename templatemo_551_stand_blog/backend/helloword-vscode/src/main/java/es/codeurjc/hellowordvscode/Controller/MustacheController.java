@@ -71,7 +71,7 @@ public class MustacheController {
 
 
 	
-	@GetMapping("/login")
+	/*@GetMapping("/login")
 	public String login(Model model) {
 		return "login";
 	}
@@ -79,7 +79,7 @@ public class MustacheController {
 	@GetMapping("/loginerror")
     public String loginerror() {
         return "loginerror";
-	}
+	}*/
 
 	@GetMapping("/personalArea")
 	public String personalArea(Model model, HttpServletRequest request) {

@@ -1,4 +1,4 @@
-package es.codeurjc.hellowordvscode.Controller;
+/*package es.codeurjc.hellowordvscode.Controller;
 
 import java.util.NoSuchElementException;
 
@@ -15,3 +15,4 @@ public class NoSuchElementExceptionCA {
 	public void handleNoTFound() {
 	}
 }
+*/

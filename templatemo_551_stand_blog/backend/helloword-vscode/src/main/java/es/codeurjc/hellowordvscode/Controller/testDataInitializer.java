@@ -51,7 +51,7 @@ public class testDataInitializer{
       user1.setName("Juan");
       user1.setEmail("john.smith@example.com");
       userRepository.save(user1);*/
-      userRepository.save(new User("admin2@gmail.com", "ADMIN", passwordEncoder.encode("pass"), "ADMIN", "USER"));
+      userRepository.save(new User("admin2@gmail.com", "ADMIN", passwordEncoder.encode("adminPassword1234"), "ADMIN", "USER"));
       
 
       /*User user2 = new User();
