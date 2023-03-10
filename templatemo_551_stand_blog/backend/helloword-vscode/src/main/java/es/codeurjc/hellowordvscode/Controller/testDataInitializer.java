@@ -21,6 +21,7 @@ import es.codeurjc.hellowordvscode.Repositories.UserRepository;
 
 @Service
 public class testDataInitializer{
+
    @Autowired
    private UserRepository userRepository;
 
@@ -44,11 +45,14 @@ public class testDataInitializer{
    
    
     @PostConstruct
-   public void init() throws  IOException, URISyntaxException {
-      User user1 = new User();
+    public void init() throws  IOException, URISyntaxException {
+      
+      /*User user1 = new User();
       user1.setName("Juan");
       user1.setEmail("john.smith@example.com");
-      userRepository.save(user1);
+      userRepository.save(user1);*/
+      userRepository.save(new User("admin2@gmail.com", "ADMIN", passwordEncoder.encode("pass"), "ADMIN"));
+      
 
       /*User user2 = new User();
       user2.setName("JANE");
