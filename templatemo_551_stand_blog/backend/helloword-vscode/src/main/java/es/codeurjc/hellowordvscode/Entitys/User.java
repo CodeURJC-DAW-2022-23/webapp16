@@ -24,9 +24,12 @@ public class User {
     @ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
 
-    public User(){}
+    
+    public User(){
 
-    public User(String email, String name, String encodedPassword, String roles) {
+    }
+
+    public User(String email, String name, String encodedPassword, String... roles) {
         this.name = name;
         this.email = email;
         this.encodedPassword = encodedPassword;

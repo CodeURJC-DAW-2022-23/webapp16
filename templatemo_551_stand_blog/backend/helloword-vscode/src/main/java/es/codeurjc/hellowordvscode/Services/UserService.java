@@ -42,8 +42,6 @@ public class UserService {
         return user.isPresent();
     }
 
-    
-
     public List<User> findAll() {
 		return users.findAll();
 	}

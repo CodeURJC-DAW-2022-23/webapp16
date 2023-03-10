@@ -41,19 +41,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
        http.authorizeRequests().antMatchers("/login").permitAll();
        http.authorizeRequests().antMatchers("/loginerror").permitAll(); 
        http.authorizeRequests().antMatchers("/destino/*").permitAll(); 
+       http.authorizeRequests().antMatchers("/admin").permitAll();
+       http.authorizeRequests().antMatchers("/añadirDestinos").permitAll();
+       http.authorizeRequests().antMatchers("/configUsuarios").permitAll();
+       http.authorizeRequests().antMatchers("/editarDestinos").permitAll();
 
-
-       //http.authorizeRequests().antMatchers("/admin").permitAll();
 
        
       
        // Private pages (all other pages)
-       http.authorizeRequests().antMatchers("/admin").hasAnyRole("ADMIN");
+       //http.authorizeRequests().antMatchers("/admin").hasAnyRole("ADMIN");
        http.authorizeRequests().antMatchers("/personalArea").hasAnyRole("USER");
       
        //Login form
        http.formLogin().loginPage("/login");
-       http.formLogin().usernameParameter("username");
+       http.formLogin().usernameParameter("name");
        http.formLogin().passwordParameter("password");
        http.formLogin().defaultSuccessUrl("/personalArea");
        http.formLogin().failureUrl("/loginerror");
