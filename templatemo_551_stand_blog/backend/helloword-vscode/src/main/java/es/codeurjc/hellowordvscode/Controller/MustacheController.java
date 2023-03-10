@@ -31,16 +31,16 @@ public class MustacheController {
         List<Destination> destinations = destinationRepository.findAll();
         model.addAttribute("destinations", destinations);
         return "destinations";   
-}
+	}
 	
 	
 
 	@GetMapping("/admin")
-	public String admin(Model model) {
-		return "admin";
+		public String admin(Model model) {
+			return "admin";
 	}
 
-@GetMapping("/destino/{name}")
+	@GetMapping("/destino/{name}")
 	public String showDestino(Model model, @PathVariable String name) {
 		Optional<Destination> destiny = destinationService.findByName(name);
 		if (destiny.isPresent()) {

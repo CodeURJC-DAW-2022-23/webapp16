@@ -20,6 +20,8 @@ public class User {
     private String name;
     Boolean admin;
 
+    private String encodedPassword;
+
     public User(){}
 
     public User(String email, String name) {
@@ -27,8 +29,7 @@ public class User {
         this.name = name;
     }
 
-    
-    
+
     @Lob
     @JsonIgnore
     Blob imageFile;
@@ -61,6 +62,11 @@ public class User {
         String[] value = {"USER"};
         return value;
     }
+
+
+	public void setEncodedPassword(String encodedPassword) {
+		this.encodedPassword = encodedPassword;
+	}
 
     public String getEncodedPassword() {
         return null;
