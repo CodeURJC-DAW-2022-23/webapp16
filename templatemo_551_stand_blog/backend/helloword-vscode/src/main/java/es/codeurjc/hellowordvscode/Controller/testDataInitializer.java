@@ -6,6 +6,7 @@ import java.net.URISyntaxException;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import es.codeurjc.hellowordvscode.Entitys.Comment;
@@ -30,12 +31,19 @@ public class testDataInitializer{
    private CommentRepository commentRepository;
 
    @Autowired
+   private PasswordEncoder passwordEncoder;
+
+   @Autowired
    private TripRepository tripRepository;
    /**
     * @throws IOException
     * @throws URISyntaxException
     */
-   @PostConstruct
+   
+   
+   
+   
+    @PostConstruct
    public void init() throws  IOException, URISyntaxException {
       User user1 = new User();
       user1.setName("Juan");
@@ -45,6 +53,7 @@ public class testDataInitializer{
       User user2 = new User();
       user2.setName("Jane Doe");
       user2.setEmail("jane.doe@example.com");
+      user2.setEncodedPassword(passwordEncoder.encode("pass"));
       userRepository.save(user2);
       
       Destination destino1= new Destination();
