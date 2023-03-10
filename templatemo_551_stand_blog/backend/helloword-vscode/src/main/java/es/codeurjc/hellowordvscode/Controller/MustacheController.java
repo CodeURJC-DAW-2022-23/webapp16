@@ -106,6 +106,22 @@ public class MustacheController {
 	public String error(Model model) {
 		return "error";
 	}
+
+	@GetMapping("/añadirDestinos")
+	public String añadirDestinos(Model model) {
+		return "añadirDestinos";
+	}
+
+	@GetMapping("/configUsuarios")
+	public String configUsuarios(Model model) {
+		return "configUsuarios";
+	}
+
+	@GetMapping("/editarDestinos")
+	public String editarDestinos(Model model) {
+		return "editarDestinos";
+	}
+
 	
  
 }
