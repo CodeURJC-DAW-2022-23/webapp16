@@ -18,15 +18,19 @@ public class User {
 
     private String email;
     private String name;
-    Boolean admin;
-
     private String encodedPassword;
+
+
+    @ElementCollection(fetch = FetchType.EAGER)
+	private List<String> roles;
 
     public User(){}
 
-    public User(String email, String name) {
-        this.email = email;
+    public User(String email, String name, String encodedPassword, String roles) {
         this.name = name;
+        this.email = email;
+        this.encodedPassword = encodedPassword;
+        this.roles = List.of(roles);
     }
 
 
@@ -54,13 +58,12 @@ public class User {
         return name;
     }
 
-    public String[] getRoles() {
-        if (admin){
-            String[] value = {"USER","ADMIN"};
-            return value;
-        }
-        String[] value = {"USER"};
-        return value;
+    public List<String> getRoles() {
+		return roles;
+	}
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
     }
 
 

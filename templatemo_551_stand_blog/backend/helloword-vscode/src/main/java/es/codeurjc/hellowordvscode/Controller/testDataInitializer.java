@@ -50,11 +50,11 @@ public class testDataInitializer{
       user1.setEmail("john.smith@example.com");
       userRepository.save(user1);
 
-      User user2 = new User();
-      user2.setName("Jane Doe");
+      /*User user2 = new User();
+      user2.setName("JANE");
       user2.setEmail("jane.doe@example.com");
-      user2.setEncodedPassword(passwordEncoder.encode("pass"));
-      userRepository.save(user2);
+      user2.setEncodedPassword(passwordEncoder.encode("pass"));*/
+      userRepository.save(new User("user@gmail.com", "user", passwordEncoder.encode("pass"), "USER"));
       
       Destination destino1= new Destination();
       destino1.setName("Paris");
