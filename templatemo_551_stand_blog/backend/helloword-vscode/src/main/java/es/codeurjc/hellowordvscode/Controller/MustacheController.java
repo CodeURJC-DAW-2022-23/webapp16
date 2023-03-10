@@ -69,6 +69,10 @@ public class MustacheController {
 
 */
 
+	@GetMapping("/logout")
+		public String logout(Model model) {
+			return "logout";
+		}
 
 	
 	/*@GetMapping("/login")
