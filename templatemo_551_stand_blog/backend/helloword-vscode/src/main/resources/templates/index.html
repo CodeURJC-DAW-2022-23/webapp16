@@ -11,7 +11,7 @@
     <!-- ***** Preloader End ***** -->
 
 
-<div>
+<div class="row">
   <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
@@ -50,30 +50,55 @@
     </header>
 
   </div>
+<!--
+  <div class="col-lg-6">
+    <div class="blog-post">
+      {{#destinations}}
+      <div class="blog-thumb">
+        <img src="assets/images/blog-thumb-01.jpg" alt="">
+      </div>
+      <div class="down-content">
+        <span>{{name}}</span>
+        <a href="post-details.html"><h4>Más información</h4></a><ahi va la referencia a destino/nombre
+        <p>{{information}}</p>
+        <div class="post-options">
+          <div class="row">
+          </div>
+        </div>
+      </div>
+      {{/destinations}}
+    </div>
+  </div>
 
- <div>
-    <section class="call-to-action">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="main-content">
+-->
+<section class="blog-posts grid-system">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="all-blog-posts">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="blog-post">
+                {{#destinations}}
+                <div class="blog-thumb">
+                  <img src="assets/images/blog-thumb-01.jpg" alt="">
+                </div>
+                <div class="down-content">
+                  <span><a href="/destino/{{name}}">{{name}}</a></span>
+                  <p>{{information}}</p>
+                  <div class="post-options">
+                    <div class="row">
+                    </div>
+                  </div>
+                </div>
+                {{/destinations}}
+              </div>
             </div>
           </div>
         </div>
-        <div>
-          <div></div>
-          <ul>
-            {{#destinations}}
-                <li>{{name}}</li>
-                <li>{{information}}</li>
-            {{/destinations}}
-        </ul>
-        </div>
       </div>
-
     </div>
-
-    
-
+  </div>
+</section>
 
 {{>footer}}

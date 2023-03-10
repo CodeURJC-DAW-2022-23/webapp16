@@ -6,6 +6,9 @@
 /*
  *  Owl Carousel - Core
  */
+ .contact-us {
+  margin-top: 300px;
+}
 .owl-carousel {
   display: none;
   width: 100%;
