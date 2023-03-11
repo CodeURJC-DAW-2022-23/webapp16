@@ -11,6 +11,19 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity(name = "UserTable")
 public class User {
 
+        
+    public User(){
+
+    }
+
+    public User(String email, String name, String encodedPassword, String... roles) {
+        this.name = name;
+        this.email = email;
+        this.encodedPassword = encodedPassword;
+        this.roles = List.of(roles);
+    }
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -24,17 +37,6 @@ public class User {
     @ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
 
-    
-    public User(){
-
-    }
-
-    public User(String email, String name, String encodedPassword, String... roles) {
-        this.name = name;
-        this.email = email;
-        this.encodedPassword = encodedPassword;
-        this.roles = List.of(roles);
-    }
 
 
     @Lob
@@ -43,9 +45,13 @@ public class User {
 
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @Column(name = "peepe")
     private List<Trip> trip_list = new ArrayList<>();
     
     
+
+
+
 
     public void setImage(String string) {
     }
