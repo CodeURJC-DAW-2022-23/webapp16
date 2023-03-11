@@ -11,6 +11,8 @@ import es.codeurjc.hellowordvscode.Repositories.DestinationRepository;
 
 @Service
 public class DestinationService {
+
+	
     
     @Autowired
 	private DestinationRepository repository;
@@ -26,6 +28,8 @@ public class DestinationService {
     public Object findAll() {
         return null;
     }
+
+
 
     
     

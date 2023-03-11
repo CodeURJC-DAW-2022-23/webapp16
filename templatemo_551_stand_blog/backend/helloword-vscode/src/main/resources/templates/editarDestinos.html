@@ -52,11 +52,14 @@
 
   <!-- Banner Ends Here -->
 
-  <h1>Buscar Destinos</h1>
-    <form method="GET" action="/editarDestinos">
+  <h1>Editar destino</h1>
+  {{#destinations}}
+  <form method="post" action="/guardarDestino">
       <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required>
-      <button type="submit">Buscar</button>
-    </form>
+      <input type="text" id="nombre" name="nombre" value="{{destinations.nombre}}" ><br><br>
+      <label for="descripcion">Descripción:</label><br>
+      <textarea id="descripcion" name="descripcion" rows="4" cols="50">{{destinations.descripcion}}</textarea><br><br>
+  </form>
+  {{/destinations}}
 
 {{>footer}}
