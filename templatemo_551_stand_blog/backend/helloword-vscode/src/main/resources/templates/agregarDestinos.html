@@ -1,3 +1,5 @@
+
+
 {{>header}}
 <body>
 
@@ -42,7 +44,7 @@
           <div class="col-lg-12">
             <div class="text-content">
               <h4>admin</h4>  
-              <h2>EDITAR DESTINOS</h2>
+              <h2>AÑADIR DESTINOS</h2>
             </div>
           </div>
         </div>
@@ -52,14 +54,27 @@
 
   <!-- Banner Ends Here -->
 
-  <h1>Editar destino</h1>
-  {{#destinations}}
-  <form method="post" action="/guardarDestino">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" value="{{destinations.nombre}}" ><br><br>
-      <label for="descripcion">Descripción:</label><br>
-      <textarea id="descripcion" name="descripcion" rows="4" cols="50">{{destinations.descripcion}}</textarea><br><br>
-  </form>
-  {{/destinations}}
+
+  <section>
+    
+    <h1>Agregar Destinos</h1>
+    <!-- Mostrar mensaje de éxito si existe -->
+    <!--<c:if test="${not empty mensaje}">
+      <div class="alert alert-success">${mensaje}</div>
+    </c:if>-->
+    
+    <form action="/agregarDestinos" method="GET">
+      <label for="name">Nombre del destino:</label>
+      <input type="text" id="name" name="name"><br>
+  
+      <label for="information">Información del destino:</label>
+      <input type="text" id="information" name="information"><br>
+  
+      <button type="submit" value="Agregar">Agregar destino</button>
+    </form>
+
+
+    
+  </section>
 
 {{>footer}}

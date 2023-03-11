@@ -1,9 +1,14 @@
 package es.codeurjc.hellowordvscode.Controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +17,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import es.codeurjc.hellowordvscode.Entitys.Comment;
 import es.codeurjc.hellowordvscode.Entitys.Destination;
@@ -47,9 +56,12 @@ public class MustacheController {
 	
 	
 
+	@ModelAttribute
 	@GetMapping("/admin")
-		public String admin(Model model) {
-			return "admin";
+    public String getAllDestinationsAdmin(Model model) {
+        List<Destination> destinations = destinationRepository.findAll();
+        model.addAttribute("destinations", destinations);
+        return "destinations";   
 	}
 
 	@GetMapping("/destino/{name}")
@@ -117,19 +129,48 @@ public class MustacheController {
 		return "error";
 	}
 
-	@GetMapping("/añadirDestinos")
-	public String añadirDestinos(Model model) {
-		return "añadirDestinos";
+	@GetMapping("/agregarDestinos")
+	public String agregarDestinos(Model model, String name, String information) throws IOException {
+		Destination destino = new Destination();
+		destino.setName(name);
+		destino.setInformation(information);
+		destinationRepository.save(destino);
+		model.addAttribute("nuevoDestino", destino);
+		//model.addAttribute("mensaje", "El destino ha sido guardado con éxito.");
+    	return "agregarDestinos";
 	}
+
+
+
+	/*@GetMapping("/editarDestinos/{name}")
+	public String editarDestinos(Model model, @PathVariable("name") String name) {
+    	Optional<Destination> destino = destinationService.findByName(name);
+    	if (destino == null) {
+        	model.addAttribute("error", "No se encontró el destino con el nombre " + name);
+        	return "error";
+    	}
+    	model.addAttribute("destino", destino);
+    	return "editarDestinos";
+	}
+
+	@PostMapping("/guardarDestino")
+	public String guardarDestino(@ModelAttribute("destino") Destination destino) {
+    	Destination destinoExistente = destinationService.findByName(destino.getNombre());
+    	if (destinoExistente != null) {
+        	destinoExistente.setDescripcion(destino.getInformation());
+        	destinoExistente.setPrecio(destino.getPrecio());
+        	destinationService.actualizar(destinoExistente);
+    	}
+    	return "redirect:/destinos";
+	}*/
+
+
+
+
 
 	@GetMapping("/configUsuarios")
 	public String configUsuarios(Model model) {
 		return "configUsuarios";
-	}
-
-	@GetMapping("/editarDestinos")
-	public String editarDestinos(Model model) {
-		return "editarDestinos";
 	}
 
 	
