@@ -1,5 +1,6 @@
 package es.codeurjc.hellowordvscode.Controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +13,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import es.codeurjc.hellowordvscode.Entitys.Comment;
 import es.codeurjc.hellowordvscode.Entitys.Destination;
@@ -117,19 +121,30 @@ public class MustacheController {
 		return "error";
 	}
 
-	@GetMapping("/añadirDestinos")
-	public String añadirDestinos(Model model) {
-		return "añadirDestinos";
+	@GetMapping("/agregarDestinos")
+	public String agregarDestinos(Model model, String name, String information) throws IOException {
+		Destination destino = new Destination();
+		destino.setName(name);
+		destino.setInformation(information);
+		destinationRepository.save(destino);
+		model.addAttribute("nuevoDestino", destino);
+		//model.addAttribute("mensaje", "El destino ha sido guardado con éxito.");
+    	return "agregarDestinos";
 	}
+
+
+
+	@GetMapping("/editarDestinos")
+	public String editarDestinos(Model model, String name) {
+		
+    	return "editarDestinos";
+
+	}
+
 
 	@GetMapping("/configUsuarios")
 	public String configUsuarios(Model model) {
 		return "configUsuarios";
-	}
-
-	@GetMapping("/editarDestinos")
-	public String editarDestinos(Model model) {
-		return "editarDestinos";
 	}
 
 	
