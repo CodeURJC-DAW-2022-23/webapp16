@@ -10,9 +10,10 @@ public class Destination {
 
     public Destination(){}
 
-    public Destination(String name, String information) {
+    public Destination(String name, String information, String infoLarga) {
         this.name = name;
         this.information=information;
+        this.infoLarga=infoLarga;
     }
 
     @Id
@@ -21,10 +22,23 @@ public class Destination {
 
     private String name;
     private String information;
-    
+
+    @Lob
+    private String infoLarga;
 
     @OneToMany (cascade = CascadeType.ALL, mappedBy="destination")   
     private List<Trip> trip_list;
+
+    @Lob
+    private Blob foto;
+
+    public String getInfoLarga() {
+        return infoLarga;
+    }
+
+    public void setInfoLarga(String infoLarga) {
+        this.infoLarga = infoLarga;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -55,6 +69,14 @@ public class Destination {
     }
 
     public void setId(long l) {
+    }
+
+    public Blob getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Blob foto) {
+        this.foto = foto;
     }
 
 
