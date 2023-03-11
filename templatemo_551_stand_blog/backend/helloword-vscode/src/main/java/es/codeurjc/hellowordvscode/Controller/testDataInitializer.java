@@ -230,6 +230,10 @@ public class testDataInitializer{
       tripBarcelona1.setDestination(barcelona);
       tripRepository.save(tripBarcelona1);
 
+      tripBarcelona2.setComment(comment4);
+      tripBarcelona2.setUser(user1);
+      tripBarcelona2.setDestination(barcelona);
+      tripRepository.save(tripBarcelona2);
 
    }
 
