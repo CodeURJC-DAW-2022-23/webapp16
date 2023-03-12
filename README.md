@@ -81,11 +81,12 @@
   #PAULA CUENCA GIL:
   - Mi tarea principal ha sido ocuparme de la seguridad de la página asi como ayudar en la inicialización de la base de datos y en su correcto funcionamiento.
   - 5 commits principales: 
-   -1 de marzo, 2 commits creando todo lo de seguridad: https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/71f949338f518a907c1dad52e64ca879f7cf8e9c
-   -8 de marzo, funcionamiento, ejemplos BBDD y cambios htmls: https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/f9acc5a69452ae8436f0ad18b00c6463567659e4
-   -8 marzo, funcion destino/name : https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/82f1fdfe943151ced92f363e502bd142e3d4dfee
-   -11 marzo, admin list : https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/725626cb41359ea068cc7fe24aeb6f84411f79aa 
-   -11 marzo, agregar destinos BBDD: https://github.com/CodeURJCDAW-2022-23/webapp16/commit/548dc9cf2b51b6618e223c83a5aabc1165c7914
+   - 1 de marzo, 2 commits creando todo lo de seguridad: https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/71f949338f518a907c1dad52e64ca879f7cf8e9c
+   - 8 de marzo, funcionamiento, ejemplos BBDD y cambios htmls: https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/f9acc5a69452ae8436f0ad18b00c6463567659e4
+   - 8 marzo, funcion destino/name : https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/82f1fdfe943151ced92f363e502bd142e3d4dfee
+   - 11 marzo, admin list : https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/725626cb41359ea068cc7fe24aeb6f84411f79aa 
+   - 11 marzo, agregar destinos BBDD: https://github.com/CodeURJCDAW-2022-23/webapp16/commit/548dc9cf2b51b6618e223c83a5aabc1165c7914
+  
   - 5 ficheros en los que más he participado: 
    - https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/security/SecurityConfiguration.java
    - https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/Controller/MustacheController.java
