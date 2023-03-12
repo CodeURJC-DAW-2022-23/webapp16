@@ -62,8 +62,8 @@
   https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/DiagramaDeNavegaci%C3%B3n.png
   
   
-  #Trabajo de cada miembto:
-  #Alejandro Romero
+  #TRABAJO DE CADA MIEMBRO:
+  #ALEJANDRO ROMERO
   -La tarea principal fue la creación de los objetos en la base de datos, inicialización de datos y mostrarlos en la página.
   -5 commits principales:
     -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/e58de4bc205b48cc6ad9743e840babe325781aa2
