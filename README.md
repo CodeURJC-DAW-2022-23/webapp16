@@ -62,6 +62,20 @@
   https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/DiagramaDeNavegaci%C3%B3n.png
   
   
-  
+  #Trabajo de cada miembto:
+  #Alejandro Romero
+  -La tarea principal fue la creación de los objetos en la base de datos, inicialización de datos y mostrarlos en la página.
+  -5 commits principales:
+    -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/e58de4bc205b48cc6ad9743e840babe325781aa2
+    -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/72d161adc48c5ca6cd05dc7c637836fcde291b10
+    -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/f9938506135ea4054691976fc773cee11a8f1a1a
+    -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/ad9d045c03be57c45c2f266ca25d44f84ecdec5e
+    -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/5eb8e392f7cf3949e21cf57655abd8040d8ebb8a
+   -5 ficheros en los que más he participado  
+    -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/Controller/testDataInitializer.java
+    -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/Controller/MustacheController.java
+    -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/resources/templates/destino.html
+    -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/resources/templates/index.html
+    -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/Entitys/Destination.java
   
 
