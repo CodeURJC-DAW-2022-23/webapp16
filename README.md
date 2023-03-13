@@ -109,3 +109,22 @@
   -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/Services/DestinationService.java
   -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/security/SecurityConfiguration.java
   -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/Repositories/DestinationRepository.java
+
+  #ADRIÁN AGUILAR RODRIGUEZ
+  -Tareas realizadas esta fase:
+  -Implementación de la página de error
+  -Diseño del esquema de la base de datos
+
+  -5 commits principales
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/94c36c1f18c9ec8b0a738a131d4adf0da77c27d8
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/98f2ed14fabc4355f6d206a422892e00221be29a
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/23d76cdce543cd7d6ce9d6e44f742727fd2327b5
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/6986c62d205fefbf316393b10515fdb3a6d75101
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/a6d6a61051d06dd824cf883e17815ab2312cb619
+
+  -5 ficheros en los que más he trabajado
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/resources/templates/Error.html
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/resources/templates/footer.html
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/resources/templates/header.html
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/Entitys/User.java
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/Controller/MustacheController.java
