@@ -26,7 +26,7 @@ public class DestinationController {
     @GetMapping("/")
     public Page<Destination> getDestinations(@RequestParam(required = false) Pageable page) {
        
-            return destinations.findAll(page);
+            return destinations.findAll(PageRequest.of(0, 10));
         
     }
 

@@ -6,6 +6,8 @@ import java.util.Optional;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +30,7 @@ public class MustacheController {
 	@ModelAttribute
 	@GetMapping("/index")
     public String getAllDestinations(Model model) {
-        List<Destination> destinations = destinationRepository.findAll();
+        Page<Destination> destinations = destinationRepository.findAll(PageRequest.of(0,10));
         model.addAttribute("destinations", destinations);
         return "destinations";   
 	}
