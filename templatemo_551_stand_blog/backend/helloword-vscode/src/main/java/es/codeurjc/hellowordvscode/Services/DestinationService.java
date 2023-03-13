@@ -1,5 +1,6 @@
 package es.codeurjc.hellowordvscode.Services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,8 @@ public class DestinationService {
 		return repository.findByName(name);
 	}
 
-    public Object findAll() {
-        return null;
+    public List<Destination> findAll() {
+        return repository.findAll();
     }
 
 
