@@ -94,3 +94,18 @@
    - https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/resources/templates/agregarDestinos.html
    - https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/resources/templates/editarDestinos.html
 
+  #ISMAEL ALBERT APARICIO:
+  -Mi tarea principal ha sido la definición de los distintos objetos, arreglo de errores y la paginación.
+  -5 commits principales:
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/5d4abd9e493cdd0e7d6b21fd6a3889bfe79224e7
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/45bce933eb62c6e7fa5c162160229c7b7a522e4b
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/7c8054b4eefd43f3df2c3f1d7de75c2d2e370cda
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/a75260757dd5bfdc199d0dacccbee7acfb0df757
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/commit/f141436ee855c490525edda7d7337a8bba74388c
+  
+  -5 ficheros en los que más he participado:
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/resources/templates/personalArea.html
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/Controller/MustacheController.java
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/Services/DestinationService.java
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/security/SecurityConfiguration.java
+  -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/Repositories/DestinationRepository.java
