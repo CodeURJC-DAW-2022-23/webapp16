@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import es.codeurjc.hellowordvscode.Entitys.Destination;
+import es.codeurjc.hellowordvscode.Entitys.Trip;
 import es.codeurjc.hellowordvscode.Repositories.DestinationRepository;
+import es.codeurjc.hellowordvscode.Repositories.TripRepository;
 import es.codeurjc.hellowordvscode.Services.DestinationService;
 
 @Controller
@@ -25,6 +27,9 @@ public class MustacheController {
 
 	@Autowired
     private DestinationRepository destinationRepository;
+
+	@Autowired
+    private TripRepository tripRepository;
 
 
 	@ModelAttribute
@@ -49,12 +54,15 @@ public class MustacheController {
 				model.addAttribute("destino", destiny.get());
 				List<Destination> destinations = destinationRepository.findAll();
         		model.addAttribute("destinations", destinations);
+				List<Trip> trips = tripRepository.findByDestination(destiny);
+				model.addAttribute("trips", trips);
 				return "destino";
 			} else {
 				return "error";
 			}
-		
 	}
+
+
 	@GetMapping("/destino")
 	public String destino(Model model) {
 		return "destino";

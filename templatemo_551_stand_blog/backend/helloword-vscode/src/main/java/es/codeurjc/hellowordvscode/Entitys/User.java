@@ -81,7 +81,7 @@ public class User {
 	}
 
     public String getEncodedPassword() {
-        return null;
+        return encodedPassword;
     }
 
     public String getEmail() {
