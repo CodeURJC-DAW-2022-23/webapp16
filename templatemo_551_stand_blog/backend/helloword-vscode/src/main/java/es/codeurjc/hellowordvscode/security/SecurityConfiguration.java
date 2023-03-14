@@ -41,34 +41,43 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
       
  
       // Public pages 
-       http.authorizeRequests().antMatchers("/index").permitAll();
-       http.authorizeRequests().antMatchers("/login").permitAll();
-       //http.authorizeRequests().antMatchers("/loginerror").permitAll(); 
-       http.authorizeRequests().antMatchers("/destino/*").permitAll(); 
-       http.authorizeRequests().antMatchers("/admin").permitAll();
-       http.authorizeRequests().antMatchers("/agregarDestinos").permitAll();
-       http.authorizeRequests().antMatchers("/configUsuarios").permitAll();
-       http.authorizeRequests().antMatchers("/editarDestinos").permitAll();
+      http.authorizeRequests().antMatchers("/index").permitAll();
+      http.authorizeRequests().antMatchers("/login").permitAll(); 
+      http.authorizeRequests().antMatchers("/loginerror").permitAll();
+      http.authorizeRequests().antMatchers("/logout").permitAll();
+      http.authorizeRequests().antMatchers("/Error").permitAll();
+      http.authorizeRequests().antMatchers("/destino/*").permitAll(); 
+      http.authorizeRequests().antMatchers("/agregarDestinos").permitAll();
+      http.authorizeRequests().antMatchers("/configUsuarios").permitAll();
+      http.authorizeRequests().antMatchers("/editarDestinos").permitAll();
+      
+
 
 
        
       
-       // Private pages (all other pages)
-       //http.authorizeRequests().antMatchers("/admin").hasAnyRole("ADMIN");
-       
-       http.authorizeRequests().antMatchers("/personalArea").hasAnyRole("USER");
+      // Private pages (all other pages)
+      http.authorizeRequests().antMatchers("/admin").hasAnyRole("ADMIN");
+      http.authorizeRequests().antMatchers("/personalArea").hasAnyRole("USER");
       
-       //Login form
-       http.formLogin().loginPage("/login");
-       http.formLogin().usernameParameter("username");
-       http.formLogin().passwordParameter("password");
-       http.formLogin().defaultSuccessUrl("/personalArea");
+      //Login form
+      http.formLogin().loginPage("/login");
+      http.formLogin().usernameParameter("username");
+      http.formLogin().passwordParameter("password");
+      http.formLogin().successHandler((request, response, authentication) -> {
+         if (authentication.getAuthorities().stream()
+                 .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_ADMIN"))) {
+             response.sendRedirect("/admin");
+         } else {
+             response.sendRedirect("/personalArea");
+         }
+      });
+
       http.formLogin().failureUrl("/loginerror");
       
       //Logout
       http.logout().logoutUrl("/logout");
-      http.logout().logoutSuccessUrl("/index");
-      
+      http.logout().logoutSuccessUrl("/logout");
 
 
       // Disable CSRF at the mome

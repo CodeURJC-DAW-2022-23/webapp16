@@ -1,5 +1,6 @@
 package es.codeurjc.hellowordvscode.Controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,8 +44,8 @@ public class MustacheController {
 	
 
 	@GetMapping("/admin")
-		public String admin(Model model) {
-			return "admin";
+	public String admin(Model model) {
+		return "admin";
 	}
 
 	@GetMapping("/destino/{name}")
@@ -80,9 +81,9 @@ public class MustacheController {
 */
 
 	@GetMapping("/logout")
-		public String log(Model model) {
-			return "logout";
-		}
+	public String log(Model model) {
+		return "logout";
+	}
 
 	
 	@GetMapping("/login")
@@ -114,8 +115,20 @@ public class MustacheController {
 
 	@GetMapping("/error")
 	public String error(Model model) {
-		return "error";
+		return "Error";
 	}
 	
+	@GetMapping("/agregarDestinos")
+	public String agregarDestinos(Model model, String name, String information) throws IOException {
+		Destination destino = new Destination();
+		destino.setName(name);
+		destino.setInformation(information);
+		destinationRepository.save(destino);
+		model.addAttribute("nuevoDestino", destino);
+    	return "agregarDestinos";
+	}
+
+
+
  
 }
