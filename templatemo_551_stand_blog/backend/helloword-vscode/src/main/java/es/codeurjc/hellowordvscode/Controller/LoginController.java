@@ -18,12 +18,5 @@ public class LoginController {
 		return "loginerror";
 	}
 
-	@RequestMapping("/logout")
-	public String logout() {
-		return "logout";
-	}
- 
-    
-    
 }
 

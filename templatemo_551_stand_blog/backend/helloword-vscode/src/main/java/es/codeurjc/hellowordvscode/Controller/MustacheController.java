@@ -117,7 +117,21 @@ public class MustacheController {
 	public String error(Model model) {
 		return "Error";
 	}
+
+	@GetMapping("/crearViaje")
+	public String crearViaje(Model model){
+		return "crearViaje";
+	}
+
+	@GetMapping("/editarViaje")
+	public String editarViaje(Model model){
+		return "editarViaje";
+	}
 	
+	@GetMapping("/borrarViaje")
+	public String borrarViaje(Model model){
+		return "borrarViaje";
+	}
 	@GetMapping("/agregarDestinos")
 	public String agregarDestinos(Model model, String name, String information) throws IOException {
 		Destination destino = new Destination();
