@@ -141,6 +141,20 @@ public class MustacheController {
 		return "Error";
 	}
 
+	@GetMapping("/crearViaje")
+	public String crearViaje(Model model){
+		return "crearViaje";
+	}
+
+	@GetMapping("/editarViaje")
+	public String editarViaje(Model model){
+		return "editarViaje";
+	}
+	
+	@GetMapping("/borrarViaje")
+	public String borrarViaje(Model model){
+		return "borrarViaje";
+	}
 	@GetMapping("/agregarDestinos")
 	public String showAgregarDestinos() {
 		return "agregarDestinos";
