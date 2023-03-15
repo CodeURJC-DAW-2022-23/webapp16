@@ -36,18 +36,14 @@ public class testDataInitializer{
 
    @Autowired
    private TripRepository tripRepository;
-   /**
-    * @throws IOException
-    * @throws URISyntaxException
-    */
-   
+    
    
    
    
     @PostConstruct
     public void init() throws  IOException, URISyntaxException {
-//user creators
-      User admin = new User("admin2@gmail.com", "ADMIN", passwordEncoder.encode("adminPassword1234"), "ADMIN", "USER");
+      /*//user creators
+      User admin = new User("admin2@gmail.com", "admin", passwordEncoder.encode("adminpass"), "ADMIN");
       userRepository.save(admin);
 
       User user1 = new User("user@gmail.com", "user", passwordEncoder.encode("pass"), "USER");
@@ -66,9 +62,10 @@ public class testDataInitializer{
       userRepository.save(user5);
 
       User user6 = new User("user6@gmail.com", "user6", passwordEncoder.encode("pass6"), "USER");
-      userRepository.save(user6);
+      userRepository.save(user6);*/
+      
 
-//city creators
+      //city creators
       Destination madrid = new Destination("Madrid", "This is information about Madrid city.", "Madrid es una ciudad que te envuelve en su energía y te hace sentir vivo. Desde el primer momento en que pones un pie en la ciudad, te das cuenta de que hay algo especial en ella. Sus calles empedradas, sus edificios históricos, sus parques llenos de vida y su gastronomía son solo algunas de las cosas que la hacen única. Pasear por el centro de Madrid es una experiencia que no te puedes perder. La Gran Vía, la Puerta del Sol, la Plaza Mayor y la Puerta de Alcalá son solo algunos de los lugares más emblemáticos de la ciudad. Pero más allá de los sitios turísticos, lo que realmente hace que Madrid sea especial son sus barrios. Desde la bohemia Malasaña hasta la elegante Salamanca, cada barrio tiene su propia personalidad y ofrece algo único. En cuanto a la gastronomía, Madrid es un  raíso para los amantes de la comida. Desde los clásicos bocadillos de calamares hasta los famosos churros con chocolate, la ciudad ofrece una gran variedad de deliciosos platos. Además, Madrid es conocida por su animada vida nocturna, con bares y discotecas para todos los gustos. Pero Madrid no es solo una ciudad para los turistas. Los madrileños son amables y acogedores, y la ciudad es un lugar ideal para vivir. Es un centro cultural importante, con una gran cantidad de museos y teatros, y ofrece una amplia variedad de actividades para todos los gustos. En resumen, Madrid es una ciudad que tiene todo lo que uno puede desear: una rica historia, cultura, comida, vida nocturna y gente amable. Si buscas una ciudad que te deje con ganas de más, no puedes equivocarte con Madrid.");
       destinationRepository.save(madrid);
 
@@ -95,7 +92,8 @@ public class testDataInitializer{
 
       Destination barcelona = new Destination("Barcelona", "Pues barcelona blablablabalabsdhaufhajskdfha","Barcelona es una ciudad vibrante, llena de cultura, historia y vida. Con su impresionante arquitectura modernista, playas bañadas por el sol y una gastronomía de clase mundial, Barcelona es un destino turístico muy popular para viajeros de todo el mundo. La ciudad es famosa por su arquitectura única, con obras maestras de Antoni Gaudí como la Sagrada Familia, el Parque Güell y la Casa Batlló. Pasear por el casco antiguo de Barcelona es como viajar en el tiempo, con sus calles empedradas y sus edificios históricos que cuentan la historia de la ciudad. Barcelona también es conocida por su vibrante vida nocturna, con bares y clubes para todos los gustos y edades. Además, su ubicación junto al Mediterráneo ofrece una gran variedad de actividades acuáticas, desde relajantes tardes en la playa hasta emocionantes deportes acuáticos. La gastronomía es otro punto fuerte de Barcelona, con una gran variedad de platos tradicionales y modernos. Desde tapas hasta paella, pasando por mariscos frescos y cocina internacional, hay opciones para todos los gustos y presupuestos. En resumen, Barcelona es una ciudad fascinante que tiene algo para todo el mundo. Con su mezcla de historia, cultura, playas y gastronomía, es un destino turístico imprescindible para aquellos que buscan una experiencia única y auténtica.");
       destinationRepository.save(barcelona);
-//trip creators
+      
+      //trip creators
       Trip tripMadrid = new Trip(1);
       tripRepository.save(tripMadrid);
 
@@ -209,7 +207,7 @@ public class testDataInitializer{
       commentRepository.save(comment10);
 
 //Trip Fillers
-      tripAmsterdam.setComment(comment5);
+      /*tripAmsterdam.setComment(comment5);
       tripAmsterdam.setUser(user1);
       tripAmsterdam.setDestination(amsterdam);
       tripRepository.save(tripAmsterdam);
@@ -233,7 +231,7 @@ public class testDataInitializer{
       tripBarcelona2.setComment(comment4);
       tripBarcelona2.setUser(user1);
       tripBarcelona2.setDestination(barcelona);
-      tripRepository.save(tripBarcelona2);
+      tripRepository.save(tripBarcelona2);*/
 
    }
 

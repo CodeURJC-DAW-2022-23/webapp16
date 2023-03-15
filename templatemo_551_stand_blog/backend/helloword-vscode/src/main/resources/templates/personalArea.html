@@ -1,252 +1,249 @@
 {{>header}}
-  <body>
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
-
-    <!-- Header -->
-    <header class="">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-brand" href="index"><h2>Area personal<em>.</em></h2></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.skyscanner.es/">VUELOS <!-- SKYSCANNER -->
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li> 
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.booking.com/index.es.html">HOTELES</a><!-- BOOKING -->
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index">Destinos
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li> 
-              <li class="nav-item">
-                <form action="/logout" method="post">
-                  <input type="submit" value="Sign Out" />
-                </form>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!-- Page Content -->
-    <!-- Banner Starts Here -->
-    <div class="main-banner header-text">
-      <div class="container-fluid">
-        <div class="owl-banner owl-carousel">          
-        </div>
-      </div>
-    
+  <!-- ***** Preloader Start ***** -->
+  <div id="preloader">
+    <div class="jumper">
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
-    <!-- Banner Ends Here -->
-    <section class="call-to-action">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="main-content">
-              <div class="row">
-                <div class="col-lg-8">
-                  <span>Bienvenido a tu area personal, aquí podrás subir, descargar y consultar tus documentos sobre tus viajes!</span>
-                  <h4>texto</h4>
-                  <a href="crearViaje">Crear viaje</a>
+  </div>  
+<!-- ***** Preloader End ***** -->
+
+<!-- Header -->
+
+<header class="">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index"><h2> NOMBRE<em>.</em></h2></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.skyscanner.es/">VUELOS <!-- SKYSCANNER -->
+              <span class="sr-only">(current)</span>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.booking.com/index.es.html">HOTELES</a><!-- BOOKING -->
+          </li>
+          <li class="nav-item">
+            <form action="/logout" method="post">
+              <input type="submit" value="Sign Out"/>
+              <input type="hidden" name="_csrf" value="{{token}}" />
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+ <!-- Banner Starts Here -->
+ 
+ <div class="heading-page header-text">
+  <section class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="text-content">
+            <h4>AREA</h4>  
+            <h2>PERSONAL</h2>
+            <p><span>Bienvenido a tu area personal, aquí podrás subir, descargar y consultar tus documentos sobre tus viajes!</span><br></p>
+            <a href="crearViaje">Crear viaje</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Banner Ends Here -->
+  
+  <div class="container">
+    <div class="row-lg-12">
+      <p style="margin-top: 15px;text-align: center; font-size: 20px;";>Bienvenido a tu area personal, aqui podrás ver todos los detalles de tus viajes y tener todos los documentos guardados necesarios.</p>
+    </div>
+  
+
+
+
+<section class="blog-posts">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="all-blog-posts">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="blog-post">
+                <div class="blog-thumb">
+                  <img src="assets/images/paris_1.jpg" alt="">
                 </div>
+                <div class="down-content">
+                  <span>Paris</span>
+                  <a href="destino"><h4>DOCUMENTOS</h4></a>
+                  <ul class="post-info">
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                  </ul>
+                  <p>Aqui estaran tus documentos</p>
+                  <div class="post-options">
+                    <div class="row">
+                      <div class="col-6">
+                        <ul class="post-tags">
+                          <li><i class="fa fa-tags"></i></li>
+                          <li><a href="#">Beauty</a>,</li>
+                          <li><a href="#">Nature</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-6">
+                        <ul class="post-share">
+                          <li><i class="fa fa-share-alt"></i></li>
+                          <li><a href="#">Facebook</a>,</li>
+                          <li><a href="#"> Twitter</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="blog-post">
+                <div class="blog-thumb">
+                  <img src="assets/images/roma_1.jpg" alt="">
+                </div>
+                <div class="down-content">
+                  <span>Roma</span>
+                  <a href="destino"><h4>DOCUMENTOS</h4></a>
+                  <ul class="post-info">
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                  </ul>
+                  <p><a rel="nofollow" href="https://templatemo.com/contact" target="_parent"></a> <a rel="nofollow" href="https://templatemo.com/tag/multi-page" target="_parent"></a><a rel="nofollow" href="https://templatemo.com/tag/resume" target="_parent"></a><a rel="nofollow" href="https://templatemo.com/tag/video" target="_parent"></a></p>
+                  <div class="post-options">
+                    <div class="row">
+                      <div class="col-6">
+                        <ul class="post-tags">
+                          <li><i class="fa fa-tags"></i></li>
+                          <li><a href="#">Best Templates</a>,</li>
+                          <li><a href="#">TemplateMo</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-6">
+                        <ul class="post-share">
+                          <li><i class="fa fa-share-alt"></i></li>
+                          <li><a href="#">Facebook</a>,</li>
+                          <li><a href="#">Twitter</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="blog-post">
+                <div class="blog-thumb">
+                  <img src="assets/images/madrid_1.jpg" alt="">
+                </div>
+                <div class="down-content">
+                  <span>Madrid</span>
+                  <a href="destino"><h4>DOCUMENTOS</h4></a>
+                  <ul class="post-info">
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                  </ul>
+                  <p>Aqui estaran tus documentos</p>
+                  <div class="post-options">
+                    <div class="row">
+                      <div class="col-6">
+                        <ul class="post-tags">
+                          <li><i class="fa fa-tags"></i></li>
+                          <li><a href="#">HTML CSS</a>,</li>
+                          <li><a href="#">Photoshop</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-6">
+                        <ul class="post-share">
+                          <li><i class="fa fa-share-alt"></i></li>
+                          <li><a href="#">Facebook</a>,</li>
+                          <li><a href="#">Twitter</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="main-button">
+                <a href="blog.html">View All Posts</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-
-    <section class="blog-posts">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="all-blog-posts">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="blog-post">
-                    <div class="blog-thumb">
-                      <img src="assets/images/paris_1.jpg" alt="">
-                    </div>
-                    <div class="down-content">
-                      <span>Paris</span>
-                      <a href="destino"><h4>DOCUMENTOS</h4></a>
-                      <ul class="post-info">
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                      </ul>
-                      <p>Aqui estaran tus documentos</p>
-                      <div class="post-options">
-                        <div class="row">
-                          <div class="col-6">
-                            <ul class="post-tags">
-                              <li><i class="fa fa-tags"></i></li>
-                              <li><a href="#">Beauty</a>,</li>
-                              <li><a href="#">Nature</a></li>
-                            </ul>
-                          </div>
-                          <div class="col-6">
-                            <ul class="post-share">
-                              <li><i class="fa fa-share-alt"></i></li>
-                              <li><a href="#">Facebook</a>,</li>
-                              <li><a href="#"> Twitter</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+      <div class="col-lg-4">
+        <div class="sidebar">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="sidebar-item search">
+                <form id="search_form" name="gs" method="GET" action="#">
+                  <input type="text" name="q" class="searchText" placeholder="type to search..." autocomplete="on">
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="sidebar-item recent-posts">
+                <div class="sidebar-heading">
+                  <h2>Amigos</h2>
                 </div>
-                <div class="col-lg-12">
-                  <div class="blog-post">
-                    <div class="blog-thumb">
-                      <img src="assets/images/roma_1.jpg" alt="">
-                    </div>
-                    <div class="down-content">
-                      <span>Roma</span>
-                      <a href="destino"><h4>DOCUMENTOS</h4></a>
-                      <ul class="post-info">
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                      </ul>
-                      <p><a rel="nofollow" href="https://templatemo.com/contact" target="_parent"></a> <a rel="nofollow" href="https://templatemo.com/tag/multi-page" target="_parent"></a><a rel="nofollow" href="https://templatemo.com/tag/resume" target="_parent"></a><a rel="nofollow" href="https://templatemo.com/tag/video" target="_parent"></a></p>
-                      <div class="post-options">
-                        <div class="row">
-                          <div class="col-6">
-                            <ul class="post-tags">
-                              <li><i class="fa fa-tags"></i></li>
-                              <li><a href="#">Best Templates</a>,</li>
-                              <li><a href="#">TemplateMo</a></li>
-                            </ul>
-                          </div>
-                          <div class="col-6">
-                            <ul class="post-share">
-                              <li><i class="fa fa-share-alt"></i></li>
-                              <li><a href="#">Facebook</a>,</li>
-                              <li><a href="#">Twitter</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="blog-post">
-                    <div class="blog-thumb">
-                      <img src="assets/images/madrid_1.jpg" alt="">
-                    </div>
-                    <div class="down-content">
-                      <span>Madrid</span>
-                      <a href="destino"><h4>DOCUMENTOS</h4></a>
-                      <ul class="post-info">
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                      </ul>
-                      <p>Aqui estaran tus documentos</p>
-                      <div class="post-options">
-                        <div class="row">
-                          <div class="col-6">
-                            <ul class="post-tags">
-                              <li><i class="fa fa-tags"></i></li>
-                              <li><a href="#">HTML CSS</a>,</li>
-                              <li><a href="#">Photoshop</a></li>
-                            </ul>
-                          </div>
-                          <div class="col-6">
-                            <ul class="post-share">
-                              <li><i class="fa fa-share-alt"></i></li>
-                              <li><a href="#">Facebook</a>,</li>
-                              <li><a href="#">Twitter</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="main-button">
-                    <a href="blog.html">View All Posts</a>
-                  </div>
+                <div class="content">
+                  <ul>
+                    <li><a href=>
+                      <h5>Alejandro Romero</h5>
+                      <span>May 31, 2020</span>
+                    </a></li>
+                    <li><a href=>
+                      <h5>Paula Cuenca</h5>
+                      <span>May 28, 2020</span>
+                    </a></li>
+                    <li><a href=>
+                      <h5>Ismael Albert</h5>
+                      <span>May 14, 2020</span>
+                    </a></li>
+                  </ul>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="sidebar">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="sidebar-item search">
-                    <form id="search_form" name="gs" method="GET" action="#">
-                      <input type="text" name="q" class="searchText" placeholder="type to search..." autocomplete="on">
-                    </form>
-                  </div>
+            <div class="col-lg-12">
+              <div class="sidebar-item categories">
+                <div class="sidebar-heading">
+                  <h2></h2>
                 </div>
-                <div class="col-lg-12">
-                  <div class="sidebar-item recent-posts">
-                    <div class="sidebar-heading">
-                      <h2>Amigos</h2>
-                    </div>
-                    <div class="content">
-                      <ul>
-                        <li><a href=>
-                          <h5>Alejandro Romero</h5>
-                          <span>May 31, 2020</span>
-                        </a></li>
-                        <li><a href=>
-                          <h5>Paula Cuenca</h5>
-                          <span>May 28, 2020</span>
-                        </a></li>
-                        <li><a href=>
-                          <h5>Ismael Albert</h5>
-                          <span>May 14, 2020</span>
-                        </a></li>
-                      </ul>
-                    </div>
-                  </div>
+                <div class="content">
+                  <ul>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                  </ul>
                 </div>
-                <div class="col-lg-12">
-                  <div class="sidebar-item categories">
-                    <div class="sidebar-heading">
-                      <h2></h2>
-                    </div>
-                    <div class="content">
-                      <ul>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-               
               </div>
             </div>
+           
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 {{>footer}}

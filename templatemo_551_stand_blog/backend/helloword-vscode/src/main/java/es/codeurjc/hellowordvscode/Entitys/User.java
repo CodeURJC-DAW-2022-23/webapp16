@@ -45,15 +45,11 @@ public class User {
 
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    @Column(name = "peepe")
     private List<Trip> trip_list = new ArrayList<>();
     
-    
-
-
-
 
     public void setImage(String string) {
+        
     }
 
     public void setImageFile(Blob generateProxy) {
