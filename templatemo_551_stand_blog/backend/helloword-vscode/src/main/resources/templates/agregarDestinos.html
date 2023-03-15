@@ -64,7 +64,7 @@
       <div class="alert alert-success">${mensaje}</div>
     </c:if>-->
     
-    <form action="/agregarDestinos" method="GET">
+    <form action="/agregarDestinos" method="post">
       <label for="name">Nombre del destino:</label>
       <input type="text" id="name" name="name"><br>
   
@@ -72,6 +72,7 @@
       <input type="text" id="information" name="information"><br>
   
       <button type="submit" value="Agregar">Agregar destino</button>
+      <input type="hidden" name="_csrf" value="{{token}}">
     </form>
 
 

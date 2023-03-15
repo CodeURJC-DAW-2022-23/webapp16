@@ -45,21 +45,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
       http.authorizeRequests().antMatchers("/login").permitAll(); 
       http.authorizeRequests().antMatchers("/loginerror").permitAll();
       http.authorizeRequests().antMatchers("/logout").permitAll();
-      http.authorizeRequests().antMatchers("/Error").permitAll();
+      //http.authorizeRequests().antMatchers("/error").permitAll();
       http.authorizeRequests().antMatchers("/destino/*").permitAll(); 
-      http.authorizeRequests().antMatchers("/agregarDestinos").permitAll();
-      http.authorizeRequests().antMatchers("/configUsuarios").permitAll();
-      http.authorizeRequests().antMatchers("/editarDestinos").permitAll();
-      
+      http.authorizeRequests().antMatchers("/signup").permitAll();
+      http.authorizeRequests().antMatchers("/editarDestinos/{name}").permitAll();
 
-
-
-       
       
       // Private pages (all other pages)
-      http.authorizeRequests().antMatchers("/admin").hasAnyRole("ADMIN");
-      http.authorizeRequests().antMatchers("/personalArea").hasAnyRole("USER");
+
+      http.authorizeRequests().antMatchers("/agregarDestinos").hasAnyRole("ADMIN");
+      http.authorizeRequests().antMatchers("/configUsuarios").hasAnyRole("ADMIN");
+      //http.authorizeRequests().antMatchers("/editarDestinos/*").hasAnyRole("ADMIN");
       
+    
+
       //Login form
       http.formLogin().loginPage("/login");
       http.formLogin().usernameParameter("username");
@@ -74,7 +73,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
       });
 
       http.formLogin().failureUrl("/loginerror");
-      
+
       //Logout
       http.logout().logoutUrl("/logout");
       http.logout().logoutSuccessUrl("/logout");

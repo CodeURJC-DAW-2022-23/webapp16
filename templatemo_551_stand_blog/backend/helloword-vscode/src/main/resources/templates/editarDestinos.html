@@ -54,13 +54,17 @@
   <!-- Banner Ends Here -->
 
   <h1>Editar destino</h1>
-  {{#destinations}}
-  <form method="post" action="/guardarDestino">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" value="{{destinations.nombre}}" ><br><br>
-      <label for="descripcion">Descripción:</label><br>
-      <textarea id="descripcion" name="descripcion" rows="4" cols="50">{{destinations.descripcion}}</textarea><br><br>
+
+  
+
+  <form action="/editarDestinos/{{destination.name}}" method="post">
+    <label>Nombre:</label>
+    <input type="text" name="name" value="{{destination.name}}" required><br>
+    <label>Descripción:</label>
+    <input type="text" name="information" value="{{destination.information}}" required><br>
+    <input type="submit" value="Guardar cambios">
+    <input type="hidden" name="_csrf" value="{{token}}">
   </form>
-  {{/destinations}}
+
 
 {{>footer}}

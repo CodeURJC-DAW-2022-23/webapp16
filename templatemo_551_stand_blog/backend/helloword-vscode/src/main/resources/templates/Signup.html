@@ -64,43 +64,26 @@
               <div class="row">
                 <div class="col-lg-8">
                   <div class="sidebar-item contact-form">
-                    <div class="sidebar-heading">
-                      <h2>Sign up</h2>
-                    </div>
-                    <div class="content">
-                      <form id="contact" action="" method="post">
-                        <div class="row">
-                          <div class="col-md-6 col-sm-12">
-                            <fieldset>
-                              <input name="name" type="text" id="name" placeholder="Your name" required="">
-                            </fieldset>
-                          </div>
-                          <div class="col-md-6 col-sm-12">
-                            <fieldset>
-                              <input name="password" type="password" id="password" placeholder="password" required="">
-                            </fieldset>
-                          </div>
-                          <div class="col-md-12 col-sm-12">
-                            <fieldset>
-                              <input name="email" type="email" id="email" placeholder="email@adress.com" required="">
-                            </fieldset>
-                          </div>
-                          <div class="col-lg-12">
-                            <p>Inserte una imagen para su avatar</p>
-                            <fieldset>
-                              <input name="avatar" type="file" id="avatar" placeholder=""></input>
-                            </fieldset>
-                          </div>
-                          <div class="col-lg-12">
-                            <fieldset>
-                              <button type="submit" id="form-submit" class="main-button">Sign up</button>
-                            </fieldset>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
+                    <form action="/signup" method="post">
+                
+                      <label for="name">Nombre:</label><br>
+                      <input type="text" id="name" name="name"><br>
+
+                      <label for="email">Correo electrónico:</label><br>
+                      <input type="email" id="email" name="email"><br>
+                
+                      <label for="password">Contraseña:</label><br>
+                      <input type="password" id="password" name="password"/><br>
+
+                      <label>Suba una foto de su avatar</label>
+                      <input name="avatar" type="file" id="avatar" placeholder=""/></input>
+                        
+                      <input type="submit" value="Submit"/>
+                      <input type="hidden" name="_csrf" value="{{token}}">
+                    </form>
                   </div>
                 </div>
+
                 <div class="col-lg-4">
                   <div class="sidebar-item contact-information">
                     <div class="sidebar-heading">

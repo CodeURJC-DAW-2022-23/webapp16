@@ -92,18 +92,22 @@
           
 
           <div class="row my-5">
-            <a href="editarDestinos" style="color: black;"><h5><li>EDITAR DESTINOS</h5></li></a>
+            <a href="#" style="color: black;"><h5><li>EDITAR DESTINOS</h5></li></a>
           </div>
 
           <ul>
             {{#destinations}}
-            <li><a href="/editarDestinos/{{name}}">{{name}}</a></li>
+            <li>
+              <form action="/editarDestinos/{{name}}" method="get">
+                <input type="submit" value="{{name}}">
+              </form>
+            </li>
             {{/destinations}}
           </ul>
         
 
           <div class= "row my-5">
-            <a href="configUsuarios"  style="color: black;"><h5><li>CONFIGURAR USUARIOS</h5></li></a>
+            <a href="configUsuarios" style="color: black;"><h5><li>CONFIGURAR USUARIOS</h5></li></a>
           </div>
           
 

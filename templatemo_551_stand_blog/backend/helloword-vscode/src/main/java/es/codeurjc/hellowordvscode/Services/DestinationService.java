@@ -30,6 +30,10 @@ public class DestinationService {
         return repository.findAll();
     }
 
+    public void save(Destination destino) {
+		repository.save(destino);
+    }
+
 
 
     

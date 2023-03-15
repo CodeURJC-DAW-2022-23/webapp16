@@ -1,9 +1,11 @@
 package es.codeurjc.hellowordvscode.Controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,23 +13,46 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.hibernate.SessionFactory;
+
 import es.codeurjc.hellowordvscode.Entitys.Destination;
 import es.codeurjc.hellowordvscode.Entitys.Trip;
+import es.codeurjc.hellowordvscode.Entitys.User;
 import es.codeurjc.hellowordvscode.Repositories.DestinationRepository;
 import es.codeurjc.hellowordvscode.Repositories.TripRepository;
+import es.codeurjc.hellowordvscode.Repositories.UserRepository;
 import es.codeurjc.hellowordvscode.Services.DestinationService;
+import es.codeurjc.hellowordvscode.Services.UserService;
 
 @Controller
 public class MustacheController {
+
+
+	private SessionFactory sessionFactory;
+
+    @Autowired
+    public void TuControlador(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
+
+
 
 	@Autowired
 	private DestinationService destinationService;
 
 	@Autowired
     private DestinationRepository destinationRepository;
+
+	@Autowired
+    private UserRepository userRepository;
+
+	@Autowired
+    private UserService userService;
 
 	@Autowired
     private TripRepository tripRepository;
@@ -44,8 +69,10 @@ public class MustacheController {
 	
 
 	@GetMapping("/admin")
-	public String admin(Model model) {
-		return "admin";
+	public String adminList(Model model) {
+		List<Destination> destinations = destinationRepository.findAll();
+        model.addAttribute("destinations", destinations);
+        return "admin";
 	}
 
 	@GetMapping("/destino/{name}")
@@ -103,10 +130,6 @@ public class MustacheController {
 		return "personalArea";
 	}
 
-	@GetMapping("/signup")
-	public String signup(Model model) {
-		return "signup";
-	}
 
 	@GetMapping("/valoraciones")
 	public String valoraciones(Model model) {
@@ -117,18 +140,87 @@ public class MustacheController {
 	public String error(Model model) {
 		return "Error";
 	}
-	
+
 	@GetMapping("/agregarDestinos")
-	public String agregarDestinos(Model model, String name, String information) throws IOException {
+	public String showAgregarDestinos() {
+		return "agregarDestinos";
+	}
+	
+	@PostMapping("/agregarDestinos")
+	public String agregarDestinos(Model model, @RequestParam String name, @RequestParam String information, RedirectAttributes redirectAttrs) throws IOException {
 		Destination destino = new Destination();
 		destino.setName(name);
 		destino.setInformation(information);
 		destinationRepository.save(destino);
 		model.addAttribute("nuevoDestino", destino);
-    	return "agregarDestinos";
+    	redirectAttrs.addFlashAttribute("message", "Destino añadido con éxito");
+    	return "redirect:/admin";
 	}
 
+	@GetMapping("/signup")
+	public String showSignupForm() {
+		return "signup";
+	}
 
+	@PostMapping("/signup")
+	public String signup(Model model, @RequestParam String name, @RequestParam String email, @RequestParam String password) throws IOException{
+		User usuario = new User();
+		usuario.setName(name);
+		usuario.setEmail(email);
+		usuario.setEncodedPassword(password);
+		usuario.setImageFile(null);
+		userRepository.save(usuario);
+		model.addAttribute("usuario", usuario);
+		return "redirect:/personalArea";
+	}
+
+	/*@GetMapping("/editarDestinos/{name}")
+	public String editarDestino(Model model, @PathVariable String name) {
+  		Optional<Destination> destino = destinationService.findByName(name);
+  		if (destino.isPresent()) {
+    		model.addAttribute("destino", destino.get());
+   	 		return "editarDestino";
+  		} else {
+    		return "error";
+  		}
+	}
+
+	@PostMapping("/editarDestinos")
+	public String editarDestinosProceso(Model model, Destination destino, boolean removeImage,MultipartFile imageField) throws IOException, SQLException {
+
+		//updateImage(destination, removeImage, imageField);
+
+		destinationService.save(destino);
+
+		model.addAttribute("destinoName", destino.getName());
+
+		return "redirect:/editarDestinos/"+destino.getName();
+	}*/
+
+	@GetMapping("/editarDestinos/{name}")
+    public String editarDestino(@PathVariable("name") String name, Model model) {
+        Destination destination = destinationRepository.findByName(name)
+            .orElseThrow(() -> new EntityNotFoundException("El destino con nombre " + name + " no existe."));
+        model.addAttribute("destination", destination);
+        return "editarDestinos";
+    }
+
+    @PostMapping("/editarDestinos/{name}")
+    public String actualizarDestino(@PathVariable("name") String name, @Validated Destination destinationActualizado, RedirectAttributes redirectAttributes) {
+        Destination destination = destinationRepository.findByName(name)
+            .orElseThrow(() -> new EntityNotFoundException("El destino con nombre " + name + " no existe."));
+        
+		destination.setName(destinationActualizado.getName());
+        destination.setInformation(destinationActualizado.getInformation());
+        //Actualizar otros atributos aquí
+		sessionFactory.getCurrentSession().merge(destination);
+        //destinationRepository.save(destination);
+        redirectAttributes.addFlashAttribute("mensaje", "El destino " + destination.getName() + " se actualizó correctamente.");
+        return "redirect:/index";
+    }
+
+
+	
 
  
 }
