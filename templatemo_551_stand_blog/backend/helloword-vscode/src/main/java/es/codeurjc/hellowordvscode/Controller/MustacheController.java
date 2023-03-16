@@ -1,6 +1,7 @@
 package es.codeurjc.hellowordvscode.Controller;
 
 import java.io.IOException;
+import java.security.Principal;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
@@ -56,6 +57,22 @@ public class MustacheController {
 
 	@Autowired
     private TripRepository tripRepository;
+
+	@ModelAttribute
+	public void addAttributes(Model model, HttpServletRequest request) {
+
+		Principal principal = request.getUserPrincipal();
+
+		if (principal != null) {
+
+			model.addAttribute("logged", true);
+			model.addAttribute("username", principal.getName());
+			model.addAttribute("admin", request.isUserInRole("USER"));
+
+		} else {
+			model.addAttribute("logged", false);
+		}
+	}
 
 
 	@ModelAttribute
@@ -185,7 +202,7 @@ public class MustacheController {
 		usuario.setImageFile(null);
 		userRepository.save(usuario);
 		model.addAttribute("usuario", usuario);
-		return "redirect:/personalArea";
+		return "personalArea";
 	}
 
 	/*@GetMapping("/editarDestinos/{name}")

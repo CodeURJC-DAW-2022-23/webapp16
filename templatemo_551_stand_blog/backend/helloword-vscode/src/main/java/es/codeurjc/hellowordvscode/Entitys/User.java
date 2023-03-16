@@ -5,6 +5,7 @@ import java.util.*;
 
 import javax.persistence.*;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -73,7 +74,8 @@ public class User {
 
 
 	public void setEncodedPassword(String encodedPassword) {
-		this.encodedPassword = encodedPassword;
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        this.encodedPassword = passwordEncoder.encode(encodedPassword);
 	}
 
     public String getEncodedPassword() {

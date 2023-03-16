@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class LoginController {
 
-    @RequestMapping("/login")
+    /*@RequestMapping("/login")
 	public String login() {
 		return "login";
 	}
@@ -26,7 +26,7 @@ public class LoginController {
     @RequestMapping("/signup")
 	public String signup(){
 		return "signup";
-	}
+	}*/
 
 }
 
