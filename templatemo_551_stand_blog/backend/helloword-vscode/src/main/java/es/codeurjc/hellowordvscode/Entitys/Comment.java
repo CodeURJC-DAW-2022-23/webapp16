@@ -16,12 +16,22 @@ public class Comment{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private int nota;
+
 
     private String texto;
 
     @OneToOne (cascade=CascadeType.ALL)   
     private Trip trip;
     
+    public int getNota(){
+        return nota;
+    }
+
+    public void setNota(){
+        this.nota=nota;
+    }
+
     public String getTexto(){
         return texto;
     }

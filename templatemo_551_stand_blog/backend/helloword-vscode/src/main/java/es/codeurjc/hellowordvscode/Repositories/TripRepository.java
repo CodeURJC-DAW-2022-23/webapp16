@@ -13,6 +13,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface TripRepository extends JpaRepository<Trip, Long>{
 
     List<Trip> findByDestination(Optional<Destination> destiny);
+    List<Trip> findByDestinationName(String name);
 
 
 }
