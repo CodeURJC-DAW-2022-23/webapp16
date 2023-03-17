@@ -28,7 +28,7 @@ public class Comment{
         return nota;
     }
 
-    public void setNota(){
+    public void setNota(int nota){
         this.nota=nota;
     }
 
