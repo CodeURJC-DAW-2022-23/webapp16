@@ -67,7 +67,7 @@ public class MustacheController {
 
 			model.addAttribute("logged", true);
 			model.addAttribute("username", principal.getName());
-			model.addAttribute("admin", request.isUserInRole("USER"));
+			model.addAttribute("user", request.isUserInRole("USER"));
 
 		} else {
 			model.addAttribute("logged", false);
