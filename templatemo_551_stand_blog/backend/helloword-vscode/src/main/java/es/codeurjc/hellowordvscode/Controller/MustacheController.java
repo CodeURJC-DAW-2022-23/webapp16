@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.hibernate.SessionFactory;
 
+import es.codeurjc.hellowordvscode.Entitys.Comment;
 import es.codeurjc.hellowordvscode.Entitys.Destination;
 import es.codeurjc.hellowordvscode.Entitys.Trip;
 import es.codeurjc.hellowordvscode.Entitys.User;
@@ -107,13 +108,13 @@ public class MustacheController {
 			}
 	}
 
-
+/* 
 	@GetMapping("/destino")
 	public String destino(Model model) {
 		return "destino";
 	}
 	
-/* 
+
 	
 	@GetMapping("/destino")
 	public String showDestination(@RequestParam(name = "nombre") String nombre, Model model) {
@@ -144,6 +145,7 @@ public class MustacheController {
 	public String personalArea(Model model, HttpServletRequest request) {
 		model.addAttribute("username", request.getUserPrincipal().getName());
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+
 		return "personalArea";
 	}
 
@@ -250,8 +252,28 @@ public class MustacheController {
         return "redirect:/index";
     }
 
+	public void setMedias(List<Destination> destinos){
+		for (int i=0;i<destinos.size();i++){
+			destinos.get(i).setMedia(obtenerMedia(destinos.get(i)));
+		}
 
-	
+	}
+
+	public int obtenerMedia(Destination destino){
+		int media=0;
+		List<Trip> trips = tripRepository.findByDestinationName(destino.getName()); 
+		for (int i=0;i<trips.size();i++){
+			Trip viaje= new Trip();
+			Comment comentario= new Comment();
+			int nota;
+			viaje=trips.get(i);
+			comentario=viaje.getComment();
+			nota=comentario.getNota();
+			media+=nota;
+		}
+		return (media/trips.size());
+	}
+
 
  
 }

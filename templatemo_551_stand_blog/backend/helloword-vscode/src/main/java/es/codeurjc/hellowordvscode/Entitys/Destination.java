@@ -5,8 +5,14 @@ import java.util.*;
 
 import javax.persistence.*;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import es.codeurjc.hellowordvscode.Repositories.TripRepository;
+
 @Entity
 public class Destination {
+    @Autowired
+    private TripRepository tripRepository;
 
     public Destination(){}
 
@@ -22,6 +28,7 @@ public class Destination {
 
     private String name;
     private String information;
+    private int media;
 
     @Lob
     private String infoLarga;
@@ -31,6 +38,14 @@ public class Destination {
 
     @Lob
     private Blob foto;
+
+    public int getMedia(){
+        return media;
+    }
+
+    public void setMedia(int numero){
+        this.media=numero;
+    }
 
     public String getInfoLarga() {
         return infoLarga;

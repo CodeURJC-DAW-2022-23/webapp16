@@ -61,6 +61,11 @@
   # DIAGRAMA DE NAVEGACIÓN
   https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/DiagramaDeNavegaci%C3%B3n.png
   
+  # DIAGRAMA DE BASE DE DATOS
+  https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Diagrama%20base%20de%20datos.png
+  
+  # DIAGRAMA DE CLASES
+  https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Diagrama%20de%20clases.png
   
   #TRABAJO DE CADA MIEMBRO:
   #ALEJANDRO ROMERO
