@@ -26,12 +26,12 @@ public class Destination {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String name;
-    private String information;
-    private int media;
+    private String name;//Destination name
+    private String information;//summary of destination
+    private int mean;//valoration average for a destination
 
     @Lob
-    private String infoLarga;
+    private String infoLarga;//description of destination
 
     @OneToMany (cascade = CascadeType.ALL, mappedBy="destination")   
     private List<Trip> trip_list;
@@ -39,12 +39,12 @@ public class Destination {
     @Lob
     private Blob foto;
 
-    public int getMedia(){
-        return media;
+    public int getMean(){
+        return mean;
     }
 
-    public void setMedia(int numero){
-        this.media=numero;
+    public void setMean(int numero){
+        this.mean=numero;
     }
 
     public String getInfoLarga() {

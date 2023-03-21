@@ -16,10 +16,10 @@ public class Comment{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private int nota;
+    private int nota;//valoration of destination
 
 
-    private String texto;
+    private String texto;//main text of destination
 
     @OneToOne (cascade=CascadeType.ALL)   
     private Trip trip;

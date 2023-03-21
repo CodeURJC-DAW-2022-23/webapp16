@@ -31,18 +31,16 @@ public class User {
 
 
     private String email;
-    private String name;
-    private String encodedPassword;
+    private String name;//user's username
+    private String encodedPassword;//user's password (encoded)
 
 
     @ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
 
-
-
     @Lob
     @JsonIgnore
-    Blob imageFile;
+    Blob imageFile;//Avatar
 
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)

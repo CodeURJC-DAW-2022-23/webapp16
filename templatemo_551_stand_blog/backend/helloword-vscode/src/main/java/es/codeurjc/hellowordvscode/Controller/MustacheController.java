@@ -166,6 +166,11 @@ public class MustacheController {
 	}
 
 	@GetMapping("/editarViaje")
+	public String showEditarViaje(Model model){
+		return "editarViaje";
+	}
+
+	@PostMapping("/editarViaje")
 	public String editarViaje(Model model){
 		return "editarViaje";
 	}
@@ -254,7 +259,7 @@ public class MustacheController {
 
 	public void setMedias(List<Destination> destinos){
 		for (int i=0;i<destinos.size();i++){
-			destinos.get(i).setMedia(obtenerMedia(destinos.get(i)));
+			destinos.get(i).setMean(obtenerMedia(destinos.get(i)));
 		}
 
 	}

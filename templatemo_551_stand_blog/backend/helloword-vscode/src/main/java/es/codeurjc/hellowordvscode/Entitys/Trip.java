@@ -18,11 +18,10 @@ public class Trip {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    private String name;//name of the trip, for user's identification
 
     @ManyToOne 
     private User user;
-
- 
 
     @ManyToOne (cascade=CascadeType.ALL)
     private Destination destination;
@@ -37,6 +36,14 @@ public class Trip {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name){
+        this.name=name;
     }
 
     public User getUser() {
