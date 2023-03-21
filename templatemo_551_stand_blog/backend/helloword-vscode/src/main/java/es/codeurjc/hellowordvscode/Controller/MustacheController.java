@@ -3,6 +3,7 @@ package es.codeurjc.hellowordvscode.Controller;
 import java.io.IOException;
 import java.security.Principal;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -100,7 +101,7 @@ public class MustacheController {
 				model.addAttribute("destino", destiny.get());
 				List<Destination> destinations = destinationRepository.findAll();
         		model.addAttribute("destinations", destinations);
-				List<Trip> trips = tripRepository.findByDestination(destiny);
+				List<Trip> trips = tripRepository.findByDestination(destiny.get());
 				model.addAttribute("trips", trips);
 				return "destino";
 			} else {
@@ -262,14 +263,16 @@ public class MustacheController {
 	public int obtenerMedia(Destination destino){
 		int media=0;
 		List<Trip> trips = tripRepository.findByDestinationName(destino.getName()); 
-		for (int i=0;i<trips.size();i++){
-			Trip viaje= new Trip();
+		for (int i=0; i<trips.size();i++){
+			/*Trip viaje= new Trip();
 			Comment comentario= new Comment();
 			int nota;
 			viaje=trips.get(i);
 			comentario=viaje.getComment();
 			nota=comentario.getNota();
 			media+=nota;
+*/
+			media+=trips.get(i).getComment().getNota();
 		}
 		return (media/trips.size());
 	}

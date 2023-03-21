@@ -11,8 +11,7 @@ import es.codeurjc.hellowordvscode.Repositories.TripRepository;
 
 @Entity
 public class Destination {
-    @Autowired
-    private TripRepository tripRepository;
+
 
     public Destination(){}
 
