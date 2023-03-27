@@ -30,24 +30,29 @@
             <li class="nav-item">
               <a class="nav-link" href="https://www.booking.com/index.es.html">HOTELES</a><!-- BOOKING -->
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index">Destinos
-                <span class="sr-only">(current)</span>
-              </a>
-            </li> 
-            <li class="nav-item">
-              <a class="nav-link" href="login">Log In</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="signup">Sign UP</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="personalArea">Area personal</a>
-            </li>
-            <li class="nav-item">
-              <form action="/logout" method="post">
-                <input type="submit" value="Sign Out"/>
-                <input type="hidden" name="_csrf" value="{{token}}"/>
+            {{^logged}}
+              <li class="nav-item">
+                <a class="nav-link" href="login">Log In</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="signup">Sign Up</a>
+              </li>
+
+              {{/logged}}{{#logged}}
+              <li class="nav-item">
+                <a class="nav-link" href="personalArea">Area personal</a>
+              </li>
+              
+              
+			        <div class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
+					        <li><form action="/logout" method="post">
+							    <button class="btn btn-default navbar-btn" type="submit">LogOut</button>
+							    <input type="hidden" name="_csrf" value="{{token}}" />
+						      </form></li>
+				        </ul>
+              </div>
+			        {{/logged}}
               </form>
             </li>
           </ul>

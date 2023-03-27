@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
@@ -42,7 +43,8 @@ public class MustacheController {
         this.sessionFactory = sessionFactory;
     }
 
-
+	@Autowired
+    private PasswordEncoder passwordEncoder;
 
 
 	@Autowired
@@ -109,23 +111,6 @@ public class MustacheController {
 			}
 	}
 
-/* 
-	@GetMapping("/destino")
-	public String destino(Model model) {
-		return "destino";
-	}
-	
-
-	
-	@GetMapping("/destino")
-	public String showDestination(@RequestParam(name = "nombre") String nombre, Model model) {
-	  Optional<Destination> destination = destinationRepository.findByName(nombre);
-	  model.addAttribute("destino", destination);
-	  return "destino";
-	}
-
-*/
-
 	@GetMapping("/logout")
 	public String log(Model model) {
 		return "logout";
@@ -137,6 +122,38 @@ public class MustacheController {
 		return "login";
 	}
 
+	@GetMapping("/signup")
+	public String showSignupForm() {
+		return "signup";
+	}
+
+	@PostMapping("/signup")
+	public String signup(Model model, @RequestParam String username, @RequestParam String email, @RequestParam String password) throws IOException{
+		User usuario = new User(email, username, passwordEncoder.encode(password), "USER");
+		userRepository.save(usuario);
+		
+		/*usuario.setName(username);
+		usuario.setEmail(email);
+		usuario.setEncodedPassword(password);
+		userRepository.save(usuario);
+
+		Optional <User> tryUser = userRepository.findByName(usuario.getName());
+        Optional <User> tryEmail = userRepository.findByEmail(usuario.getEmail());
+		
+		if (!tryUser.isPresent() && !tryEmail.isPresent()){
+            userRepository.save(usuario);
+            return "/personalArea";
+        }else {
+            return"/error";
+        }
+		
+		model.addAttribute("logged", true);
+		*/
+		model.addAttribute("username", usuario);
+		
+		return "/personalArea";
+	}
+
 	@GetMapping("/loginerror")
     public String loginerror() {
         return "loginerror";
@@ -145,7 +162,7 @@ public class MustacheController {
 	@GetMapping("/personalArea")
 	public String personalArea(Model model, HttpServletRequest request) {
 		model.addAttribute("username", request.getUserPrincipal().getName());
-    	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	//model.addAttribute("admin", request.isUserInRole("ADMIN"));
 
 		return "personalArea";
 	}
@@ -196,22 +213,6 @@ public class MustacheController {
     	return "redirect:/admin";
 	}
 
-	@GetMapping("/signup")
-	public String showSignupForm() {
-		return "signup";
-	}
-
-	@PostMapping("/signup")
-	public String signup(Model model, @RequestParam String name, @RequestParam String email, @RequestParam String password) throws IOException{
-		User usuario = new User();
-		usuario.setName(name);
-		usuario.setEmail(email);
-		usuario.setEncodedPassword(password);
-		usuario.setImageFile(null);
-		userRepository.save(usuario);
-		model.addAttribute("usuario", usuario);
-		return "personalArea";
-	}
 
 	/*@GetMapping("/editarDestinos/{name}")
 	public String editarDestino(Model model, @PathVariable String name) {
@@ -237,7 +238,7 @@ public class MustacheController {
 	}*/
 
 	@GetMapping("/editarDestinos/{name}")
-    public String editarDestino(@PathVariable("name") String name, Model model) {
+    public String editarDestino(@PathVariable("username") String name, Model model) {
         Destination destination = destinationRepository.findByName(name)
             .orElseThrow(() -> new EntityNotFoundException("El destino con nombre " + name + " no existe."));
         model.addAttribute("destination", destination);
