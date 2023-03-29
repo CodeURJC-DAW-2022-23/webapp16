@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
@@ -43,6 +44,8 @@ public class MustacheController {
     }
 
 
+	@Autowired
+    private PasswordEncoder passwordEncoder;
 
 
 	@Autowired
@@ -202,15 +205,15 @@ public class MustacheController {
 	}
 
 	@PostMapping("/signup")
-	public String signup(Model model, @RequestParam String name, @RequestParam String email, @RequestParam String password) throws IOException{
-		User usuario = new User();
-		usuario.setName(name);
+	public String signup(Model model, @RequestParam String username, @RequestParam String email, @RequestParam String password) throws IOException{
+		User usuario = new User(email, username, passwordEncoder.encode(password), "USER");
+		/*usuario.setName(name);
 		usuario.setEmail(email);
 		usuario.setEncodedPassword(password);
-		usuario.setImageFile(null);
+		usuario.setImageFile(null);*/
 		userRepository.save(usuario);
-		model.addAttribute("usuario", usuario);
-		return "personalArea";
+		model.addAttribute("username", usuario);
+		return "/personalArea";
 	}
 
 	/*@GetMapping("/editarDestinos/{name}")
