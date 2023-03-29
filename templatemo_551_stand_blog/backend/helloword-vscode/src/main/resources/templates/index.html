@@ -102,7 +102,73 @@
                     </div>
                   </div>
                 </div>
+
+                <button id="load-more-button" data-destinations="{{destinations.nextPageable.pageNumber}}">Mostrar más</button>
                 {{/destinations}}
+
+                 
+    <script>
+      const loadMoreButton = document.querySelector('#load-more-button');
+      const destiantionsContainer = document.querySelector('.blog-post');
+
+      loadMoreButton.addEventListener('click', function () {
+          const nextPage = this.getAttribute('data-destinations');
+
+          // We make the Ajax request to the server to get the reviews of the following page, without reloading the entire page
+          setTimeout(function () {
+              const xhr = new XMLHttpRequest();
+              xhr.open('GET', '?page=' + nextPage);
+              xhr.onload = function () {
+                  if (xhr.status === 200) {
+                      // We convert the server response to HTML and add it to the reviews container.
+                      const parser = new DOMParser();
+                      const html = parser.parseFromString(xhr.response, 'text/html');
+                      destinationsContainer.innerHTML += html.querySelector('.blog-post').innerHTML;
+
+                      //Update the page number of the "Show more" button and hide the button if there are no more pages.
+                      const newPage = parseInt(nextPage) + 1;
+                      loadMoreButton.setAttribute('data-destinations', newPage);
+                      if (!html.querySelector('#load-more-button')) {
+                          loadMoreButton.style.display = 'none';
+                      }
+
+                      // Updating the star values in the added reviews.
+                      // const newReviewRatings = destinationsContainer.querySelectorAll('.review-rating:not(.updated)');
+                      
+                      // newReviewRatings.forEach(newReviewRating => {
+                      //     const rating = parseInt(newReviewRating.getAttribute('data-rating'));
+                      //     const stars = newReviewRating.querySelectorAll('.star');
+
+                      //     // We add active stars based on the rating value.
+                      //     for (let i = 0; i < rating; i++) {
+                      //         stars[i].classList.add('active');
+                      //     }
+
+
+
+
+
+                      //     // We mark this review as updated so that it will not be updated again in the future.
+                      //     newReviewRating.classList.add('updated');
+                      // });
+                      
+                      // We hide the spinner and show the button
+                      spinner.style.display = 'none';
+                      loadMoreButton.style.display = 'block';
+                      if (!html.querySelector('#load-more-button')) {
+                          loadMoreButton.style.display = 'none'; //When there is no more "load more" in html, that is, there are no more pages of reviews available, we hide the button
+                      }
+                  } else {
+                      console.error('Error en la carga de reviews');
+                  }
+              };
+              xhr.send();
+
+          }, 0);
+      });
+
+  </script>
+  
               </div>
             </div>
           </div>
