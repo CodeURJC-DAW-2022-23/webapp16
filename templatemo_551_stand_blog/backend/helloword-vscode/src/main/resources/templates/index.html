@@ -89,7 +89,7 @@
         <div class="all-blog-posts">
           <div class="row">
             <div class="col-lg-6">
-              <div class="blog-post">
+              <div class="blog-post-destinations">
                 {{#destinations}}
                 <div class="blog-thumb">
                   <img src="assets/images/{{name}}.jpg" alt="">
@@ -102,8 +102,43 @@
                     </div>
                   </div>
                 </div>
+                
                 {{/destinations}}
+
               </div>
+              <button id="load-more-button" data-destinations="{{destinations.nextPageable.pageNumber}}">Mostrar más</button>
+              <script>
+                const loadMoreButton = document.querySelector('#load-more-button');
+                const destinationsContainer = document.querySelector('.blog-post-destinations');
+
+                loadMoreButton.addEventListener('click', function () {
+                  const nextPage = this.getAttribute('data-destinations');
+
+                  // Hacer la petición AJAX al servidor para obtener la siguiente página de destinos
+                  const xhr = new XMLHttpRequest();
+                  xhr.open('GET', '?page=' + nextPage);
+                  xhr.onload = function () {
+                    if (xhr.status === 200) {
+                      // Convertir la respuesta del servidor a HTML y agregarla al contenedor de destinos
+                      const parser = new DOMParser();
+                      const html = parser.parseFromString(xhr.response, 'text/html');
+                      destiantionsContainer.innerHTML += html.querySelector('.blog-post-destinations').innerHTML;
+
+                      // Actualizar el número de página del botón "Mostrar más" y ocultarlo si no hay más páginas disponibles
+                      const newPage = parseInt(nextPage) + 1;
+                      loadMoreButton.setAttribute('data-destinations', newPage);
+                      if (!html.querySelector('#load-more-button')) {
+                        loadMoreButton.style.display = 'none';
+                      }
+                    } else {
+                      console.error('Error al cargar destinos');
+                    }
+                  };
+                  xhr.send();
+                });
+
+          
+            </script>
             </div>
           </div>
         </div>
