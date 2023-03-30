@@ -76,6 +76,39 @@ public class MustacheController {
 		}
 	}
 
+	public List<Destination> setMedias(List<Destination> destinos){//IN: destinations list; OUT: --
+		for (int i=0;i<destinos.size();i++){
+			String nombre= destinos.get(i).getName();
+			//System.out.println(nombre);
+			destinos.get(i).setMean(obtenerMedia(nombre));
+			destinationRepository.save(destinos.get(i));
+	
+		}
+		return destinos;
+	}
+
+	public int obtenerMedia(String destinationName){//IN: destination; OUT: integer
+		int media=0;
+		List<Trip> trips = tripRepository.findByDestinationName(destinationName); 
+		for (int i=0; i<trips.size();i++){
+			/*Trip viaje= new Trip();
+			Comment comentario= new Comment();
+			int nota;
+			viaje=trips.get(i);
+			comentario=viaje.getComment();
+			nota=comentario.getNota();
+			media+=nota;
+*/
+			media+=trips.get(i).getComment().getNota();
+		}
+		if (trips.size()>0){
+			return (media/trips.size());
+		}
+		else{
+			return 0;
+		}
+		
+	}
 
 	@ModelAttribute
 	@GetMapping("/index")
@@ -100,6 +133,7 @@ public class MustacheController {
 		if (destiny.isPresent()) {
 				model.addAttribute("destino", destiny.get());
 				List<Destination> destinations = destinationRepository.findAll();
+				destinations=setMedias(destinations);
         		model.addAttribute("destinations", destinations);
 				List<Trip> trips = tripRepository.findByDestination(destiny.get());
 				model.addAttribute("trips", trips);
@@ -110,6 +144,24 @@ public class MustacheController {
 	}
 
 /* 
+	@GetMapping("/destino/{name}")
+	public String showDestino(Model model, @PathVariable String name) {
+		Optional<Destination> destiny = destinationService.findByName(name);
+		if (destiny.isPresent()) {
+				model.addAttribute("destino", destiny.get());
+				List<Destination> destinations = destinationRepository.findAll();
+        		model.addAttribute("destinations", destinations);
+				List<Trip> trips = tripRepository.findByDestination(destiny.get());
+				model.addAttribute("trips", trips);
+				return "destino";
+			} else {
+				return "error";
+			}
+	}
+*/
+
+
+	/* 
 	@GetMapping("/destino")
 	public String destino(Model model) {
 		return "destino";
@@ -258,29 +310,6 @@ public class MustacheController {
         return "redirect:/index";
     }
 
-	public void setMedias(List<Destination> destinos){
-		for (int i=0;i<destinos.size();i++){
-			destinos.get(i).setMean(obtenerMedia(destinos.get(i)));
-		}
-
-	}
-
-	public int obtenerMedia(Destination destino){
-		int media=0;
-		List<Trip> trips = tripRepository.findByDestinationName(destino.getName()); 
-		for (int i=0; i<trips.size();i++){
-			/*Trip viaje= new Trip();
-			Comment comentario= new Comment();
-			int nota;
-			viaje=trips.get(i);
-			comentario=viaje.getComment();
-			nota=comentario.getNota();
-			media+=nota;
-*/
-			media+=trips.get(i).getComment().getNota();
-		}
-		return (media/trips.size());
-	}
 
 
  
