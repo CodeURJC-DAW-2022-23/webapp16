@@ -19,6 +19,7 @@
 	
 	<properties>
 		<java.version>17</java.version>
+		<itext.version>7.2.5</itext.version>
 	</properties>
 
 	<dependencies>
@@ -69,6 +70,26 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!--itext dependencies-->
+	
+		<!-- always needed -->
+		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>kernel</artifactId>
+			<version>${itext.version}</version>
+		</dependency>
+		<!-- always needed -->
+		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>io</artifactId>
+			<version>${itext.version}</version>
+		</dependency>
+		<!-- always needed -->
+		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>layout</artifactId>
+			<version>${itext.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
