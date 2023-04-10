@@ -103,7 +103,7 @@ public class Destination {
     public void createPDF(){
         String outputFilePath = "document.pdf";
         try{
-            //Crear un nevo documento PDF
+            //Crear un nuevo documento PDF
             PdfWriter writer = new PdfWriter(outputFilePath);
             PdfDocument pdfDoc = new PdfDocument(writer);
             Document doc = new Document(pdfDoc);

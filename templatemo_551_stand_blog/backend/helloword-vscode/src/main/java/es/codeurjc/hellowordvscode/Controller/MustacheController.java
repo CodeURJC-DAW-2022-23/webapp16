@@ -310,7 +310,10 @@ public class MustacheController {
         return "redirect:/index";
     }
 
-
+	@GetMapping("/")
+	public String paginaPrincipal(){
+		return "index";
+	}
 
  
 }
