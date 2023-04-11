@@ -110,12 +110,19 @@ public class MustacheController {
 		
 	}
 
-	@ModelAttribute
-	@GetMapping("/index")
+	// @ModelAttribute
+	// @GetMapping("/index")
+    // public String getAllDestinations(Model model) {
+    //     Page<Destination> destinations = destinationRepository.findAll(PageRequest.of(0,10));
+    //     model.addAttribute("destinations", destinations);
+    //     return "destinations";   
+	// }
+
+	@GetMapping("/")
     public String getAllDestinations(Model model) {
         Page<Destination> destinations = destinationRepository.findAll(PageRequest.of(0,10));
         model.addAttribute("destinations", destinations);
-        return "destinations";   
+        return "index";   
 	}
 	
 	
@@ -309,11 +316,6 @@ public class MustacheController {
         redirectAttributes.addFlashAttribute("mensaje", "El destino " + destination.getName() + " se actualizó correctamente.");
         return "redirect:/index";
     }
-
-	@GetMapping("/")
-	public String paginaPrincipal(){
-		return "index";
-	}
 
  
 }
