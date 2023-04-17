@@ -1,4 +1,4 @@
-package es.codeurjc.daw.library.controller.auth;
+package es.codeurjc.hellowordvscode.Controller.auth;
 
 import javax.servlet.http.HttpServletRequest;
 

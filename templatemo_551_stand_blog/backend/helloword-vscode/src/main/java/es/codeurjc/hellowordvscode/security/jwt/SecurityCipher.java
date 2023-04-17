@@ -1,4 +1,4 @@
-package es.codeurjc.daw.library.security.jwt;
+package es.codeurjc.hellowordvscode.security.jwt;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
