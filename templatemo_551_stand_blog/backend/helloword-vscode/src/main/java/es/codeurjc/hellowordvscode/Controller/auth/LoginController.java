@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.codeurjc.daw.library.security.jwt.AuthResponse;
-import es.codeurjc.daw.library.security.jwt.LoginRequest;
-import es.codeurjc.daw.library.security.jwt.UserLoginService;
-import es.codeurjc.daw.library.security.jwt.AuthResponse.Status;
+import es.codeurjc.hellowordvscode.security.jwt.AuthResponse;
+import es.codeurjc.hellowordvscode.security.jwt.LoginRequest;
+import es.codeurjc.hellowordvscode.security.jwt.UserLoginService;
+import es.codeurjc.hellowordvscode.security.jwt.AuthResponse.Status;
 
 @RestController
 @RequestMapping("/api/auth")

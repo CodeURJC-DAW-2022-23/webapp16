@@ -79,7 +79,7 @@ public class DestinationController {
             }
             //byte[] bytes = target.toByteArray();
             /* Send the response as downloadable PDF */
-            return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=order.pdf") .contentType(MediaType.APPLICATION_PDF) .body(bytes);
+            return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=document.pdf") .contentType(MediaType.APPLICATION_PDF) .body(bytes);
 
         } catch(FileNotFoundException e){
             e.printStackTrace();
