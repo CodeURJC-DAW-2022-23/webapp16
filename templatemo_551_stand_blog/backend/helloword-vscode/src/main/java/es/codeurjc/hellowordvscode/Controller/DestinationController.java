@@ -29,14 +29,10 @@ public class DestinationController {
     @GetMapping("/destinations/{page}")
     public String getDestinations(Model model, @PathVariable Integer page) {
        
-<<<<<<< Updated upstream
-            return destinations.findAll(PageRequest.of(0, 2));
-=======
         List <Destination> destiantionsList = destinations.findAll(PageRequest.of(page,10)).getContent();
 
         model.addAttribute("destinations", destiantionsList);
         return "mostrarDestino";
->>>>>>> Stashed changes
         
     }
 
