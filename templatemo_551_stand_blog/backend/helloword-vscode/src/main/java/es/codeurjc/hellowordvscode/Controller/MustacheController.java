@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
@@ -49,6 +50,9 @@ public class MustacheController {
 	private DestinationService destinationService;
 
 	@Autowired
+	private PasswordEncoder passwordEncoder;
+
+	@Autowired
     private DestinationRepository destinationRepository;
 
 	@Autowired
@@ -76,13 +80,53 @@ public class MustacheController {
 		}
 	}
 
+	public List<Destination> setMedias(List<Destination> destinos){//IN: destinations list; OUT: --
+		for (int i=0;i<destinos.size();i++){
+			String nombre= destinos.get(i).getName();
+			//System.out.println(nombre);
+			destinos.get(i).setMean(obtenerMedia(nombre));
+			destinationRepository.save(destinos.get(i));
+	
+		}
+		return destinos;
+	}
 
-	@ModelAttribute
-	@GetMapping("/index")
+	public int obtenerMedia(String destinationName){//IN: destination; OUT: integer
+		int media=0;
+		List<Trip> trips = tripRepository.findByDestinationName(destinationName); 
+		for (int i=0; i<trips.size();i++){
+			/*Trip viaje= new Trip();
+			Comment comentario= new Comment();
+			int nota;
+			viaje=trips.get(i);
+			comentario=viaje.getComment();
+			nota=comentario.getNota();
+			media+=nota;
+*/
+			media+=trips.get(i).getComment().getNota();
+		}
+		if (trips.size()>0){
+			return (media/trips.size());
+		}
+		else{
+			return 0;
+		}
+		
+	}
+
+	// @ModelAttribute
+	// @GetMapping("/index")
+    // public String getAllDestinations(Model model) {
+    //     Page<Destination> destinations = destinationRepository.findAll(PageRequest.of(0,10));
+    //     model.addAttribute("destinations", destinations);
+    //     return "destinations";   
+	// }
+
+	@GetMapping("/")
     public String getAllDestinations(Model model) {
         Page<Destination> destinations = destinationRepository.findAll(PageRequest.of(0,10));
         model.addAttribute("destinations", destinations);
-        return "destinations";   
+        return "index";   
 	}
 	
 	
@@ -100,6 +144,7 @@ public class MustacheController {
 		if (destiny.isPresent()) {
 				model.addAttribute("destino", destiny.get());
 				List<Destination> destinations = destinationRepository.findAll();
+				destinations=setMedias(destinations);
         		model.addAttribute("destinations", destinations);
 				List<Trip> trips = tripRepository.findByDestination(destiny.get());
 				model.addAttribute("trips", trips);
@@ -110,6 +155,24 @@ public class MustacheController {
 	}
 
 /* 
+	@GetMapping("/destino/{name}")
+	public String showDestino(Model model, @PathVariable String name) {
+		Optional<Destination> destiny = destinationService.findByName(name);
+		if (destiny.isPresent()) {
+				model.addAttribute("destino", destiny.get());
+				List<Destination> destinations = destinationRepository.findAll();
+        		model.addAttribute("destinations", destinations);
+				List<Trip> trips = tripRepository.findByDestination(destiny.get());
+				model.addAttribute("trips", trips);
+				return "destino";
+			} else {
+				return "error";
+			}
+	}
+*/
+
+
+	/* 
 	@GetMapping("/destino")
 	public String destino(Model model) {
 		return "destino";
@@ -203,13 +266,13 @@ public class MustacheController {
 
 	@PostMapping("/signup")
 	public String signup(Model model, @RequestParam String name, @RequestParam String email, @RequestParam String password) throws IOException{
-		User usuario = new User();
+		User usuario = new User(email, name, passwordEncoder.encode(password),"USER");
 		usuario.setName(name);
 		usuario.setEmail(email);
 		usuario.setEncodedPassword(password);
 		usuario.setImageFile(null);
 		userRepository.save(usuario);
-		model.addAttribute("usuario", usuario);
+		model.addAttribute("username", usuario);
 		return "personalArea";
 	}
 
@@ -257,31 +320,6 @@ public class MustacheController {
         redirectAttributes.addFlashAttribute("mensaje", "El destino " + destination.getName() + " se actualizó correctamente.");
         return "redirect:/index";
     }
-
-	public void setMedias(List<Destination> destinos){
-		for (int i=0;i<destinos.size();i++){
-			destinos.get(i).setMean(obtenerMedia(destinos.get(i)));
-		}
-
-	}
-
-	public int obtenerMedia(Destination destino){
-		int media=0;
-		List<Trip> trips = tripRepository.findByDestinationName(destino.getName()); 
-		for (int i=0; i<trips.size();i++){
-			/*Trip viaje= new Trip();
-			Comment comentario= new Comment();
-			int nota;
-			viaje=trips.get(i);
-			comentario=viaje.getComment();
-			nota=comentario.getNota();
-			media+=nota;
-*/
-			media+=trips.get(i).getComment().getNota();
-		}
-		return (media/trips.size());
-	}
-
 
  
 }

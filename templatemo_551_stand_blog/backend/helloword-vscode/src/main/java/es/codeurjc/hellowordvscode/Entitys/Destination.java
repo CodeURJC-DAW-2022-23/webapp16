@@ -1,16 +1,13 @@
 package es.codeurjc.hellowordvscode.Entitys;
 
-import java.io.Console;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Blob;
 import java.util.*;
 
 import javax.persistence.*;
 
-import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.layout.Document;
-import com.itextpdf.layout.element.Paragraph;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -100,21 +97,5 @@ public class Destination {
         this.foto = foto;
     }
 
-    public void createPDF(){
-        String outputFilePath = "document.pdf";
-        try{
-            //Crear un nevo documento PDF
-            PdfWriter writer = new PdfWriter(outputFilePath);
-            PdfDocument pdfDoc = new PdfDocument(writer);
-            Document doc = new Document(pdfDoc);
-            //Agregar el texto
-            Paragraph para = new Paragraph(getInfoLarga());
-            doc.add(para);
-            //Guardar el documento
-            doc.close();
-        } catch(FileNotFoundException e){
-            //System.out.println("Error creating PDF");
-        }
-    }
-
+    
 }

@@ -25,13 +25,21 @@ public class DestinationService {
     public Optional<Destination> findByName(String name) {
 		return repository.findByName(name);
 	}
+    
+    
+/*     public Optional<Destination> orderByMedian(int median) {
+		return repository.orderByMedian(median);
+	}
+   */ 
+
+    
 
     public List<Destination> findAll() {
         return repository.findAll();
     }
 
     public void save(Destination destino) {
-		repository.save(destino);
+		repository.save(destino); 
     }
 
 

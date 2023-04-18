@@ -208,18 +208,23 @@ public class testDataInitializer{
 
 //comment creators
       Comment comment1 = new Comment ("pues barcelona es muy bonito y me gusto x edificio");
+      comment1.setNota(5);
       commentRepository.save(comment1);
 
       Comment comment2 = new Comment("Pues Barcelona es muy bonito y me gustó el edificio Gaudí.");
+      comment2.setNota(1);
       commentRepository.save(comment2);
 
       Comment comment3 = new Comment("Madrid es una ciudad increíble llena de historia y cultura.");
+      comment3.setNota(5);
       commentRepository.save(comment3);
 
       Comment comment4 = new Comment("Berlín es una ciudad vibrante y emocionante con mucho que ofrecer.");
+      comment4.setNota(3);
       commentRepository.save(comment4);
 
       Comment comment5 = new Comment("Amsterdam es una ciudad encantadora con canales pintorescos y una vibrante escena cultural.");
+      comment5.setNota(1);
       commentRepository.save(comment5);
 
       Comment comment6 = new Comment("Tokio es una ciudad futurista y tecnológica con una rica cultura tradicional.");
@@ -238,7 +243,7 @@ public class testDataInitializer{
       commentRepository.save(comment10);
 
 //Trip Fillers
-      tripAmsterdam.setComment(comment5);
+      tripAmsterdam.setComment(comment4);
       tripAmsterdam.setUser(user1);
       tripAmsterdam.setDestination(amsterdam);
       tripRepository.save(tripAmsterdam);
