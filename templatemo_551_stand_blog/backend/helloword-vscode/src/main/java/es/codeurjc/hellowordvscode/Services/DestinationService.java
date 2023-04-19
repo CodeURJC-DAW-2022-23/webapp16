@@ -38,8 +38,8 @@ public class DestinationService {
         return repository.findAll();
     }
 
-    public void save(Destination destino) {
-		repository.save(destino); 
+    public void save(Destination destination) {
+		repository.save(destination); 
     }
 
 
