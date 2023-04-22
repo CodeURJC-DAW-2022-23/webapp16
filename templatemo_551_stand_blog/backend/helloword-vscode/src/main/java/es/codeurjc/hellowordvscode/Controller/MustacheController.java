@@ -197,7 +197,7 @@ public class MustacheController {
 	
 	@GetMapping("/login")
 	public String login(Model model) {
-		return "login";
+		return "Login";
 	}
 
 	@GetMapping("/loginerror")
@@ -261,7 +261,7 @@ public class MustacheController {
 
 	@GetMapping("/signup")
 	public String showSignupForm() {
-		return "signup";
+		return "Signup";
 	}
 
 	@PostMapping("/signup")
