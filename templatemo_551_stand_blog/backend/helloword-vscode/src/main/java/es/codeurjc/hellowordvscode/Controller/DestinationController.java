@@ -48,11 +48,11 @@ public class DestinationController {
         return "mostrarDestino";
         
     }
-    @RequestMapping("/pdf/{id}")
-    public ResponseEntity<byte[]> createPDF(@PathVariable long id){
+    @RequestMapping("/pdf/{name}")
+    public ResponseEntity<byte[]> createPDF(@PathVariable String name){
         String outputFilePath = "document.pdf";
         
-        Optional<Destination> destination = this.destinations.findById(id);
+        Optional<Destination> destination = this.destinations.findByName(name);
         
         try{
             //Crear un nuevo documento PDF
