@@ -115,5 +115,9 @@ public class Destination {
 
     public void setFotoBase64(String fotoBase64) {
     }
+
+    public com.mysql.cj.jdbc.Blob getFoto() {
+        return null;
+    }
     
 }

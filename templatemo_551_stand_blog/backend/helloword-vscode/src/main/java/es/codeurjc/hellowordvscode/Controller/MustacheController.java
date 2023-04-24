@@ -109,10 +109,8 @@ public class MustacheController {
 	}
 
 	@ModelAttribute
-<<<<<<< HEAD
-	@GetMapping("/")
-    public String getAllDestinations(Model model) throws SQLException {
-=======
+	
+	
 	@GetMapping("/index")
     public String getAllDestinations(Model model) {
         Page<Destination> destinations = destinationRepository.findAll(PageRequest.of(0,10));
@@ -120,9 +118,9 @@ public class MustacheController {
         return "destinations";   
 	}
 
-	/* @GetMapping("/index")
-    public String getAllDestinations(Model model) {
->>>>>>> eee106a1a167fc305f57c1f560e0b355916ebda5
+	/*
+	 @GetMapping("/index")
+    public String getAllDestinations(Model model) throws SQLException {
         Page<Destination> destinations = destinationRepository.findAll(PageRequest.of(0,10));
 		for (Destination destino : destinations) {
 			Blob blob = (Blob) destino.getFoto(); // obtener el objeto Blob de la base de datos
@@ -131,14 +129,9 @@ public class MustacheController {
 			destino.setFotoBase64(fotoBase64); // establecer la cadena Base64 en el objeto Destination
 		}
         model.addAttribute("destinations", destinations);
-<<<<<<< HEAD
-        return "destinations";   
-	}
-=======
         return "index";   
-	} */
->>>>>>> eee106a1a167fc305f57c1f560e0b355916ebda5
-	
+	} 
+	  */
 	
 	
 
@@ -149,11 +142,7 @@ public class MustacheController {
         return "admin";
 	}
 
-<<<<<<< HEAD
-	@GetMapping("/destintion/{name}")
-=======
 	@GetMapping("/destination/{name}")
->>>>>>> eee106a1a167fc305f57c1f560e0b355916ebda5
 	public String showDestino(Model model, @PathVariable String name) {
 		Optional<Destination> destiny = destinationService.findByName(name);
 		if (destiny.isPresent()) {
