@@ -124,17 +124,6 @@ public class MustacheController {
 
 
 	/*
-	 @GetMapping("/index")
-    public String getAllDestinations(Model model) throws SQLException {
-=======
-        return "index";   
-<<<<<<< HEAD
-	  
-
-	} 
-	
-	*/
-
 	@GetMapping("/admin")
 	public String adminList(Model model) {
 		List<Destination> destinations = destinationRepository.findAll();
