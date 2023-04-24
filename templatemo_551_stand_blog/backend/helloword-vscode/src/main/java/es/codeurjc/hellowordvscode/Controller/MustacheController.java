@@ -229,6 +229,12 @@ public class MustacheController {
 		return "crearViaje";
 	}
 
+	@PostMapping("/crearViaje")
+	public String publicarViaje(Model model){
+
+		return "redirect:personalArea";
+	}
+
 	@GetMapping("/editarViaje")
 	public String showEditarViaje(Model model){
 		return "editarViaje";
@@ -273,7 +279,7 @@ public class MustacheController {
 		usuario.setImageFile(null);
 		userRepository.save(usuario);
 		model.addAttribute("username", usuario);
-		return "personalArea";
+		return "redirect:/personalArea";
 	}
 
 	/*@GetMapping("/editarDestinos/{name}")
