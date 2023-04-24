@@ -9,21 +9,17 @@ import java.util.Optional;
 
 import javax.persistence.EntityNotFoundException;
 import javax.servlet.http.HttpServletRequest;
-import javax.xml.bind.DatatypeConverter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import com.itextpdf.commons.utils.Base64;
-import com.mysql.cj.jdbc.Blob;
-
 import org.hibernate.SessionFactory;
 
 import es.codeurjc.hellowordvscode.Entitys.Comment;
@@ -35,7 +31,6 @@ import es.codeurjc.hellowordvscode.Repositories.TripRepository;
 import es.codeurjc.hellowordvscode.Repositories.UserRepository;
 import es.codeurjc.hellowordvscode.Services.DestinationService;
 import es.codeurjc.hellowordvscode.Services.UserService;
-import net.bytebuddy.asm.Advice.OffsetMapping.Sort;
 
 @Controller
 public class MustacheController {
@@ -53,6 +48,9 @@ public class MustacheController {
 
 	@Autowired
 	private DestinationService destinationService;
+
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
 	@Autowired
     private DestinationRepository destinationRepository;
@@ -97,6 +95,14 @@ public class MustacheController {
 		int media=0;
 		List<Trip> trips = tripRepository.findByDestinationName(destinationName); 
 		for (int i=0; i<trips.size();i++){
+			/*Trip viaje= new Trip();
+			Comment comentario= new Comment();
+			int nota;
+			viaje=trips.get(i);
+			comentario=viaje.getComment();
+			nota=comentario.getNota();
+			media+=nota;
+*/
 			media+=trips.get(i).getComment().getNota();
 		}
 		if (trips.size()>0){
@@ -109,8 +115,11 @@ public class MustacheController {
 	}
 
 	@ModelAttribute
+<<<<<<< HEAD
 	
 	
+=======
+>>>>>>> d3047b4c9abc480d78854408a892327b93908056
 	@GetMapping("/index")
     public String getAllDestinations(Model model) {
         Page<Destination> destinations = destinationRepository.findAll(PageRequest.of(0,10));
@@ -118,20 +127,23 @@ public class MustacheController {
         return "destinations";   
 	}
 
+<<<<<<< HEAD
 	/*
 	 @GetMapping("/index")
     public String getAllDestinations(Model model) throws SQLException {
+=======
+	/* @GetMapping("/index")
+    public String getAllDestinations(Model model) {
+>>>>>>> d3047b4c9abc480d78854408a892327b93908056
         Page<Destination> destinations = destinationRepository.findAll(PageRequest.of(0,10));
-		for (Destination destino : destinations) {
-			Blob blob = (Blob) destino.getFoto(); // obtener el objeto Blob de la base de datos
-			byte[] bytes = blob.getBytes(1, (int) blob.length()); // obtener los bytes de la imagen
-			String fotoBase64 = DatatypeConverter.printBase64Binary(bytes);			
-			destino.setFotoBase64(fotoBase64); // establecer la cadena Base64 en el objeto Destination
-		}
         model.addAttribute("destinations", destinations);
         return "index";   
+<<<<<<< HEAD
 	} 
 	  */
+=======
+	} */
+>>>>>>> d3047b4c9abc480d78854408a892327b93908056
 	
 	
 
@@ -149,7 +161,6 @@ public class MustacheController {
 				model.addAttribute("destino", destiny.get());
 				List<Destination> destinations = destinationRepository.findAll();
 				destinations=setMedias(destinations);
-				//destinations=destinationRepository.findAll(Sort.by());
         		model.addAttribute("destinations", destinations);
 				List<Trip> trips = tripRepository.findByDestination(destiny.get());
 				model.addAttribute("trips", trips);
@@ -205,7 +216,6 @@ public class MustacheController {
 		return "Login";
 	}
 
-	
 	@GetMapping("/loginerror")
     public String loginerror() {
         return "loginerror";
@@ -233,6 +243,12 @@ public class MustacheController {
 	@GetMapping("/crearViaje")
 	public String crearViaje(Model model){
 		return "crearViaje";
+	}
+
+	@PostMapping("/crearViaje")
+	public String publicarViaje(Model model){
+
+		return "redirect:personalArea";
 	}
 
 	@GetMapping("/editarViaje")
@@ -272,14 +288,14 @@ public class MustacheController {
 
 	@PostMapping("/signup")
 	public String signup(Model model, @RequestParam String name, @RequestParam String email, @RequestParam String password) throws IOException{
-		User usuario = new User();
+		User usuario = new User(email, name, passwordEncoder.encode(password),"USER");
 		usuario.setName(name);
 		usuario.setEmail(email);
 		usuario.setEncodedPassword(password);
 		usuario.setImageFile(null);
 		userRepository.save(usuario);
-		model.addAttribute("usuario", usuario);
-		return "personalArea";
+		model.addAttribute("username", usuario);
+		return "redirect:/personalArea";
 	}
 
 	/*@GetMapping("/editarDestinos/{name}")
@@ -326,11 +342,6 @@ public class MustacheController {
         redirectAttributes.addFlashAttribute("mensaje", "El destino " + destination.getName() + " se actualizó correctamente.");
         return "redirect:/index";
     }
-/* 
-	@GetMapping("/")
-	public String paginaPrincipal(){
-		return "index";
-	}
 
- */
+ 
 }
