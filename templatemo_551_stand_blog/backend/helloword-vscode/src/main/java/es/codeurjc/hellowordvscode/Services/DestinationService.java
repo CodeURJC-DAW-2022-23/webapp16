@@ -27,10 +27,10 @@ public class DestinationService {
 	}
     
     
-    public Optional<Destination> orderByMedian(int median) {
+/*     public Optional<Destination> orderByMedian(int median) {
 		return repository.orderByMedian(median);
 	}
-    
+   */ 
 
     
 
@@ -39,7 +39,7 @@ public class DestinationService {
     }
 
     public void save(Destination destino) {
-		repository.save(destino);
+		repository.save(destino); 
     }
 
 

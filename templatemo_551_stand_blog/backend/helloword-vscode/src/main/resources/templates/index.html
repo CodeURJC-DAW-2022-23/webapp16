@@ -50,6 +50,9 @@
               
 			        <div class="nav navbar-nav navbar-right">
                 <ul class="nav navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="personalArea">Area personal</a>
+                  </li>
 					        <li><form action="/logout" method="post">
 							    <button class="btn btn-default navbar-btn" type="submit">LogOut</button>
 							    <input type="hidden" name="_csrf" value="{{token}}" />
@@ -92,7 +95,7 @@
         <div class="all-blog-posts">
           <div class="row">
             <div class="col-lg-6">
-              <div class="blog-post">
+              <div class="blog-post-destinations" id="destinos">
                 {{#destinations}}
                 <div class="blog-thumb">
                   <img src="assets/images/{{name}}.jpg" alt="">
@@ -105,8 +108,38 @@
                     </div>
                   </div>
                 </div>
+                
                 {{/destinations}}
+
               </div>
+              <button id="load-more-button" data-destinations="{{destinations.nextPageable.pageNumber}}">Mostrar más</button>
+             
+                  <script>
+                    var pag = 1; // Variable para llevar el registro de la página actual
+
+                    $(document).ready(function() {
+                      // Manejador de eventos para el botón "Cargar Más"
+                      $("#load-more-button").on("click", function() {
+                        // Hacer una llamada AJAX al controlador con el número de página
+                        $.ajax({
+                          url: "/destinations/" + pag, // Ruta al archivo del controlador en el servidor
+                          type: "GET", // Método de la llamada (puede ser GET o POST)
+                          data: { pagina: pag }, // Datos a enviar al controlador (en este caso, el número de página)
+                          dataType: "html", // Tipo de datos esperados en la respuesta
+                          success: function(data) { // Función a ejecutar en caso de éxito
+                            $("#destinos").append(data); // Agregar el contenido cargado al div de contenido
+                            pag++; // Incrementar el número de página
+                          },
+                          error: function() { // Función a ejecutar en caso de error
+                            alert("Error al cargar el contenido");
+                          }
+                        });
+                      });
+                    });
+                  </script>
+
+          
+            </script>
             </div>
           </div>
         </div>

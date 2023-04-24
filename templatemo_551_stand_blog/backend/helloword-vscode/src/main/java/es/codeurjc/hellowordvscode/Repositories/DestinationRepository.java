@@ -15,7 +15,7 @@ public interface DestinationRepository extends JpaRepository<Destination, Long>{
     
     Page<Destination> findAll(Pageable page);
 
-    Optional<Destination> orderByMedian(int median);
+   // Optional<Destination> orderByMedian(int median);
 
 
 }
