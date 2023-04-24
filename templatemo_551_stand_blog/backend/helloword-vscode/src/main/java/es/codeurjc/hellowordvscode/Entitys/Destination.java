@@ -23,6 +23,9 @@ public class Destination {
     private String name;//Destination name
     private String information;//summary of destination
     private int mean;//valoration average for a destination
+    private boolean image;
+
+
 
     @Lob
     private String largeInformation;//description of destination
@@ -102,5 +105,15 @@ public class Destination {
         this.photo = photo;
     }
 
+    public boolean getImage(){
+		return this.image;
+	}
+
+	public void setImage(boolean image){
+		this.image = image;
+	}
+
+    public void setFotoBase64(String fotoBase64) {
+    }
     
 }
