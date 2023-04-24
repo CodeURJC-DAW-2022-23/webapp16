@@ -60,7 +60,7 @@ public class DestinationController {
             PdfDocument pdfDoc = new PdfDocument(writer);
             Document doc = new Document(pdfDoc);
             //Agregar el texto
-            Paragraph para = new Paragraph(destination.get().getInfoLarga());
+            Paragraph para = new Paragraph(destination.get().getLargeInformation());
             doc.add(para);
             //Guardar el documento
             doc.close();

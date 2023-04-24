@@ -16,15 +16,6 @@ import es.codeurjc.hellowordvscode.Repositories.TripRepository;
 @Entity
 public class Destination {
 
-
-    public Destination(){}
-
-    public Destination(String name, String information, String infoLarga) {
-        this.name = name;
-        this.information=information;
-        this.infoLarga=infoLarga;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -37,13 +28,26 @@ public class Destination {
 
 
     @Lob
-    private String infoLarga;//description of destination
+    private String largeInformation;//description of destination
 
     @OneToMany (cascade = CascadeType.ALL, mappedBy="destination")   
     private List<Trip> trip_list;
 
     @Lob
-    private Blob foto;
+    private Blob photo;
+
+
+
+
+    public Destination(){}
+
+    public Destination(String name, String information, String largeInformation) {
+        this.name = name;
+        this.information=information;
+        this.largeInformation=largeInformation;
+    }
+
+    
 
     public int getMean(){
         return mean;
@@ -53,12 +57,12 @@ public class Destination {
         this.mean=numero;
     }
 
-    public String getInfoLarga() {
-        return infoLarga;
+    public String getLargeInformation() {
+        return largeInformation;
     }
 
-    public void setInfoLarga(String infoLarga) {
-        this.infoLarga = infoLarga;
+    public void setInfoLarga(String largeInformation) {
+        this.largeInformation = largeInformation;
     }
 
     public void setName(String name) {
@@ -90,14 +94,15 @@ public class Destination {
     }
 
     public void setId(long l) {
+        this.id = l;
     }
 
-    public Blob getFoto() {
-        return foto;
+    public Blob getPhoto() {
+        return photo;
     }
 
-    public void setFoto(Blob foto) {
-        this.foto = foto;
+    public void setFoto(Blob photo) {
+        this.photo = photo;
     }
 
     public boolean getImage(){

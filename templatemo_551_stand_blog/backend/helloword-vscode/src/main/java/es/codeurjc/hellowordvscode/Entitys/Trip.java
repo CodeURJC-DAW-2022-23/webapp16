@@ -8,11 +8,7 @@ import javax.persistence.*;
 @Entity
 public class Trip {
     
-    public Trip() {
-    }
-    public Trip(long id) {
-        this.id = id;
-    }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,6 +24,15 @@ public class Trip {
 
     @OneToOne (cascade=CascadeType.ALL)
     private Comment comment;
+
+
+    public Trip() {
+    }
+    public Trip(long id) {
+        this.id = id;
+    }
+
+    
 
 
     public long getId() {
