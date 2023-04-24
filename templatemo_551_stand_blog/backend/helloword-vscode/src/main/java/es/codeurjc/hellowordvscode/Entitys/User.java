@@ -58,9 +58,6 @@ public class User {
         return imageFile;
     }
 
-    public String getNombre(){
-        return name;
-    }
 
     public List<String> getRoles() {
 		return roles;

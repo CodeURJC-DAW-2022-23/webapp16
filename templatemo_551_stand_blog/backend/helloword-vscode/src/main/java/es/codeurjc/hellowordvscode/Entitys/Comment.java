@@ -6,34 +6,37 @@ import javax.persistence.GenerationType;
 @Entity
 public class Comment{
 
-    public Comment() {
-    }
-
-    public Comment(String texto) {
-        this.texto = texto;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private int nota;//valoration of destination
+    private int note;//valoration of destination
 
 
-    private String texto;//main text of destination
+    private String text;//main text of destination
+
+
+    public Comment() {
+    }
+
+    public Comment(String text) {
+        this.text = text;
+    }
+
+   
 
     @OneToOne (cascade=CascadeType.ALL)   
     private Trip trip;
     
     public int getNota(){
-        return nota;
+        return note;
     }
 
-    public void setNota(int nota){
-        this.nota=nota;
+    public void setNota(int note){
+        this.note=note;
     }
 
     public String getTexto(){
-        return texto;
+        return text;
     }
 
     public Long getId() {
@@ -52,8 +55,8 @@ public class Comment{
         this.trip = trip;
     }
 
-    public void setTexto(String texto){
-        this.texto=texto;
+    public void setTexto(String text){
+        this.text=text;
     }
 
 }

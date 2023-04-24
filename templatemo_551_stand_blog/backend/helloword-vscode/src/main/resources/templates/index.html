@@ -95,13 +95,13 @@
         <div class="all-blog-posts">
           <div class="row">
             <div class="col-lg-6">
-              <div class="blog-post-destinations" id="destinos">
+              <div class="blog-post-destinations" id="destinations">
                 {{#destinations}}
                 <div class="blog-thumb">
                   <img src="assets/images/{{name}}.jpg" alt="">
                 </div>
                 <div class="down-content">
-                  <span><a href="/destino/{{name}}">{{name}}</a></span>
+                  <span><a href="/destination/{{name}}">{{name}}</a></span>
                   <p>{{information}}</p>
                   <div class="post-options">
                     <div class="row">
@@ -127,7 +127,7 @@
                           data: { pagina: pag }, // Datos a enviar al controlador (en este caso, el número de página)
                           dataType: "html", // Tipo de datos esperados en la respuesta
                           success: function(data) { // Función a ejecutar en caso de éxito
-                            $("#destinos").append(data); // Agregar el contenido cargado al div de contenido
+                            $("#destinations").append(data); // Agregar el contenido cargado al div de contenido
                             pag++; // Incrementar el número de página
                           },
                           error: function() { // Función a ejecutar en caso de error
