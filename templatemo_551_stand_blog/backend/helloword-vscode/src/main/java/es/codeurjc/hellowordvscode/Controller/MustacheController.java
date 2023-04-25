@@ -115,35 +115,14 @@ public class MustacheController {
 	}
 
 	@ModelAttribute
-<<<<<<< HEAD
-	
-	
-=======
->>>>>>> d3047b4c9abc480d78854408a892327b93908056
 	@GetMapping("/index")
     public String getAllDestinations(Model model) {
         Page<Destination> destinations = destinationRepository.findAll(PageRequest.of(0,10));
         model.addAttribute("destinations", destinations);
         return "destinations";   
 	}
+  
 
-<<<<<<< HEAD
-	/*
-	 @GetMapping("/index")
-    public String getAllDestinations(Model model) throws SQLException {
-=======
-	/* @GetMapping("/index")
-    public String getAllDestinations(Model model) {
->>>>>>> d3047b4c9abc480d78854408a892327b93908056
-        Page<Destination> destinations = destinationRepository.findAll(PageRequest.of(0,10));
-        model.addAttribute("destinations", destinations);
-        return "index";   
-<<<<<<< HEAD
-	} 
-	  */
-=======
-	} */
->>>>>>> d3047b4c9abc480d78854408a892327b93908056
 	
 	
 
