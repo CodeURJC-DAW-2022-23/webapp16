@@ -123,11 +123,6 @@ public class MustacheController {
 	}
   
 
-<<<<<<< HEAD
-	
-	
-=======
->>>>>>> 2622be4820b230a93af66b36bb3ef720323e0feb
 
 	/*
 	@GetMapping("/admin")
