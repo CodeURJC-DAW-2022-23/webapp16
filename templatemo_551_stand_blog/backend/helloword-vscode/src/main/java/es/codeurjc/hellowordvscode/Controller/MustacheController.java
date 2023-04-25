@@ -38,6 +38,12 @@ public class MustacheController {
 
 	private SessionFactory sessionFactory;
 
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+
+	@Autowired
+    private UserRepository userRepository;
+
     @Autowired
     public void TuControlador(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
@@ -108,6 +114,23 @@ public class MustacheController {
         Page<Destination> destinations = destinationRepository.findAll(PageRequest.of(0,10));
         model.addAttribute("destinations", destinations);
         return "destinations";   
+	}
+
+	@GetMapping("/signup")
+	public String showSignupForm() {
+		return "Signup";
+	}
+
+	@PostMapping("/signup")
+	public String signup(Model model, @RequestParam String username, @RequestParam String email, @RequestParam String password) throws IOException{
+		User usuario = new User(email, username, passwordEncoder.encode(password),"USER");
+		/*usuario.setName(name);
+		usuario.setEmail(email);
+		usuario.setEncodedPassword(password);
+		usuario.setImageFile(null);*/
+		userRepository.save(usuario);
+		model.addAttribute("username", usuario);
+		return "/personalArea";  //si pongo el redirect:/personalArea me lleva al LogIn 
 	}
   
 

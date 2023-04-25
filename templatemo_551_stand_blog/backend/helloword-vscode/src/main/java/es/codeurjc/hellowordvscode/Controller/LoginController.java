@@ -40,22 +40,7 @@ public class LoginController {
         return "loginerror";
 	}
 
-	@GetMapping("/signup")
-	public String showSignupForm() {
-		return "Signup";
-	}
-
-	@PostMapping("/signup")
-	public String signup(Model model, @RequestParam String name, @RequestParam String email, @RequestParam String password) throws IOException{
-		User usuario = new User(email, name, passwordEncoder.encode(password),"USER");
-		usuario.setName(name);
-		usuario.setEmail(email);
-		usuario.setEncodedPassword(password);
-		usuario.setImageFile(null);
-		userRepository.save(usuario);
-		model.addAttribute("username", usuario);
-		return "redirect:/personalArea";
-	}
+	
 
 }
 
