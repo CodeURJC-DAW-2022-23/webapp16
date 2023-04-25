@@ -130,7 +130,7 @@ public class MustacheController {
         		model.addAttribute("destinations", destinations);
 				List<Trip> trips = tripRepository.findByDestination(destiny.get());
 				model.addAttribute("trips", trips);
-				return "destino";
+				return "destination";
 			} else {
 				return "error";
 			}
