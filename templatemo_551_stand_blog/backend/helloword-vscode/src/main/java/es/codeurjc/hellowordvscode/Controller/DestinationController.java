@@ -3,7 +3,7 @@ package es.codeurjc.hellowordvscode.Controller;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -27,6 +29,7 @@ import org.springframework.http.ResponseEntity;
 
 import es.codeurjc.hellowordvscode.Entitys.Destination;
 import es.codeurjc.hellowordvscode.Repositories.DestinationRepository;
+import es.codeurjc.hellowordvscode.Services.DestinationService;
 
 @Controller
 public class DestinationController {
@@ -36,7 +39,11 @@ public class DestinationController {
     @Autowired
     private DestinationRepository destinations;
     
-    
+    @Autowired
+    private DestinationRepository destinationRepository;
+
+    @Autowired
+    private DestinationService destinationService;
    
 
     @GetMapping("/destinations/{page}")
@@ -95,6 +102,62 @@ public class DestinationController {
         return null;
         
     }
+
+    @GetMapping("/destino")
+	public String destino(Model model) {
+		return "destino";
+	}
+	
+
+	
+	@PostMapping("/destino")
+	public String showDestination(@RequestParam(name = "nombre") String nombre, Model model) {
+	  Optional<Destination> destination = destinationRepository.findByName(nombre);
+	  model.addAttribute("destino", destination);
+	  return "destino";
+	}
+
+    @GetMapping("/agregarDestinos")
+	public String showAgregarDestinos() {
+		return "agregarDestinos";
+	}
+	
+	@PostMapping("/agregarDestinos")
+	public String agregarDestinos(Model model, @RequestParam String name, @RequestParam String information, RedirectAttributes redirectAttrs) throws IOException {
+		Destination destino = new Destination();
+		destino.setName(name);
+		destino.setInformation(information);
+		destinationRepository.save(destino);
+		model.addAttribute("nuevoDestino", destino);
+    	redirectAttrs.addFlashAttribute("message", "Destino añadido con éxito");
+    	return "redirect:/admin";
+	}
+
+    /*@GetMapping("/editarDestinos/{name}")
+	public String editarDestino(Model model, @PathVariable String name) {
+  		Optional<Destination> destino = destinationService.findByName(name);
+  		if (destino.isPresent()) {
+    		model.addAttribute("destino", destino.get());
+   	 		return "editarDestino";
+  		} else {
+    		return "error";
+  		}
+	}
+
+	@PostMapping("/editarDestinos")
+	public String editarDestinosProceso(Model model, Destination destino, boolean removeImage,MultipartFile imageField) throws IOException, SQLException {
+
+		//updateImage(destination, removeImage, imageField);
+
+		destinationService.save(destino);
+
+		model.addAttribute("destinoName", destino.getName());
+
+		return "redirect:/editarDestinos/"+destino.getName();
+	}*/
+
+
+    
 
 
 

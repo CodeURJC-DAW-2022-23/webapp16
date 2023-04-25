@@ -43,23 +43,11 @@ public class MustacheController {
         this.sessionFactory = sessionFactory;
     }
 
-
-
-
-	@Autowired
-	private DestinationService destinationService;
-
-	@Autowired
-	private PasswordEncoder passwordEncoder;
-
 	@Autowired
     private DestinationRepository destinationRepository;
 
 	@Autowired
-    private UserRepository userRepository;
-
-	@Autowired
-    private UserService userService;
+    private DestinationService destinationService;
 
 	@Autowired
     private TripRepository tripRepository;
@@ -123,13 +111,8 @@ public class MustacheController {
 	}
   
 
-<<<<<<< HEAD
-	
-	
-=======
->>>>>>> 2622be4820b230a93af66b36bb3ef720323e0feb
 
-	/*
+	
 	@GetMapping("/admin")
 	public String adminList(Model model) {
 		List<Destination> destinations = destinationRepository.findAll();
@@ -153,57 +136,9 @@ public class MustacheController {
 			}
 	}
 
-/* 
-	@GetMapping("/destino/{name}")
-	public String showDestino(Model model, @PathVariable String name) {
-		Optional<Destination> destiny = destinationService.findByName(name);
-		if (destiny.isPresent()) {
-				model.addAttribute("destino", destiny.get());
-				List<Destination> destinations = destinationRepository.findAll();
-        		model.addAttribute("destinations", destinations);
-				List<Trip> trips = tripRepository.findByDestination(destiny.get());
-				model.addAttribute("trips", trips);
-				return "destino";
-			} else {
-				return "error";
-			}
-	}
-*/
 
-
-	/* 
-	@GetMapping("/destino")
-	public String destino(Model model) {
-		return "destino";
-	}
-	
 
 	
-	@GetMapping("/destino")
-	public String showDestination(@RequestParam(name = "nombre") String nombre, Model model) {
-	  Optional<Destination> destination = destinationRepository.findByName(nombre);
-	  model.addAttribute("destino", destination);
-	  return "destino";
-	}
-
-*/
-
-	@GetMapping("/logout")
-	public String log(Model model) {
-		return "logout";
-	}
-
-	
-	@GetMapping("/login")
-	public String login(Model model) {
-		return "Login";
-	}
-
-	@GetMapping("/loginerror")
-    public String loginerror() {
-        return "loginerror";
-	}
-
 	@GetMapping("/personalArea")
 	public String personalArea(Model model, HttpServletRequest request) {
 		model.addAttribute("username", request.getUserPrincipal().getName());
@@ -223,87 +158,8 @@ public class MustacheController {
 		return "Error";
 	}
 
-	@GetMapping("/crearViaje")
-	public String crearViaje(Model model){
-		return "crearViaje";
-	}
 
-	@PostMapping("/crearViaje")
-	public String publicarViaje(Model model){
-
-		return "redirect:personalArea";
-	}
-
-	@GetMapping("/editarViaje")
-	public String showEditarViaje(Model model){
-		return "editarViaje";
-	}
-
-	@PostMapping("/editarViaje")
-	public String editarViaje(Model model){
-		return "editarViaje";
-	}
-	
-	@GetMapping("/borrarViaje")
-	public String borrarViaje(Model model){
-		return "borrarViaje";
-	}
-	@GetMapping("/agregarDestinos")
-	public String showAgregarDestinos() {
-		return "agregarDestinos";
-	}
-	
-	@PostMapping("/agregarDestinos")
-	public String agregarDestinos(Model model, @RequestParam String name, @RequestParam String information, RedirectAttributes redirectAttrs) throws IOException {
-		Destination destino = new Destination();
-		destino.setName(name);
-		destino.setInformation(information);
-		destinationRepository.save(destino);
-		model.addAttribute("nuevoDestino", destino);
-    	redirectAttrs.addFlashAttribute("message", "Destino añadido con éxito");
-    	return "redirect:/admin";
-	}
-
-	@GetMapping("/signup")
-	public String showSignupForm() {
-		return "Signup";
-	}
-
-	@PostMapping("/signup")
-	public String signup(Model model, @RequestParam String name, @RequestParam String email, @RequestParam String password) throws IOException{
-		User usuario = new User(email, name, passwordEncoder.encode(password),"USER");
-		usuario.setName(name);
-		usuario.setEmail(email);
-		usuario.setEncodedPassword(password);
-		usuario.setImageFile(null);
-		userRepository.save(usuario);
-		model.addAttribute("username", usuario);
-		return "redirect:/personalArea";
-	}
-
-	/*@GetMapping("/editarDestinos/{name}")
-	public String editarDestino(Model model, @PathVariable String name) {
-  		Optional<Destination> destino = destinationService.findByName(name);
-  		if (destino.isPresent()) {
-    		model.addAttribute("destino", destino.get());
-   	 		return "editarDestino";
-  		} else {
-    		return "error";
-  		}
-	}
-
-	@PostMapping("/editarDestinos")
-	public String editarDestinosProceso(Model model, Destination destino, boolean removeImage,MultipartFile imageField) throws IOException, SQLException {
-
-		//updateImage(destination, removeImage, imageField);
-
-		destinationService.save(destino);
-
-		model.addAttribute("destinoName", destino.getName());
-
-		return "redirect:/editarDestinos/"+destino.getName();
-	}*/
-
+	//NO cambiar al controlador de destination, da error, necesita estar con /personalArea
 	@GetMapping("/editarDestinos/{name}")
     public String editarDestino(@PathVariable("name") String name, Model model) {
         Destination destination = destinationRepository.findByName(name)
