@@ -50,7 +50,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
       http.authorizeRequests().antMatchers("/destination/*").permitAll(); 
       http.authorizeRequests().antMatchers("/signup").permitAll();
       http.authorizeRequests().antMatchers("/editDestinations/{name}").permitAll();
-
+      http.authorizeRequests().antMatchers("/error").permitAll();
       
       // Private pages (all other pages)
 

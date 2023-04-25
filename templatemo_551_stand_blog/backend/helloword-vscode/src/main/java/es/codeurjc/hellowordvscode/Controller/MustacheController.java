@@ -155,7 +155,7 @@ public class MustacheController {
 
 	@GetMapping("/error")
 	public String error(Model model) {
-		return "Error";
+		return "error";
 	}
 
 
