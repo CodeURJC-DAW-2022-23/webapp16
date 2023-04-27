@@ -46,14 +46,23 @@ public class DestinationController {
     private DestinationService destinationService;
    
 
-    @GetMapping("/destinations/{page}")
-    public String getDestinations(Model model, @PathVariable Integer page) {
+    // @GetMapping("/destinations/{page}")
+    // public String getDestinations(Model model, @PathVariable Integer page) {
        
-        List <Destination> destiantionsList = destinations.findAll(PageRequest.of(page,10)).getContent();
+    //     List <Destination> destiantionsList = destinations.findAll(PageRequest.of(page,10)).getContent();
 
-        model.addAttribute("destinations", destiantionsList);
-        return "mostrarDestino";
+    //     model.addAttribute("destinations", destiantionsList);
+    //     return "mostrarDestino";
         
+    // }
+    @RequestMapping("/destination/{name}")
+    public String getDestination(Model model, @PathVariable String name){
+        Optional<Destination> destination = destinationRepository.findByName(name);
+        if(!destination.isPresent()){
+            return "error";
+        }
+        model.addAttribute("destination", destination.get());
+        return "destination";
     }
     @RequestMapping("/pdf/{name}")
     public ResponseEntity<byte[]> createPDF(@PathVariable String name){

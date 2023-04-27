@@ -143,7 +143,7 @@ public class MustacheController {
         return "admin";
 	}
 
-	@GetMapping("/destination/{name}")
+	@GetMapping("/destinations/{name}")
 	public String showDestino(Model model, @PathVariable String name) {
 		Optional<Destination> destiny = destinationService.findByName(name);
 		if (destiny.isPresent()) {
