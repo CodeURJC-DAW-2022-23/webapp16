@@ -183,15 +183,15 @@ public class MustacheController {
 
 
 	//NO cambiar al controlador de destination, da error, necesita estar con /personalArea
-	@GetMapping("/editarDestinos/{name}")
+	@GetMapping("/editDestination/{name}")
     public String editarDestino(@PathVariable("name") String name, Model model) {
         Destination destination = destinationRepository.findByName(name)
             .orElseThrow(() -> new EntityNotFoundException("El destino con nombre " + name + " no existe."));
         model.addAttribute("destination", destination);
-        return "editarDestinos";
+        return "editDestination/{name}";
     }
 
-    @PostMapping("/editarDestinos/{name}")
+    @PostMapping("/editDestination/{name}")
     public String actualizarDestino(@PathVariable("name") String name, @Validated Destination destinationActualizado, RedirectAttributes redirectAttributes) {
         Destination destination = destinationRepository.findByName(name)
             .orElseThrow(() -> new EntityNotFoundException("El destino con nombre " + name + " no existe."));

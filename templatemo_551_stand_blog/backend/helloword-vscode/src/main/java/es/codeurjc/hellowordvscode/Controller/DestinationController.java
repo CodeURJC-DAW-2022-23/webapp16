@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Controller;
@@ -57,11 +59,9 @@ public class DestinationController {
     // }
     @RequestMapping("/destination/{name}")
     public String getDestination(Model model, @PathVariable String name){
-        Optional<Destination> destination = destinationRepository.findByName(name);
-        if(!destination.isPresent()){
-            return "error";
-        }
-        model.addAttribute("destination", destination.get());
+        Destination destination = destinationRepository.findByName(name)
+            .orElseThrow(() -> new EntityNotFoundException("El destino con nombre " + name + " no existe."));
+        model.addAttribute("destination", destination);
         return "destination";
     }
     @RequestMapping("/pdf/{name}")
@@ -126,12 +126,12 @@ public class DestinationController {
 	  return "destino";
 	}
 
-    @GetMapping("/agregarDestinos")
+    @GetMapping("/addDestination")
 	public String showAgregarDestinos() {
-		return "agregarDestinos";
+		return "addDestination";
 	}
 	
-	@PostMapping("/agregarDestinos")
+	@PostMapping("/addDestination")
 	public String agregarDestinos(Model model, @RequestParam String name, @RequestParam String information, RedirectAttributes redirectAttrs) throws IOException {
 		Destination destino = new Destination();
 		destino.setName(name);
