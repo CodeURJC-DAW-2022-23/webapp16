@@ -48,15 +48,15 @@ public class DestinationController {
     private DestinationService destinationService;
    
 
-    // @GetMapping("/destinations/{page}")
-    // public String getDestinations(Model model, @PathVariable Integer page) {
+    @GetMapping("/destinations/{page}")
+    public String getDestinations(Model model, @PathVariable Integer page) {
        
-    //     List <Destination> destiantionsList = destinations.findAll(PageRequest.of(page,10)).getContent();
+        List <Destination> destiantionsList = destinations.findAll(PageRequest.of(page,10)).getContent();
 
-    //     model.addAttribute("destinations", destiantionsList);
-    //     return "mostrarDestino";
+        model.addAttribute("destinations", destiantionsList);
+        return "showDestination";
         
-    // }
+    }
     @RequestMapping("/destination/{name}")
     public String getDestination(Model model, @PathVariable String name){
         Destination destination = destinationRepository.findByName(name)

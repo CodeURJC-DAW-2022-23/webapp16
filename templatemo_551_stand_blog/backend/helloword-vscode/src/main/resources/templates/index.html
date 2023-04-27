@@ -112,6 +112,32 @@
                 {{/destinations}}
 
               </div>
+
+              <button id="load-more-button">Mostrar más</button>
+
+              <script>
+                var pag = 1; // Variable para llevar el registro de la página actual
+
+                $(document).ready(function() {
+                  // Manejador de eventos para el botón "Cargar Más"
+                  $("#load-more-button").on("click", function() {
+                    // Hacer una llamada AJAX al controlador con el número de página
+                    $.ajax({
+                      url: "/destinations/" + pag, // Ruta al archivo del controlador en el servidor
+                      type: "GET", // Método de la llamada (puede ser GET o POST)
+                      data: { pagina: pag }, // Datos a enviar al controlador (en este caso, el número de página)
+                      dataType: "html", // Tipo de datos esperados en la respuesta
+                      success: function(data) { // Función a ejecutar en caso de éxito
+                        $("#destinations").append(data); // Agregar el contenido cargado al div de contenido
+                        pag++; // Incrementar el número de página
+                      },
+                      error: function() { // Función a ejecutar en caso de error
+                        alert("Error al cargar el contenido");
+                      }
+                    });
+                  });
+                });
+              </script>
              
             </div>
           </div>
