@@ -48,7 +48,7 @@ public class DestinationController {
     private DestinationService destinationService;
    
 
-    @GetMapping("/destinations/{page}")
+    @GetMapping("/moreDestinations/{page}")
     public String getDestinations(Model model, @PathVariable Integer page) {
        
         List <Destination> destiantionsList = destinations.findAll(PageRequest.of(page,10)).getContent();

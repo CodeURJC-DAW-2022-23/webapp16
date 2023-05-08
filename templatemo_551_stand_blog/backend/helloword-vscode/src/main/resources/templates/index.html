@@ -123,7 +123,7 @@
                   $("#load-more-button").on("click", function() {
                     // Hacer una llamada AJAX al controlador con el número de página
                     $.ajax({
-                      url: "/destinations/" + pag, // Ruta al archivo del controlador en el servidor
+                      url: "/moreDestinations/" + pag, // Ruta al archivo del controlador en el servidor
                       type: "GET", // Método de la llamada (puede ser GET o POST)
                       data: { pagina: pag }, // Datos a enviar al controlador (en este caso, el número de página)
                       dataType: "html", // Tipo de datos esperados en la respuesta

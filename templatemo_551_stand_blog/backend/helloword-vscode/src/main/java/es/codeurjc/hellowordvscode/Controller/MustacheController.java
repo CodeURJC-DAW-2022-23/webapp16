@@ -107,7 +107,13 @@ public class MustacheController {
 		}
 		
 	}
-
+	@ModelAttribute
+	@GetMapping("/")
+    public String getInitialDestinations(Model model) {
+        Page<Destination> destinations = destinationRepository.findAll(PageRequest.of(0,10));
+        model.addAttribute("destinations", destinations);
+        return "destinations";   
+	}
 	@ModelAttribute
 	@GetMapping("/index")
     public String getAllDestinations(Model model) {

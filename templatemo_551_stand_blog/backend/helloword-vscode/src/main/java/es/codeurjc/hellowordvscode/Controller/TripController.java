@@ -21,12 +21,12 @@ public class TripController {
     private TripRepository trips;
     
     
-    @GetMapping("/")
-    public Page<Trip> getTrips(@RequestParam(required = false) Pageable page) {
+    // @GetMapping("/")
+    // public Page<Trip> getTrips(@RequestParam(required = false) Pageable page) {
        
-            return trips.findAll(PageRequest.of(0, 10));
+    //         return trips.findAll(PageRequest.of(0, 10));
         
-    }
+    // }
 
     @GetMapping("/crearViaje")
 	public String crearViaje(Model model){
