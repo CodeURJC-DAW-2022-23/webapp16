@@ -64,7 +64,7 @@ public class DestinationController {
         model.addAttribute("destination", destination);
         return "destination";
     }
-    @RequestMapping("/pdf/{name}")
+    @RequestMapping("destination/pdf/{name}")
     public ResponseEntity<byte[]> createPDF(@PathVariable String name){
         String outputFilePath = "document.pdf";
         
