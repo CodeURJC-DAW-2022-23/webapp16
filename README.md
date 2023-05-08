@@ -56,16 +56,16 @@
   https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/areaPersonal.png
   
   - PANTALLA VALORACIONES: Está pantalla esta pensada para que los usuarios que hayan terminado su viaje puedan subir información sobre este y asi que otros usuarios          puedan consultarla y puedan organizar su viaje de una forma más sencillla y cómoda.
-  https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Valoraciones.png
+  <img alt="valoraciones" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Valoraciones.png">
   
   # DIAGRAMA DE NAVEGACIÓN
-  https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/DiagramaDeNavegaci%C3%B3n.png
+  <img alt="Diagrama de navegación" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/DiagramaDeNavegaci%C3%B3n.png">
   
   # DIAGRAMA DE BASE DE DATOS
-  https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Diagrama%20base%20de%20datos.png
+  <img alt="Diagrama de bases de datos" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Diagrama%20base%20de%20datos.png">
   
   # DIAGRAMA DE CLASES
-  https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Diagrama%20de%20clases.png
+  <img alt="Diagrama de clases" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Diagrama%20de%20clases.png">
   
   # Instrucciones para ejecutar el programa como aplicación web:
   -Paso 1: Descargarse la aplicación del repositorio de github.
