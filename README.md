@@ -1,6 +1,8 @@
 ## webapp16
 
-# DEFINICIÓN DE LAS FUNCIONES DE LA WEB
+# FASE 1: 
+
+## DEFINICIÓN DE LAS FUNCIONES DE LA WEB
 
   - CONCEPTO:
   Nuestra página web consiste en un blog de viajes para que los usuarios compartan sus experiencias con los demás.
@@ -34,7 +36,7 @@
   - Algoritmo avanzado
   Utilizaremos un algoritmo de ordenación para recomendar a los usuarios los mejores destinos.
 
-# CAPTURAS DE PANTALLA
+## CAPTURAS DE PANTALLA
 
   - PANTALLA ADMINISTRADOR:
   A esta página solo tendrá acceso aquel usuario que se haya registrado como administrador. Podrá editar y añadir destinos y configurar los usuarios registrados en la       web.
@@ -58,16 +60,16 @@
   - PANTALLA VALORACIONES: Está pantalla esta pensada para que los usuarios que hayan terminado su viaje puedan subir información sobre este y asi que otros usuarios          puedan consultarla y puedan organizar su viaje de una forma más sencillla y cómoda.
   <img alt="Pantalla valoraciones" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Valoraciones.png">
   
-  # DIAGRAMA DE NAVEGACIÓN
+  ## DIAGRAMA DE NAVEGACIÓN
   <img alt="Diagrama de navegación" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/DiagramaDeNavegaci%C3%B3n.png">
   
-  # DIAGRAMA DE BASE DE DATOS
+  ## DIAGRAMA DE BASE DE DATOS
   <img alt="Diagrama de bases de datos" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Diagrama%20base%20de%20datos.png">
   
-  # DIAGRAMA DE CLASES
+  ## DIAGRAMA DE CLASES
   <img alt="Diagrama de clases" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Diagrama%20de%20clases.png">
   
-  # Instrucciones para ejecutar el programa como aplicación web:
+  ## Instrucciones para ejecutar el programa como aplicación web:
   -  Paso 1: Descargarse la aplicación del repositorio de github.
   -  Paso 2: Iniciar la base de datos.
   -    Paso 2.1: Crear una base de datos con nombre de webapp16 y conectarla al puerto 3306.
@@ -143,3 +145,17 @@
   -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/resources/templates/header.html
   -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/Entitys/User.java
   -https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/templatemo_551_stand_blog/backend/helloword-vscode/src/main/java/es/codeurjc/hellowordvscode/Controller/MustacheController.java
+
+
+# FASE 2: 
+## NAVEGACIÓN: 
+Se presenta una captura de cada pantalla actualizada de la aplicación 
+- PANTALLA ADMINISTRADOR: 
+
+- PANTALLA DESTINO:
+- PANTALLA PRINCIPAL:
+- PANTALLA LOGIN:
+- PANTALLA SIGNUP:
+- PANTALLA AREA PERSONAL:
+- PANTALLA VALORACIONES
+
