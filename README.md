@@ -55,7 +55,7 @@
   <img alt="Pantalla signup" src="images/FASE 1/SignUp.png">
 
   - PANTALLA AREA PERSONAL: A esta pantalla solo tendrán acceso los usuarios registrados. Desde aquí podrán ver todos los detalles de su viaje y subir los documentos          necesarios para ello (ticket de avión, reserva hotel...).
-  <img alt="Pantalla area personal" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/areaPersonal.png">
+  <img alt="Pantalla area personal" src="images/FASE 1/areaPersonal.png">
   
   - PANTALLA VALORACIONES: Está pantalla esta pensada para que los usuarios que hayan terminado su viaje puedan subir información sobre este y asi que otros usuarios          puedan consultarla y puedan organizar su viaje de una forma más sencillla y cómoda.
   <img alt="Pantalla valoraciones" src="images/FASE 1/Valoraciones.png">
@@ -137,20 +137,20 @@
 # FASE 2: 
 ## NAVEGACIÓN: 
 Se presenta una captura de cada pantalla actualizada de la aplicación 
-- PANTALLA ADMINISTRADOR: 
+- PANTALLA ADMINISTRADOR: En esta pantalla hemos añadido la lista de destinos para poder ver todos los que tenemos y asi ir directamente a editar el que se seleccione.
 <img alt="Pantalla admin" src = "images/Nueva carpeta/ADMIN.jpeg">
-- PANTALLA DESTINO: 
+- PANTALLA DESTINO: Hemos insertado fotos e información de cada destino
  <img alt="Pantalla destino" src="images/Nueva carpeta/DESTINO.jpeg"> 
-- PANTALLA PRINCIPAL:
+- PANTALLA PRINCIPAL: En la página principal ahora podremos ver una lista de todos los detinos, cada uno con una foto y una breve descripción. Además, podemos observar que hemos añadido el botón de cargar más destinos.
  <img alt="Pantalla principal" src="images/Nueva carpeta/PRINCIPAL.png">
  <img alt = "Principal boton mostrar más" src = "images/Nueva carpeta/PRINCIPAL-2.png">
-- PANTALLA LOGIN:
+- PANTALLA LOGIN: Pantalla donde los usuarios podrán iniciar sesión.
 <img alt="Pantalla login" src="images/Nueva carpeta/LOG-IN.jpeg">
-- PANTALLA SIGNUP
+- PANTALLA SIGNUP: Aqui los usuarios no registrados podrán unirse a nuestra aplicación.
 <img alt="Pantalla signup" src="images/Nueva carpeta/SIGN-UP.jpeg">
-- PANTALLA AREA PERSONAL
+- PANTALLA AREA PERSONAL: En esta pantalla se verá la información de cada usuario, sus viajes, reservas...
 <img alt="Pantalla area personal" src="images/Nueva carpeta/AREA PERSONAL.png">
-- PANTALLA VALORACIONES:
+- PANTALLA VALORACIONES: Una vez los usuarios terminen su viaje podráwn subir información y dar su opinión sobre el mismo y así poder ayudar a otros usuarios que estén pensando realizar el mismo viaje.
 <img alt="Pantalla valoraciones" src="images/Nueva carpeta/VALORACIONES.jpeg">
 
 ## INTRUCCIONES DE EJECUCIÓN
