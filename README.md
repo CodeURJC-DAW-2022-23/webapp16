@@ -63,22 +63,9 @@
   ## DIAGRAMA DE NAVEGACIÓN
   <img alt="Diagrama de navegación" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/DiagramaDeNavegaci%C3%B3n.png">
   
-  ## DIAGRAMA DE BASE DE DATOS
-  <img alt="Diagrama de bases de datos" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Diagrama%20base%20de%20datos.png">
-  
   ## DIAGRAMA DE CLASES
   <img alt="Diagrama de clases" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Diagrama%20de%20clases.png">
-  
-  ## Instrucciones para ejecutar el programa como aplicación web:
-  -  Paso 1: Descargarse la aplicación del repositorio de github.
-  -  Paso 2: Iniciar la base de datos.
-  -    Paso 2.1: Crear una base de datos con nombre de webapp16 y conectarla al puerto 3306.
-  -    Paso 2.2: Introducir datos iniciales a la base de datos.
-  -      El código del repositorio ya tiene datos por defecto.
-  -  Paso 3: Iniciar la aplicación como aplicación de SpringBoot.
-  -  Paso 4: Iniciar el navegador y conectarse a la aplicación.
-  -    Si se está ejecutando en el mismo ordenador el programa y el navegador, se puede acceder a la aplicación introduciendo como dirección "https://localhost:8443" (Si está con la configuración por defecto).
-
+ 
   #TRABAJO DE CADA MIEMBRO:
   #ALEJANDRO ROMERO
   -La tarea principal fue la creación de los objetos en la base de datos, inicialización de datos y mostrarlos en la página.
@@ -152,10 +139,26 @@
 Se presenta una captura de cada pantalla actualizada de la aplicación 
 - PANTALLA ADMINISTRADOR: 
 
-- PANTALLA DESTINO:
+- PANTALLA DESTINO: 
+  <img alt="Pantalla destino" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Nueva Carpeta/DESTINO.JPEG"> 
 - PANTALLA PRINCIPAL:
 - PANTALLA LOGIN:
 - PANTALLA SIGNUP:
 - PANTALLA AREA PERSONAL:
 - PANTALLA VALORACIONES
+
+## INTRUCCIONES DE EJECUCIÓN
+## Instrucciones para ejecutar el programa como aplicación web:
+  -  Paso 1: Descargarse la aplicación del repositorio de github.
+  -  Paso 2: Iniciar la base de datos.
+  -    Paso 2.1: Crear una base de datos con nombre de webapp16 y conectarla al puerto 3306.
+  -    Paso 2.2: Introducir datos iniciales a la base de datos.
+  -      El código del repositorio ya tiene datos por defecto.
+  -  Paso 3: Iniciar la aplicación como aplicación de SpringBoot.
+  -  Paso 4: Iniciar el navegador y conectarse a la aplicación.
+  -    Si se está ejecutando en el mismo ordenador el programa y el navegador, se puede acceder a la aplicación introduciendo como dirección "https://localhost:8443" (Si está con la configuración por defecto).
+
+## DIAGRAMA CON LAS ENTIDADES DE LA BASE DE DATOS
+  <img alt="Diagrama de bases de datos" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Diagrama%20base%20de%20datos.png">
+
 
