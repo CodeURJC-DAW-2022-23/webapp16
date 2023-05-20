@@ -40,31 +40,31 @@
 
   - PANTALLA ADMINISTRADOR:
   A esta página solo tendrá acceso aquel usuario que se haya registrado como administrador. Podrá editar y añadir destinos y configurar los usuarios registrados en la       web.
-  <img alt="Pantalla administrador" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/admin.png"> 
+  <img alt="Pantalla administrador" src="images/FASE 1/admin.png"> 
   
   - PANTALLA DESTINO: Pantalla que nuestra un destino concreto de la lista de destinos con información detallada del sitio.
-  <img alt="Pantalla destino" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/destino.png">
+  <img alt="Pantalla destino" src="images/FASE 1/destino.png">
   
   - PANTALLA PRINCIPAL: La pantalla principal de nuestra página web, desde aquí se podrá ver una lista de todos los destinos y navegar por las diferentes pantallas de    la página.
-  <img alt="Pantalla principal" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/paginaPrincipal.png">
+  <img alt="Pantalla principal" src="images/FASE 1/paginaPrincipal.png">
   
   - PANTALLA LOGIN: Desde aquí los usuarios podrán iniciar sesión con su nombre y contraseña.
-  <img alt="Pantalla login" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Log-In.png">
+  <img alt="Pantalla login" src="images/FASE 1/Log-In.png">
   
   - PANTALLA SIGNUP: Los usuarios que no estén registrados podran hacerlo a través de esta pantalla. Se registrarán con un nombre y una contraseña y además podrán        subir una imagen para ponerla de foto de perfil. 
-  <img alt="Pantalla signup" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/SignUp.png">
+  <img alt="Pantalla signup" src="images/FASE 1/SignUp.png">
 
   - PANTALLA AREA PERSONAL: A esta pantalla solo tendrán acceso los usuarios registrados. Desde aquí podrán ver todos los detalles de su viaje y subir los documentos          necesarios para ello (ticket de avión, reserva hotel...).
   <img alt="Pantalla area personal" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/areaPersonal.png">
   
   - PANTALLA VALORACIONES: Está pantalla esta pensada para que los usuarios que hayan terminado su viaje puedan subir información sobre este y asi que otros usuarios          puedan consultarla y puedan organizar su viaje de una forma más sencillla y cómoda.
-  <img alt="Pantalla valoraciones" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Valoraciones.png">
+  <img alt="Pantalla valoraciones" src="images/FASE 1/Valoraciones.png">
   
   ## DIAGRAMA DE NAVEGACIÓN
-  <img alt="Diagrama de navegación" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/DiagramaDeNavegaci%C3%B3n.png">
+  <img alt="Diagrama de navegación" src="images/FASE 1/DiagramaDeNavegación.png">
   
   ## DIAGRAMA DE CLASES
-  <img alt="Diagrama de clases" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Diagrama%20de%20clases.png">
+  <img alt="Diagrama de clases" src="images/FASE 1/Diagrama de clases.png">
  
   #TRABAJO DE CADA MIEMBRO:
   #ALEJANDRO ROMERO
@@ -138,14 +138,20 @@
 ## NAVEGACIÓN: 
 Se presenta una captura de cada pantalla actualizada de la aplicación 
 - PANTALLA ADMINISTRADOR: 
-
+<img alt="Pantalla admin" src = "images/Nueva carpeta/ADMIN.jpeg">
 - PANTALLA DESTINO: 
-  <img alt="Pantalla destino" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Nueva Carpeta/DESTINO.JPEG"> 
+ <img alt="Pantalla destino" src="images/Nueva carpeta/DESTINO.jpeg"> 
 - PANTALLA PRINCIPAL:
+ <img alt="Pantalla principal" src="images/Nueva carpeta/PRINCIPAL.png">
+ <img alt = "Principal boton mostrar más" src = "images/Nueva carpeta/PRINCIPAL-2.png">
 - PANTALLA LOGIN:
-- PANTALLA SIGNUP:
-- PANTALLA AREA PERSONAL:
-- PANTALLA VALORACIONES
+<img alt="Pantalla login" src="images/Nueva carpeta/LOG-IN.jpeg">
+- PANTALLA SIGNUP
+<img alt="Pantalla signup" src="images/Nueva carpeta/SIGN-UP.jpeg">
+- PANTALLA AREA PERSONAL
+<img alt="Pantalla area personal" src="images/Nueva carpeta/AREA PERSONAL.png">
+- PANTALLA VALORACIONES:
+<img alt="Pantalla valoraciones" src="images/Nueva carpeta/VALORACIONES.jpeg">
 
 ## INTRUCCIONES DE EJECUCIÓN
 ## Instrucciones para ejecutar el programa como aplicación web:
@@ -159,6 +165,6 @@ Se presenta una captura de cada pantalla actualizada de la aplicación
   -    Si se está ejecutando en el mismo ordenador el programa y el navegador, se puede acceder a la aplicación introduciendo como dirección "https://localhost:8443" (Si está con la configuración por defecto).
 
 ## DIAGRAMA CON LAS ENTIDADES DE LA BASE DE DATOS
-  <img alt="Diagrama de bases de datos" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Diagrama%20base%20de%20datos.png">
+  <img alt="Diagrama de bases de datos" src="images/FASE 1/Diagrama base de datos.png">
 
 
