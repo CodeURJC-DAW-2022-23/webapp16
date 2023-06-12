@@ -40,45 +40,32 @@
 
   - PANTALLA ADMINISTRADOR:
   A esta página solo tendrá acceso aquel usuario que se haya registrado como administrador. Podrá editar y añadir destinos y configurar los usuarios registrados en la       web.
-  <img alt="Pantalla administrador" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/admin.png"> 
+  <img alt="Pantalla administrador" src="images/FASE 1/admin.png"> 
   
   - PANTALLA DESTINO: Pantalla que nuestra un destino concreto de la lista de destinos con información detallada del sitio.
-  <img alt="Pantalla destino" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/destino.png">
+  <img alt="Pantalla destino" src="images/FASE 1/destino.png">
   
   - PANTALLA PRINCIPAL: La pantalla principal de nuestra página web, desde aquí se podrá ver una lista de todos los destinos y navegar por las diferentes pantallas de    la página.
-  <img alt="Pantalla principal" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/paginaPrincipal.png">
+  <img alt="Pantalla principal" src="images/FASE 1/paginaPrincipal.png">
   
   - PANTALLA LOGIN: Desde aquí los usuarios podrán iniciar sesión con su nombre y contraseña.
-  <img alt="Pantalla login" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Log-In.png">
+  <img alt="Pantalla login" src="images/FASE 1/Log-In.png">
   
   - PANTALLA SIGNUP: Los usuarios que no estén registrados podran hacerlo a través de esta pantalla. Se registrarán con un nombre y una contraseña y además podrán        subir una imagen para ponerla de foto de perfil. 
-  <img alt="Pantalla signup" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/SignUp.png">
+  <img alt="Pantalla signup" src="images/FASE 1/SignUp.png">
 
   - PANTALLA AREA PERSONAL: A esta pantalla solo tendrán acceso los usuarios registrados. Desde aquí podrán ver todos los detalles de su viaje y subir los documentos          necesarios para ello (ticket de avión, reserva hotel...).
-  <img alt="Pantalla area personal" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/areaPersonal.png">
+  <img alt="Pantalla area personal" src="images/FASE 1/areaPersonal.png">
   
   - PANTALLA VALORACIONES: Está pantalla esta pensada para que los usuarios que hayan terminado su viaje puedan subir información sobre este y asi que otros usuarios          puedan consultarla y puedan organizar su viaje de una forma más sencillla y cómoda.
-  <img alt="Pantalla valoraciones" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Valoraciones.png">
+  <img alt="Pantalla valoraciones" src="images/FASE 1/Valoraciones.png">
   
   ## DIAGRAMA DE NAVEGACIÓN
-  <img alt="Diagrama de navegación" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/DiagramaDeNavegaci%C3%B3n.png">
-  
-  ## DIAGRAMA DE BASE DE DATOS
-  <img alt="Diagrama de bases de datos" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Diagrama%20base%20de%20datos.png">
+  <img alt="Diagrama de navegación" src="images/FASE 1/DiagramaDeNavegación.png">
   
   ## DIAGRAMA DE CLASES
-  <img alt="Diagrama de clases" src="https://github.com/CodeURJC-DAW-2022-23/webapp16/blob/main/images/Diagrama%20de%20clases.png">
-  
-  ## Instrucciones para ejecutar el programa como aplicación web:
-  -  Paso 1: Descargarse la aplicación del repositorio de github.
-  -  Paso 2: Iniciar la base de datos.
-  -    Paso 2.1: Crear una base de datos con nombre de webapp16 y conectarla al puerto 3306.
-  -    Paso 2.2: Introducir datos iniciales a la base de datos.
-  -      El código del repositorio ya tiene datos por defecto.
-  -  Paso 3: Iniciar la aplicación como aplicación de SpringBoot.
-  -  Paso 4: Iniciar el navegador y conectarse a la aplicación.
-  -    Si se está ejecutando en el mismo ordenador el programa y el navegador, se puede acceder a la aplicación introduciendo como dirección "https://localhost:8443" (Si está con la configuración por defecto).
-
+  <img alt="Diagrama de clases" src="images/FASE 1/Diagrama de clases.png">
+ 
   #TRABAJO DE CADA MIEMBRO:
   #ALEJANDRO ROMERO
   -La tarea principal fue la creación de los objetos en la base de datos, inicialización de datos y mostrarlos en la página.
@@ -150,12 +137,34 @@
 # FASE 2: 
 ## NAVEGACIÓN: 
 Se presenta una captura de cada pantalla actualizada de la aplicación 
-- PANTALLA ADMINISTRADOR: 
+- PANTALLA ADMINISTRADOR: En esta pantalla hemos añadido la lista de destinos para poder ver todos los que tenemos y asi ir directamente a editar el que se seleccione.
+<img alt="Pantalla admin" src = "images/Nueva carpeta/ADMIN.jpeg">
+- PANTALLA DESTINO: Hemos insertado fotos e información de cada destino
+ <img alt="Pantalla destino" src="images/Nueva carpeta/DESTINO.jpeg"> 
+- PANTALLA PRINCIPAL: En la página principal ahora podremos ver una lista de todos los detinos, cada uno con una foto y una breve descripción. Además, podemos observar que hemos añadido el botón de cargar más destinos.
+ <img alt="Pantalla principal" src="images/Nueva carpeta/PRINCIPAL.png">
+ <img alt = "Principal boton mostrar más" src = "images/Nueva carpeta/PRINCIPAL-2.png">
+- PANTALLA LOGIN: Pantalla donde los usuarios podrán iniciar sesión.
+<img alt="Pantalla login" src="images/Nueva carpeta/LOG-IN.jpeg">
+- PANTALLA SIGNUP: Aqui los usuarios no registrados podrán unirse a nuestra aplicación.
+<img alt="Pantalla signup" src="images/Nueva carpeta/SIGN-UP.jpeg">
+- PANTALLA AREA PERSONAL: En esta pantalla se verá la información de cada usuario, sus viajes, reservas...
+<img alt="Pantalla area personal" src="images/Nueva carpeta/AREA PERSONAL.png">
+- PANTALLA VALORACIONES: Una vez los usuarios terminen su viaje podráwn subir información y dar su opinión sobre el mismo y así poder ayudar a otros usuarios que estén pensando realizar el mismo viaje.
+<img alt="Pantalla valoraciones" src="images/Nueva carpeta/VALORACIONES.jpeg">
 
-- PANTALLA DESTINO:
-- PANTALLA PRINCIPAL:
-- PANTALLA LOGIN:
-- PANTALLA SIGNUP:
-- PANTALLA AREA PERSONAL:
-- PANTALLA VALORACIONES
+## INTRUCCIONES DE EJECUCIÓN
+## Instrucciones para ejecutar el programa como aplicación web:
+  -  Paso 1: Descargarse la aplicación del repositorio de github.
+  -  Paso 2: Iniciar la base de datos.
+  -    Paso 2.1: Crear una base de datos con nombre de webapp16 y conectarla al puerto 3306.
+  -    Paso 2.2: Introducir datos iniciales a la base de datos.
+  -      El código del repositorio ya tiene datos por defecto.
+  -  Paso 3: Iniciar la aplicación como aplicación de SpringBoot.
+  -  Paso 4: Iniciar el navegador y conectarse a la aplicación.
+  -    Si se está ejecutando en el mismo ordenador el programa y el navegador, se puede acceder a la aplicación introduciendo como dirección "https://localhost:8443" (Si está con la configuración por defecto).
+
+## DIAGRAMA CON LAS ENTIDADES DE LA BASE DE DATOS
+  <img alt="Diagrama de bases de datos" src="images/FASE 1/Diagrama base de datos.png">
+
 
