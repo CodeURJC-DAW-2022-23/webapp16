@@ -3,7 +3,7 @@ FROM maven:3.8-openjdk-18 as backend
 
 
 # Definimos el directorio de trabajo en /usr/src/app/
-WORKDIR /app
+WORKDIR /project
 
 # Copiamos los ficheros de la aplicación
 COPY backend/ .
@@ -14,9 +14,9 @@ RUN mvn package -DskipTests=true
 
 FROM openjdk:18.0.2.1
 
-WORKDIR /app/project
+WORKDIR /app
 
-COPY --from=backend app/target/*.jar /backend.jar
+COPY --from=backend project/target/*.jar /app/backend.jar
 
 # Indica el puerto que expone el contenedor
 EXPOSE 8443
