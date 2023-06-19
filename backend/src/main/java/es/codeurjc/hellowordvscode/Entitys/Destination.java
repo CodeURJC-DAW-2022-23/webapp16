@@ -11,6 +11,8 @@ import javax.persistence.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import es.codeurjc.hellowordvscode.Repositories.TripRepository;
 
 @Entity
@@ -32,9 +34,12 @@ public class Destination {
 
     @OneToMany (cascade = CascadeType.ALL, mappedBy="destination")   
     private List<Trip> trip_list;
-
+    
     @Lob
-    private Blob photo;
+	@JsonIgnore
+	private Blob imageFile;
+
+
 
 
 
@@ -97,13 +102,11 @@ public class Destination {
         this.id = l;
     }
 
-    public Blob getPhoto() {
-        return photo;
-    }
+ 
 
-    public void setFoto(Blob photo) {
-        this.photo = photo;
-    }
+   public void setImageFile(Blob image) {
+		this.imageFile = image;
+	}
 
     public boolean getImage(){
 		return this.image;
