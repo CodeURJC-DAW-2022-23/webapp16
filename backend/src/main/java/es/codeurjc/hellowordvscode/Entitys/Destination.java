@@ -1,8 +1,6 @@
 package es.codeurjc.hellowordvscode.Entitys;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+
 import java.sql.Blob;
 import java.util.*;
 
@@ -25,7 +23,7 @@ public class Destination {
     private String name;//Destination name
     private String information;//summary of destination
     private int mean;//valoration average for a destination
-    private boolean image;
+    
 
 
 
@@ -38,10 +36,7 @@ public class Destination {
     @Lob
 	@JsonIgnore
 	private Blob imageFile;
-
-
-
-
+    private boolean image;
 
 
     public Destination(){}
