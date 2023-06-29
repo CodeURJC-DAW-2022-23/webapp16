@@ -47,7 +47,6 @@ public class Destination {
         this.largeInformation=largeInformation;
     }
 
-    
 
     public int getMean(){
         return mean;
