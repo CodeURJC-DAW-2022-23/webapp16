@@ -28,12 +28,12 @@ public class TripController {
         
     // }
 
-    @GetMapping("/crearViaje")
-	public String crearViaje(Model model){
-		return "crearViaje";
+    @GetMapping("/createTrip")
+	public String createTrip(Model model){
+		return "createTrip";
 	}
 
-	@PostMapping("/crearViaje")
+	@PostMapping("/createTrip")
 	public String publicarViaje(Model model){
 
 		return "redirect:personalArea";
