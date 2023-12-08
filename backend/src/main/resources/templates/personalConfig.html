@@ -1,0 +1,125 @@
+{{>header}}
+<!--   <body>
+ -->
+    <!-- ***** Preloader Start ***** -->
+<!--     <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  --> 
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+ <!--    <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index"><h2>Stand Blog<em>.</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="login">LOG IN
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="index">inicio</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header> -->
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="heading-page header-text">
+      <section class="page-heading">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="text-content">
+                <h4>LET'S START!</h4>
+                <h2>View your account from here and change your personal data</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!-- Banner Ends Here -->
+
+
+    <section class="contact-us">
+      <div class="container">
+        <div class="row">
+        
+          <div class="col-lg-12">
+            <div class="down-contact">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="sidebar-item contact-form">
+                    <form action="/userUpdate" method="put">
+                
+                      <label for="name">Nombre:</label><br>
+                      <input type="text" id="username" name="username" placeholder={username} required=""><br>
+
+                      <label for="email">Correo electrónico:</label><br>
+                      <input type="email" id="email" name="email" placeholder={email} required=""><br>
+                
+                      <label for="password">Contraseña:</label><br>
+                      <input type="password" id="password" name="password"/><br>
+
+                      <label>Suba una foto de su avatar</label>
+                      <input name="avatar" type="file" id="avatar" placeholder=""/></input>
+                        
+                      <input type="submit" value="Submit"/>
+                      <input type="hidden" name="_csrf" value="{{token}}">
+                    </form>
+                  </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="sidebar-item contact-information">
+                    <div class="sidebar-heading">
+                      <h2>contact information</h2>
+                    </div>
+                    <div class="content">
+                      <ul>
+                        <li>
+                          <h5>090-484-8080</h5>
+                          <span>PHONE NUMBER</span>
+                        </li>
+                        <li>
+                          <h5>info@urjc.es</h5>
+                          <span>EMAIL ADDRESS</span>
+                        </li>
+                        <li>
+                          <h5> Av. del Alcalde de Móstoles, 
+                          	<br> 28933 Móstoles, Madrid</h5>
+                          <span>STREET ADDRESS</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--
+            <div class="col-lg-12">
+              <div id="map">
+                <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
+            </div>
+          -->
+        </div>
+      </div>
+    </section>
+
+{{>footer}}

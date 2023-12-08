@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +31,6 @@ import es.codeurjc.hellowordvscode.Repositories.DestinationRepository;
 import es.codeurjc.hellowordvscode.Repositories.TripRepository;
 import es.codeurjc.hellowordvscode.Repositories.UserRepository;
 import es.codeurjc.hellowordvscode.Services.DestinationService;
-import es.codeurjc.hellowordvscode.Services.UserService;
 
 @Controller
 public class MustacheController {
@@ -174,6 +174,23 @@ public class MustacheController {
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
 
 		return "personalArea";
+	}
+	@GetMapping("/personalConfig")
+	public String personalConfig(Model model, HttpServletRequest request){
+		String name = request.getUserPrincipal().getName();
+		model.addAttribute("username", name);
+		model.addAttribute("email", name);
+		return "personalConfig";
+	}
+
+	@PutMapping
+	public ResponseEntity<Object> userUpdate(@PathVariable long id, String username, String email, String password){
+		User usuario =userRepository.findById(id).orElseThrow();
+		usuario.setName(username);
+		usuario.setEmail(email);
+		usuario.setEncodedPassword(passwordEncoder.encode(password));
+		userRepository.save(usuario);
+		return ResponseEntity.noContent().build();
 	}
 
 
